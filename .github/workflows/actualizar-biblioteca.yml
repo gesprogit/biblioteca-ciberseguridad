@@ -13,17 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Preparar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       - name: Instalar dependencias
         run: pip install --quiet requests beautifulsoup4
 
-      - name: Ejecutar monitor y regenerador
+      - name: Ejecutar script de actualización
         run: python scripts/actualizar_fuentes.py
 
       - name: Confirmar cambios (si los hay)
