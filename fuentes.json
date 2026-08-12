@@ -1,0 +1,21 @@
+{
+  "version_esquema": 2,
+  "fuentes": [
+    {"id":"aepd-faq","categoria":"aepd","tipo":"html","url":"https://www.aepd.es/preguntas-frecuentes","selector":"main","nombre":"FAQ AEPD"},
+    {"id":"ccn-faq","categoria":"ccn","tipo":"html","url":"https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html","selector":"main","nombre":"FAQ CCN-CERT"},
+    {"id":"ccn-stic-800","categoria":"ccn","tipo":"html","url":"https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html","selector":"main","nombre":"Guías CCN-STIC 800 (ENS)"},
+    {"id":"dora-base","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg/2022/2554/oj","selector":"body","nombre":"DORA · Reg. (UE) 2022/2554"},
+    {"id":"dora-rts-1774","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_del/2024/1774/oj","selector":"body","nombre":"RTS marco gestión riesgo TIC y marco simplificado"},
+    {"id":"dora-rts-1772","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_del/2024/1772/oj","selector":"body","nombre":"RTS clasificación de incidentes y umbrales"},
+    {"id":"dora-rts-301","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_del/2025/301/oj","selector":"body","nombre":"RTS plazos y contenido de notificaciones"},
+    {"id":"dora-rts-295","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_del/2025/295/oj","selector":"body","nombre":"RTS armonización de la supervisión"},
+    {"id":"dora-rts-420","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_del/2025/420/oj","selector":"body","nombre":"RTS Equipo de Examen Conjunto (JET)"},
+    {"id":"dora-its-2956","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_impl/2024/2956/oj","selector":"body","nombre":"ITS Registro de Información (plantillas)"},
+    {"id":"nis2","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/dir/2022/2555/oj","selector":"body","nombre":"Directiva NIS2"},
+    {"id":"nis2-impl-2690","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg_impl/2024/2690/oj","selector":"body","nombre":"Reg. Ejec. (UE) 2024/2690 (NIS2)"},
+    {"id":"cra","categoria":"ue","tipo":"html","url":"http://data.europa.eu/eli/reg/2024/2847/oj","selector":"body","nombre":"Cyber Resilience Act"},
+    {"id":"iso-27001","categoria":"iso","tipo":"html","url":"https://www.iso.org/isoiec-27001-information-security.html","selector":"main","nombre":"ISO/IEC 27001"},
+    {"id":"iso-27002","categoria":"iso","tipo":"html","url":"https://www.iso.org/standard/75652.html","selector":"main","nombre":"ISO/IEC 27002"},
+    {"id":"tisax-handbook","categoria":"enx","tipo":"html","url":"https://www.enx.com/handbook/tph-es.html","selector":"body","nombre":"Manual del Participante TISAX (ES)"}
+  ]
+}
