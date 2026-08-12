@@ -1,0 +1,39 @@
+name: Actualizar biblioteca
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # todos los lunes a las 06:00 UTC
+  workflow_dispatch:       # permite lanzarlo a mano con un botón
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install --quiet requests beautifulsoup4
+
+      - name: Ejecutar el monitor de fuentes
+        run: python scripts/actualizar_fuentes.py
+
+      - name: Guardar cambios en el repositorio (si los hay)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Sin cambios: las fuentes no han variado."
+          else
+            git commit -m "Monitor de fuentes: actualización automática [skip ci]"
+            git push
+          fi
