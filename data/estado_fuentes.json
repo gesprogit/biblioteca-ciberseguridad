@@ -4,97 +4,97 @@
     "huella": "0204c5e4a654bdfd72b3ea057a2a9fdc51af2a4a51c5a451f08e90f06fe44d2e",
     "chars": 811,
     "estado": "OK",
-    "fecha": "2026-08-12T12:19:40.893408+00:00"
+    "fecha": "2026-08-12T12:27:35.795112+00:00"
   },
   "ccn-faq": {
     "url": "https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
     "estado": "ERROR",
     "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
-    "fecha": "2026-08-12T12:19:41.502686+00:00"
+    "fecha": "2026-08-12T12:27:36.335462+00:00"
   },
   "ccn-stic-800": {
     "url": "https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html",
     "estado": "ERROR",
     "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html",
-    "fecha": "2026-08-12T12:19:41.954767+00:00"
+    "fecha": "2026-08-12T12:27:36.558811+00:00"
   },
   "dora-base": {
     "url": "http://data.europa.eu/eli/reg/2022/2554/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:42.653710+00:00"
+    "fecha": "2026-08-12T12:27:36.964162+00:00"
   },
   "dora-rts-1774": {
     "url": "http://data.europa.eu/eli/reg_del/2024/1774/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:43.082996+00:00"
+    "fecha": "2026-08-12T12:27:37.314714+00:00"
   },
   "dora-rts-1772": {
     "url": "http://data.europa.eu/eli/reg_del/2024/1772/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:43.780042+00:00"
+    "fecha": "2026-08-12T12:27:37.547383+00:00"
   },
   "dora-rts-301": {
     "url": "http://data.europa.eu/eli/reg_del/2025/301/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:44.383715+00:00"
+    "fecha": "2026-08-12T12:27:37.799520+00:00"
   },
   "dora-rts-295": {
     "url": "http://data.europa.eu/eli/reg_del/2025/295/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:44.672271+00:00"
+    "fecha": "2026-08-12T12:27:38.193383+00:00"
   },
   "dora-rts-420": {
     "url": "http://data.europa.eu/eli/reg_del/2025/420/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:45.074708+00:00"
+    "fecha": "2026-08-12T12:27:38.459295+00:00"
   },
   "dora-its-2956": {
     "url": "http://data.europa.eu/eli/reg_impl/2024/2956/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:45.656311+00:00"
+    "fecha": "2026-08-12T12:27:39.006471+00:00"
   },
   "nis2": {
     "url": "http://data.europa.eu/eli/dir/2022/2555/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:46.093194+00:00"
+    "fecha": "2026-08-12T12:27:39.384586+00:00"
   },
   "nis2-impl-2690": {
     "url": "http://data.europa.eu/eli/reg_impl/2024/2690/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:46.380111+00:00"
+    "fecha": "2026-08-12T12:27:39.745461+00:00"
   },
   "cra": {
     "url": "http://data.europa.eu/eli/reg/2024/2847/oj",
     "estado": "ERROR",
     "error": "'NoneType' object has no attribute 'get_text'",
-    "fecha": "2026-08-12T12:19:46.784594+00:00"
+    "fecha": "2026-08-12T12:27:39.983225+00:00"
   },
   "iso-27001": {
     "url": "https://www.iso.org/isoiec-27001-information-security.html",
     "estado": "ERROR",
     "error": "403 Client Error: Forbidden for url: https://www.iso.org/isoiec-27001-information-security.html",
-    "fecha": "2026-08-12T12:19:47.017652+00:00"
+    "fecha": "2026-08-12T12:27:40.034283+00:00"
   },
   "iso-27002": {
     "url": "https://www.iso.org/standard/75652.html",
     "estado": "ERROR",
     "error": "403 Client Error: Forbidden for url: https://www.iso.org/standard/75652.html",
-    "fecha": "2026-08-12T12:19:47.077807+00:00"
+    "fecha": "2026-08-12T12:27:40.070096+00:00"
   },
   "tisax-handbook": {
     "url": "https://www.enx.com/handbook/tph-es.html",
     "huella": "7f5c706e573baf8d4e6adbd914d747f2c031e1269b48fe41110d14c394a7fef1",
     "chars": 243183,
     "estado": "OK",
-    "fecha": "2026-08-12T12:19:48.938317+00:00"
+    "fecha": "2026-08-12T12:27:42.575112+00:00"
   }
 }
