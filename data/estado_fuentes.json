@@ -1,0 +1,64 @@
+{
+  "RGPD": {
+    "url": "http://data.europa.eu/eli/reg/2016/679/oj",
+    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "longitud_texto": 0,
+    "consultado": "2026-08-12T06:48:18.991933+00:00",
+    "estado": "OK"
+  },
+  "LOPDGDD": {
+    "url": "https://www.boe.es/eli/es/lo/2018-12-05/3",
+    "huella": "aadd1121ae566832b9b464aaa2ed7c631c605a2aab422ed8d3e0733517b91544",
+    "longitud_texto": 863,
+    "consultado": "2026-08-12T06:48:19.844959+00:00",
+    "estado": "OK"
+  },
+  "DORA": {
+    "url": "http://data.europa.eu/eli/reg/2022/2554/oj",
+    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "longitud_texto": 0,
+    "consultado": "2026-08-12T06:48:20.380260+00:00",
+    "estado": "OK"
+  },
+  "NIS2": {
+    "url": "http://data.europa.eu/eli/dir/2022/2555/oj",
+    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "longitud_texto": 0,
+    "consultado": "2026-08-12T06:48:21.077539+00:00",
+    "estado": "OK"
+  },
+  "CRA": {
+    "url": "http://data.europa.eu/eli/reg/2024/2847/oj",
+    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "longitud_texto": 0,
+    "consultado": "2026-08-12T06:48:22.219430+00:00",
+    "estado": "OK"
+  },
+  "ENS (RD 311/2022)": {
+    "url": "https://www.boe.es/eli/es/rd/2022-05-03/311",
+    "huella": "14d3047641d7df1c6c563ea4e43c6609760089027f0a3f47f4bfdfd8912db7cf",
+    "longitud_texto": 1634,
+    "consultado": "2026-08-12T06:48:23.166432+00:00",
+    "estado": "OK"
+  },
+  "AEPD FAQ": {
+    "url": "https://www.aepd.es/preguntas-frecuentes",
+    "huella": "3cf60d3af2548bbb5bd1ebe59c884ece0419c2ca96d6e0c375f955cf538b8746",
+    "longitud_texto": 1936,
+    "consultado": "2026-08-12T06:48:23.610458+00:00",
+    "estado": "OK"
+  },
+  "CCN-CERT FAQ": {
+    "url": "https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
+    "estado": "ERROR",
+    "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
+    "consultado": "2026-08-12T06:48:24.486726+00:00"
+  },
+  "TISAX (ENX)": {
+    "url": "https://enx.com/en-US/TISAX/",
+    "huella": "506c9c629db2c5f88635b4a15cd9cd65688a8d7484856604059f88dc6d50973f",
+    "longitud_texto": 5660,
+    "consultado": "2026-08-12T06:48:26.668556+00:00",
+    "estado": "OK"
+  }
+}
