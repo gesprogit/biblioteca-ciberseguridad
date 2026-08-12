@@ -1,64 +1,100 @@
 {
-  "RGPD": {
-    "url": "http://data.europa.eu/eli/reg/2016/679/oj",
-    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "longitud_texto": 0,
-    "consultado": "2026-08-12T06:48:18.991933+00:00",
-    "estado": "OK"
-  },
-  "LOPDGDD": {
-    "url": "https://www.boe.es/eli/es/lo/2018-12-05/3",
-    "huella": "aadd1121ae566832b9b464aaa2ed7c631c605a2aab422ed8d3e0733517b91544",
-    "longitud_texto": 863,
-    "consultado": "2026-08-12T06:48:19.844959+00:00",
-    "estado": "OK"
-  },
-  "DORA": {
-    "url": "http://data.europa.eu/eli/reg/2022/2554/oj",
-    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "longitud_texto": 0,
-    "consultado": "2026-08-12T06:48:20.380260+00:00",
-    "estado": "OK"
-  },
-  "NIS2": {
-    "url": "http://data.europa.eu/eli/dir/2022/2555/oj",
-    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "longitud_texto": 0,
-    "consultado": "2026-08-12T06:48:21.077539+00:00",
-    "estado": "OK"
-  },
-  "CRA": {
-    "url": "http://data.europa.eu/eli/reg/2024/2847/oj",
-    "huella": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "longitud_texto": 0,
-    "consultado": "2026-08-12T06:48:22.219430+00:00",
-    "estado": "OK"
-  },
-  "ENS (RD 311/2022)": {
-    "url": "https://www.boe.es/eli/es/rd/2022-05-03/311",
-    "huella": "14d3047641d7df1c6c563ea4e43c6609760089027f0a3f47f4bfdfd8912db7cf",
-    "longitud_texto": 1634,
-    "consultado": "2026-08-12T06:48:23.166432+00:00",
-    "estado": "OK"
-  },
-  "AEPD FAQ": {
+  "aepd-faq": {
     "url": "https://www.aepd.es/preguntas-frecuentes",
-    "huella": "3cf60d3af2548bbb5bd1ebe59c884ece0419c2ca96d6e0c375f955cf538b8746",
-    "longitud_texto": 1936,
-    "consultado": "2026-08-12T06:48:23.610458+00:00",
-    "estado": "OK"
+    "huella": "0204c5e4a654bdfd72b3ea057a2a9fdc51af2a4a51c5a451f08e90f06fe44d2e",
+    "chars": 811,
+    "estado": "OK",
+    "fecha": "2026-08-12T11:59:34.766156+00:00"
   },
-  "CCN-CERT FAQ": {
+  "ccn-faq": {
     "url": "https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
     "estado": "ERROR",
     "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
-    "consultado": "2026-08-12T06:48:24.486726+00:00"
+    "fecha": "2026-08-12T11:59:35.056925+00:00"
   },
-  "TISAX (ENX)": {
-    "url": "https://enx.com/en-US/TISAX/",
-    "huella": "506c9c629db2c5f88635b4a15cd9cd65688a8d7484856604059f88dc6d50973f",
-    "longitud_texto": 5660,
-    "consultado": "2026-08-12T06:48:26.668556+00:00",
-    "estado": "OK"
+  "ccn-stic-800": {
+    "url": "https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html",
+    "estado": "ERROR",
+    "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html",
+    "fecha": "2026-08-12T11:59:35.299106+00:00"
+  },
+  "dora-base": {
+    "url": "http://data.europa.eu/eli/reg/2022/2554/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:35.665456+00:00"
+  },
+  "dora-rts-1774": {
+    "url": "http://data.europa.eu/eli/reg_del/2024/1774/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:36.037813+00:00"
+  },
+  "dora-rts-1772": {
+    "url": "http://data.europa.eu/eli/reg_del/2024/1772/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:36.326828+00:00"
+  },
+  "dora-rts-301": {
+    "url": "http://data.europa.eu/eli/reg_del/2025/301/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:36.801334+00:00"
+  },
+  "dora-rts-295": {
+    "url": "http://data.europa.eu/eli/reg_del/2025/295/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:37.149324+00:00"
+  },
+  "dora-rts-420": {
+    "url": "http://data.europa.eu/eli/reg_del/2025/420/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:37.467736+00:00"
+  },
+  "dora-its-2956": {
+    "url": "http://data.europa.eu/eli/reg_impl/2024/2956/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:37.776929+00:00"
+  },
+  "nis2": {
+    "url": "http://data.europa.eu/eli/dir/2022/2555/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:38.033779+00:00"
+  },
+  "nis2-impl-2690": {
+    "url": "http://data.europa.eu/eli/reg_impl/2024/2690/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:38.283518+00:00"
+  },
+  "cra": {
+    "url": "http://data.europa.eu/eli/reg/2024/2847/oj",
+    "estado": "ERROR",
+    "error": "'NoneType' object has no attribute 'get_text'",
+    "fecha": "2026-08-12T11:59:38.534646+00:00"
+  },
+  "iso-27001": {
+    "url": "https://www.iso.org/isoiec-27001-information-security.html",
+    "estado": "ERROR",
+    "error": "403 Client Error: Forbidden for url: https://www.iso.org/isoiec-27001-information-security.html",
+    "fecha": "2026-08-12T11:59:38.586631+00:00"
+  },
+  "iso-27002": {
+    "url": "https://www.iso.org/standard/75652.html",
+    "estado": "ERROR",
+    "error": "403 Client Error: Forbidden for url: https://www.iso.org/standard/75652.html",
+    "fecha": "2026-08-12T11:59:38.630030+00:00"
+  },
+  "tisax-handbook": {
+    "url": "https://www.enx.com/handbook/tph-es.html",
+    "huella": "7f5c706e573baf8d4e6adbd914d747f2c031e1269b48fe41110d14c394a7fef1",
+    "chars": 243183,
+    "estado": "OK",
+    "fecha": "2026-08-12T11:59:40.901120+00:00"
   }
 }
