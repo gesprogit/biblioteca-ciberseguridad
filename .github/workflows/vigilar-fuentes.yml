@@ -1,0 +1,55 @@
+name: Vigilar fuentes oficiales
+
+on:
+  schedule:
+    - cron: "0 6 * * *"     # todos los días a las 06:00 UTC
+  workflow_dispatch:        # botón para lanzarlo a mano
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dependencias
+        run: pip install --quiet requests beautifulsoup4
+
+      - name: Vigilar fuentes
+        run: python scripts/vigilar_fuentes.py
+
+      - name: Commit del estado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "Sin cambios de estado."
+          else
+            git commit -m "Vigilancia: actualizar estado de fuentes [skip ci]"
+            git push
+          fi
+
+      - name: Crear etiqueta si no existe
+        run: gh label create vigilancia --color "fbca04" --force || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Abrir issue si hay cambios
+        if: hashFiles('data/cambios_detectados.md') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "Cambio detectado en fuentes oficiales — $(date -u +%Y-%m-%d)" \
+            --body-file data/cambios_detectados.md \
+            --label vigilancia || true
