@@ -129,7 +129,7 @@ footer{background:#15202e;color:#aebbc9}
 <section class="hero">
  <span class="kicker">📚 Biblioteca de consulta rápida</span>
  <h1>Protección de datos, seguridad de la información y <em>ciberseguridad</em></h1>
- <p class="lead">Recopilación con respuestas basadas en fuentes oficiales: AEPD, CCN-CERT, ISO/IEC 27001 y 27002, NIS2 y Reg. Ejec. 2024/2690, CRA (Reg. 2024/2847 + Guía Comisión 2026 + ENISA SBD + CISA SBOM), Reglamento de IA, TISAX, LSSI-CE y el paquete DORA completo (Reglamento + RTS + ITS).</p>
+ <p class="lead">Recopilación con respuestas basadas en fuentes oficiales: AEPD, CCN-CERT, ISO/IEC 27001 y 27002, NIS2, CRA, DORA, LSSI-CE, Reglamento de IA (AI Act) y TISAX.</p>
 </section>
 
 <div class="dash" id="dash"></div>
@@ -147,7 +147,6 @@ footer{background:#15202e;color:#aebbc9}
  <div class="sec-actions"><button class="btn-all" id="clearFav" type="button">Vaciar favoritos</button></div>
  <div class="qas" id="favList"></div></section>
 
- <!-- SECCIONES 00-37 EXISTENTES (AEPD, CCN, ISO, UE, ENX) -->
  <section class="sec" id="s0" data-cat="aepd"><div class="sec-top"><span class="num">00</span><div class="sec-titles"><h2>Conceptos básicos de protección de datos</h2><p class="sec-desc">Definiciones del RGPD y la LOPDGDD.</p></div><span class="tag tag-aepd">AEPD</span></div>
  <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos" target="_blank" rel="noopener">Fuente ↗</a></div>
  <div class="qas">
@@ -159,10 +158,305 @@ footer{background:#15202e;color:#aebbc9}
  <details class="qa"><summary>¿Principios y bases jurídicas?</summary><div class="a"><p>Art. 5: licitud/lealtad/transparencia, limitación de finalidad, minimización, exactitud, limitación de conservación, integridad/confidencialidad, responsabilidad proactiva. Art. 6: consentimiento, contrato, obligación legal, intereses vitales, interés público, interés legítimo.</p></div></details>
  </div></section>
 
- <!-- ... (SECCIONES 01-37 EXISTENTES) ... -->
+ <section class="sec" id="s1" data-cat="aepd"><div class="sec-top"><span class="num">01</span><div class="sec-titles"><h2>Tus derechos como ciudadano</h2><p class="sec-desc">Derechos ARSOPOL (arts. 15-22 RGPD).</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/1-tus-derechos" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué derechos tengo (ARSOPOL)?</summary><div class="a"><p>Acceso (art. 15), Rectificación (16), Supresión/olvido (17), Oposición (21), Portabilidad (20), Limitación (18) y no ser objeto de decisiones únicamente automatizadas con efectos jurídicos (22).</p></div></details>
+ <details class="qa"><summary>¿Cómo los ejerzo y en qué plazo responden?</summary><div class="a"><p>Ejercicio gratuito por cualquier medio que deje constancia. El responsable responde en un mes (prorrogable a dos si es compleja). Si no responde o deniega, reclamación ante la AEPD en seis meses (art. 65 LOPDGDD).</p></div></details>
+ <details class="qa"><summary>¿Pueden cobrarme por el acceso?</summary><div class="a"><p>No; gratuidad incluida la primera copia (art. 12.5). Solo si la solicitud es manifiestamente infundada/excesiva cabe tarifa razonable, debiendo el responsable demostrarlo.</p></div></details>
+ <details class="qa"><summary>¿Qué es el derecho al olvido?</summary><div class="a"><p>Supresión aplicada al entorno digital (arts. 93-94 LOPDGDD): exigir a buscadores/redes eliminar enlaces/contenidos falsos, obsoletos o excesivos. La AEPD pondera relevancia pública, interés informativo y tiempo (doctrina TJUE).</p></div></details>
+ </div></section>
 
- <!-- SECCIÓN 38: LSSI-CE (NUEVA) -->
- <section class="sec" id="s38" data-cat="ue"><div class="sec-top"><span class="num">38</span><div class="sec-titles"><h2>LSSI-CE: Servicios de la Sociedad de la Información</h2><p class="sec-desc">Ley 34/2002 + modificaciones Ley 11/2022 (General de Telecomunicaciones).</p></div><span class="tag tag-ue">UE</span></div>
+ <section class="sec" id="s2" data-cat="aepd"><div class="sec-top"><span class="num">02</span><div class="sec-titles"><h2>Obligaciones del responsable</h2><p class="sec-desc">Empresas, pymes, autónomos y organismos.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/2-tus-obligaciones-como-responsable-del-tratamiento" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Privacidad desde el diseño y por defecto?</summary><div class="a"><p>Art. 25: aplicar medidas desde el diseño para aplicar los principios e integrar garantías; por defecto tratar solo los datos necesarios (cantidad, alcance, conservación, accesibilidad).</p></div></details>
+ <details class="qa"><summary>¿Cuándo es obligatoria una EIPD?</summary><div class="a"><p>Art. 35: alto riesgo probable, en particular con nuevas tecnologías: perfilado con efectos jurídicos, gran escala de categorías especiales, observación sistemática de zonas públicas, colectivos vulnerables, combinaciones inesperadas. La AEPD publica lista orientativa y Guía.</p></div></details>
+ <details class="qa"><summary>¿Qué incluye el RAT?</summary><div class="a"><p>Art. 30: identidad de responsable/encargado/DPD, fines, categorías de interesados/datos, destinatarios, transferencias y garantías, plazos de supresión, medidas de seguridad. A disposición de la autoridad.</p></div></details>
+ <details class="qa"><summary>¿Qué hacer ante una brecha?</summary><div class="a"><p>Art. 33: notificar a la AEPD en máx. 72 h salvo improbable riesgo; contenido: naturaleza, categorías/nº afectados, contacto DPD, consecuencias, medidas. Si alto riesgo, comunicar a afectados (art. 34). Documentar toda brecha internamente.</p></div></details>
+ <details class="qa"><summary>¿Obligaciones al contratar un encargado?</summary><div class="a"><p>Art. 28: garantías suficientes; contrato con objeto/duración/finalidad, confidencialidad, seguridad, subencargo con autorización, asistencia en derechos/EIPD/brechas, supresión/devolución y auditorías.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s3" data-cat="aepd"><div class="sec-top"><span class="num">03</span><div class="sec-titles"><h2>Protección de datos en el ámbito laboral</h2><p class="sec-desc">Empresa y personas trabajadoras.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Justificantes con datos de salud?</summary><div class="a"><p>Minimización: el empresario puede exigir justificante de ausencia pero no el diagnóstico. Si lo necesita por prevención (art. 22 LPRL), limitado a lo estrictamente necesario.</p></div></details>
+ <details class="qa"><summary>¿GPS en vehículos de empresa?</summary><div class="a"><p>Sí (art. 20.3 ET) con información previa, proporcionalidad y sin uso exclusivamente particular; no en descanso si hay uso privado; no zonas privadas.</p></div></details>
+ <details class="qa"><summary>¿Consentimiento para registro horario?</summary><div class="a"><p>No: obligación legal (art. 34.9 ET). Registro diario con inicio/final, informar a la plantilla, conservar 4 años y ponerlo a disposición de trabajadores/Inspección.</p></div></details>
+ <details class="qa"><summary>¿Desconexión digital?</summary><div class="a"><p>Art. 88 LOPDGDD: no atender comunicaciones fuera de jornada/descanso/vacaciones. Política interna previa audiencia de representantes con modalidades, formación y supuestos excepcionales.</p></div></details>
+ <details class="qa"><summary>¿Acceso a dispositivos corporativos?</summary><div class="a"><p>Art. 87: derecho a la intimidad; acceso solo con criterios previos (política de uso aceptable) con participación de representantes e información al trabajador; si hay uso privado, definir supuestos; nunca información privada sin advertencia.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s4" data-cat="aepd"><div class="sec-top"><span class="num">04</span><div class="sec-titles"><h2>Delegado de Protección de Datos (DPD)</h2><p class="sec-desc">Obligatoriedad, funciones y garantías.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/4-dpd" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Cuándo es obligatorio?</summary><div class="a"><p>Art. 37 RGPD: autoridades/organismos públicos; observación habitual/sistemática a gran escala; gran escala de categorías especiales/condenas. Art. 34 LOPDGDD añade: colegios profesionales, centros docentes, operadores telecom, entidades de crédito/aseguradoras/inversión, energía, centros sanitarios, seguridad privada, federaciones con datos de menores, etc.</p></div></details>
+ <details class="qa"><summary>¿Funciones del DPD?</summary><div class="a"><p>Art. 39: informar/asesorar; supervisar cumplimiento (formación, auditorías); asesorar en EIPD; cooperar con la AEPD y ser punto de contacto; atender a interesados.</p></div></details>
+ <details class="qa"><summary>¿Externo y garantías?</summary><div class="a"><p>Sí, personal o externo por contrato; un DPD por grupo accesible. Art. 38: publicar contacto y comunicar a la AEPD (10 días); sin instrucciones; informa al más alto nivel; inamovible; sin conflicto de intereses.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s5" data-cat="aepd"><div class="sec-top"><span class="num">05</span><div class="sec-titles"><h2>Publicidad no deseada</h2><p class="sec-desc">Llamadas, SMS, email y postal.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Llamadas comerciales sin consentimiento?</summary><div class="a"><p>Desde 29-6-2023, art. 66.1.b Ley 11/2022 exige consentimiento previo, salvo relación contractual previa con productos similares y oposición posible (soft opt-in art. 21.2 LSSI). Consultar Lista Robinson antes de campañas por interés legítimo (art. 23.2 LOPDGDD).</p></div></details>
+ <details class="qa"><summary>¿Email publicitario sin consentimiento?</summary><div class="a"><p>Prohibido sin consentimiento expreso (art. 21.1 LSSI). Excepción soft opt-in: relación previa, datos lícitos, productos similares y oposición sencilla y gratuita en recogida y cada envío.</p></div></details>
+ <details class="qa"><summary>¿Sigo recibiendo publicidad tras oponerme?</summary><div class="a"><p>Conserva pruebas, reitera oposición, verifica Lista Robinson y reclama ante la AEPD identificando al responsable.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s6" data-cat="aepd"><div class="sec-top"><span class="num">06</span><div class="sec-titles"><h2>Transferencias internacionales, BCR y códigos</h2><p class="sec-desc">Envío de datos fuera del EEE (arts. 44-49 RGPD).</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/6-transferencias-internacionales-bcr-codigos-de-conducta" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Decisión de adecuación?</summary><div class="a"><p>Decisión de la Comisión (art. 45) que declara nivel adecuado; permite transferir sin garantías adicionales. Vigentes: Andorra, Argentina, Canadá (comercial), Corea, EAU (sector), EE.UU. (Data Privacy Framework), Faroe, Guernsey, Israel, Isla de Man, Japón, Jersey, NZ, RU, Suiza.</p></div></details>
+ <details class="qa"><summary>¿Cláusulas tipo y BCR?</summary><div class="a"><p>CCT: Decisión (UE) 2021/914 (4 módulos). Tras Schrems II, evaluar el destino (TIA) y adoptar medidas suplementarias si el nivel no es equivalente. BCR (art. 47): políticas internas aprobadas por autoridad para transferencias intragrupo.</p></div></details>
+ <details class="qa"><summary>¿Excepciones art. 49?</summary><div class="a"><p>Consentimiento explícito; contrato/medidas precontractuales; contrato en interés del interesado; interés público; intereses vitales; reconocimiento/defensa de derechos; registros públicos. Restrictivas: no para transferencias masivas/sistemáticas.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s7" data-cat="aepd"><div class="sec-top"><span class="num">07</span><div class="sec-titles"><h2>Solvencia patrimonial (ficheros de morosos)</h2><p class="sec-desc">Inclusión, consulta y exclusión.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Requisitos para incluirme?</summary><div class="a"><p>Art. 20 LOPDGDD: requerimiento previo; deuda cierta/vencida/exigible (>50 € físicos / >400 € jurídicos); <5 años; deber de información al contratar. Falta alguno = indebida.</p></div></details>
+ <details class="qa"><summary>¿Cuánto tiempo conservan mis datos?</summary><div class="a"><p>Máx. 5 años desde exigible; después suprimirse aunque subsista. El pago no exige supresión inmediata pero da derecho a que conste.</p></div></details>
+ <details class="qa"><summary>¿Inclusión indebida?</summary><div class="a"><p>Ejercer acceso/rectificación/supresión; si no atienden en un mes, reclamación AEPD. Además indemnización judicial, incluidos daños morales.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s8" data-cat="aepd"><div class="sec-top"><span class="num">08</span><div class="sec-titles"><h2>Videovigilancia</h2><p class="sec-desc">Cámaras, control laboral y comunidades.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/8-videovigilancia" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Instalar cámaras = tratamiento?</summary><div class="a"><p>Sí: la imagen identifica; captar/grabar/conservar/acceder es tratamiento sujeto a RGPD (Guía de Videovigilancia).</p></div></details>
+ <details class="qa"><summary>¿Obligaciones al instalar?</summary><div class="a"><p>Proporcionalidad (solo sin medios menos invasivos); cartel visible; información completa; conservación máx. 1 mes salvo excepciones; no captar vía pública salvo franja mínima.</p></div></details>
+ <details class="qa"><summary>¿Comunidad de vecinos?</summary><div class="a"><p>Acuerdo previo de la Junta; comunidad responsable, administrador encargado; solo zonas comunes; cartel; grabaciones 1 mes; acceso solo autorizado.</p></div></details>
+ <details class="qa"><summary>¿Cámaras ficticias / cámara propia?</summary><div class="a"><p>Ficticias: sin captar no hay tratamiento. Grabaciones domésticas amparadas por excepción doméstica (art. 2.2.c) si no se difunden; difundir íntimos sin consentimiento da lugar a Canal Prioritario.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s9" data-cat="aepd"><div class="sec-top"><span class="num">09</span><div class="sec-titles"><h2>Comunidades de propietarios</h2><p class="sec-desc">Gestión de fincas.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Se aplica la normativa?</summary><div class="a"><p>Sí cuando tratan datos de personas físicas (propietarios, arrendatarios, empleados). Comunidad responsable, administrador encargado. AEPD no resuelve disputas vecinales.</p></div></details>
+ <details class="qa"><summary>¿Lista de morosos en el tablón?</summary><div class="a"><p>Regla general no: vulnera confidencialidad. Art. 9.1.h LPH solo edictos si no es posible notificar, contenido mínimo y plazo limitado. Publicar nombres+deudas ha sido sancionado.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s10" data-cat="aepd"><div class="sec-top"><span class="num">10</span><div class="sec-titles"><h2>Menores y educación</h2><p class="sec-desc">Consentimiento, centros y Canal Joven.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Edad para consentir?</summary><div class="a"><p>14 años (art. 7.1 LOPDGDD). Menos de 14: patria potestad/tutela y lenguaje adaptado. Misma regla para servicios de la sociedad de la información.</p></div></details>
+ <details class="qa"><summary>¿Fotos de alumnos sin autorización?</summary><div class="a"><p>No: consentimiento específico/informado/expreso de padres/tutores, distinto por finalidad; minimización; retirada en cualquier momento.</p></div></details>
+ <details class="qa"><summary>¿Canal Joven?</summary><div class="a"><p>Recursos en tudecideseninternet.es (ciberacoso, sexting, grooming); Canal Prioritario para retirada urgente de íntimos (72 h).</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s11" data-cat="aepd"><div class="sec-top"><span class="num">11</span><div class="sec-titles"><h2>Transparencia y protección de datos</h2><p class="sec-desc">Publicidad activa y acceso a información pública.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Transparencia vs RGPD?</summary><div class="a"><p>Sin datos o con no sensibles rige acceso (Ley 19/2013); con datos personales, art. 5.2 LOPDGDD remite al 15.3 Ley 19/2013: ponderación expresa (finalidad, legitimación, menores, categorías especiales, tiempo), seudonimización/acceso parcial.</p></div></details>
+ <details class="qa"><summary>¿Retribuciones de empleados públicos?</summary><div class="a"><p>Art. 8.1.b: publicidad activa de altos cargos/máximos responsables. Resto: agregadas por categoría/puesto; nominal exige ponderación.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s12" data-cat="aepd"><div class="sec-top"><span class="num">12</span><div class="sec-titles"><h2>Sede electrónica de la AEPD</h2><p class="sec-desc">Trámites y gestiones.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://sedeaepd.gob.es/sede-electronica/home" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Acceso y trámites?</summary><div class="a"><p>sedeaepd.gob.es con certificado/DNIe/Cl@ve: tutela, denuncias, consultas, brechas (72 h), nombramiento DPD (10 días), códigos de conducta. Justificante con CSV.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s13" data-cat="aepd"><div class="sec-top"><span class="num">13</span><div class="sec-titles"><h2>Reclamaciones</h2><p class="sec-desc">Cómo y cuándo reclamar.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/13-reclamaciones" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Reclamar antes al responsable?</summary><div class="a"><p>Para derechos sí (requerimiento previo; solo si no responde/deniega cabe reclamación). Otras vulneraciones: denuncia directa.</p></div></details>
+ <details class="qa"><summary>¿Plazos y coste?</summary><div class="a"><p>Admisión 3 meses (silencio=admitida); tutela 9 meses; sancionador 9-12. Gratuita, sin abogado ni costas.</p></div></details>
+ <details class="qa"><summary>¿Sanciones?</summary><div class="a"><p>Muy graves hasta 20 M€ o 4%; graves 10 M€ o 2%; leves hasta 400.000 €. Gradúan por gravedad, duración, intencionalidad, cooperación. Compatible con indemnizaciones.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s14" data-cat="aepd"><div class="sec-top"><span class="num">14</span><div class="sec-titles"><h2>Procesos electorales</h2><p class="sec-desc">Datos por partidos en campaña.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/14-procesos-electorales" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Datos de redes por partidos?</summary><div class="a"><p>No sin base: STC 76/2019 anuló art. 58 bis.2 LOREG (recopilar opiniones políticas de webs/fuentes públicas) por vulnerar arts. 16.1 y 18.4 CE.</p></div></details>
+ <details class="qa"><summary>¿Propaganda email/SMS?</summary><div class="a"><p>Consentimiento previo y expreso (art. 21.1 LSSI); no soft opt-in. Postal amparada en art. 53 LOREG con censo; cabe exclusión de copias del censo.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s15" data-cat="aepd"><div class="sec-top"><span class="num">15</span><div class="sec-titles"><h2>Canal prioritario contenidos sensibles</h2><p class="sec-desc">Difusión no consentida de íntimos.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/canalprioritario" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Retirada urgente?</summary><div class="a"><p>Formulario aepd.es/canalprioritario con hechos, plataforma, URL y pruebas. Especial vulnerabilidad → orden de retirada en 72 h. Adheridos: Google, Meta, X, TikTok, Snapchat, Telegram, adultas. Tramitación anónima posible.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s16" data-cat="aepd"><div class="sec-top"><span class="num">16</span><div class="sec-titles"><h2>Salud</h2><p class="sec-desc">Historia clínica y datos de salud.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/16-salud" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Quién accede a mi historia clínica?</summary><div class="a"><p>Paciente (art. 16 Ley 41/2002) y personal implicado (secreto). Terceros solo supuestos tasados; familiares solo con autorización o excepción legal.</p></div></details>
+ <details class="qa"><summary>¿Conservación?</summary><div class="a"><p>Mínimo 5 años desde cada alta (art. 17); garantías de seguridad; CCAA pueden ampliar.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s17" data-cat="aepd"><div class="sec-top"><span class="num">17</span><div class="sec-titles"><h2>Internet y redes sociales</h2><p class="sec-desc">Olvido, publicaciones y perfiles.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Olvido frente a buscador?</summary><div class="a"><p>Solicitud al buscador; responde en un mes; si no, reclamación AEPD (pondera relevancia, papel público, interés, tiempo).</p></div></details>
+ <details class="qa"><summary>¿Foto publicada por tercero?</summary><div class="a"><p>Pedir supresión al autor/plataforma (art. 17); si no, reclamación AEPD; íntimos sin consentimiento → Canal Prioritario. Difusión no consentida puede ser ilícito penal (art. 197.7 CP).</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s18" data-cat="ccn"><div class="sec-top"><span class="num">18</span><div class="sec-titles"><h2>El CCN-CERT</h2><p class="sec-desc">Capacidad de Respuesta a Incidentes del CNI.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es?</summary><div class="a"><p>Capacidad de Respuesta a Incidentes del CCN (CNI). Centro de alerta y respuesta nacional para AAPP, entidades vinculadas y operadores esenciales; detección temprana, respuesta, avisos, herramientas, coordinación.</p></div></details>
+ <details class="qa"><summary>¿CCN-CERT vs INCIBE-CERT vs ESPDEF-CERT?</summary><div class="a"><p>CCN-CERT: sector público/esenciales. INCIBE-CERT: ciudadanos/pymes/privadas no CCN. ESPDEF-CERT: Defensa. Coordinación (RD 311/2022, Ley 36/2015, PIC/N) cuando cruza ámbitos.</p></div></details>
+ <details class="qa"><summary>¿Normativa de sustento?</summary><div class="a"><p>Ley 11/2002 (CNI); RD 421/2004 (CCN); RD 311/2022 (ENS, coordinación nacional); Ley 8/2011; transposición NIS2. Guías CCN-STIC de referencia.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s19" data-cat="ccn"><div class="sec-top"><span class="num">19</span><div class="sec-titles"><h2>ENS: fundamentos</h2><p class="sec-desc">RD 311/2022, deroga RD 3/2010.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" rel="noopener">CCN-STIC 800 ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y a quién obliga?</summary><div class="a"><p>Marco con principios, requisitos mínimos y medidas para proteger CIA+autenticidad+trazabilidad de información/servicios electrónicos del sector público. Obliga a AAPP y privadas que prestan servicios/proveen soluciones a AAPP por contrato/convenio.</p></div></details>
+ <details class="qa"><summary>¿ENS vs RGPD?</summary><div class="a"><p>Complementarios no equivalentes: RGPD datos personales; ENS sistemas públicos (con o sin datos). ENS facilita demostrar art. 32 RGPD pero no sustituye obligaciones RGPD.</p></div></details>
+ <details class="qa"><summary>¿Novedades RD 311/2022?</summary><div class="a"><p>Gestión continua; catálogo alineado con ISO 27001/27002:2022; más peso a ciberseguridad operativa e incidentes; niveles crítico/muy alto; refuerzo responsabilidad; extensión a sector público institucional; ITS de notificación.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s20" data-cat="ccn"><div class="sec-top"><span class="num">20</span><div class="sec-titles"><h2>Categorización y niveles</h2><p class="sec-desc">Básica/media/alta + crítico/muy alto.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" rel="noopener">CCN-STIC-803 ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Categorizar un sistema?</summary><div class="a"><p>Asignar nivel (bajo/medio/alto) según impacto de un incidente sobre las cinco dimensiones. Antes de producción y revisión periódica/ante cambios.</p></div></details>
+ <details class="qa"><summary>¿Dimensiones con distinto impacto?</summary><div class="a"><p>Categoría global = la más exigente de todas las dimensiones.</p></div></details>
+ <details class="qa"><summary>¿«No aplica» vs «No definido»?</summary><div class="a"><p>Cumplimentar es obligatorio. «No definido» = medida aplicable no implementada (impide indicador). «No aplica» solo si realmente no aplica. Sin sistemas de una categoría: «0».</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s21" data-cat="ccn"><div class="sec-top"><span class="num">21</span><div class="sec-titles"><h2>Medidas, auditoría y certificación ENS</h2><p class="sec-desc">Declaración/Certificación (arts. 34 y 38).</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" rel="noopener">Guías auditoría ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Declaración vs Certificación?</summary><div class="a"><p>Declaración: autoevaluación (básica). Certificación: auditoría por entidad acreditada (ENAC), obligatoria media/alta; validez 2 años con renovación. Guías 806/807.</p></div></details>
+ <details class="qa"><summary>¿ISO/IEC 15408?</summary><div class="a"><p>Certificación de referencia para evaluar seguridad de productos TIC; garantías independientes; valorada en productos cualificados ENS.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s22" data-cat="ccn"><div class="sec-top"><span class="num">22</span><div class="sec-titles"><h2>Notificación y gestión de incidentes</h2><p class="sec-desc">ITS de Notificación de Incidentes.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">Avisos ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿A quién notificar?</summary><div class="a"><p>Sujetos ENS: CCN-CERT en general; coordinación Interior/ESPDEF según ámbito; privadas no ENS a INCIBE-CERT. ITS concreta plazos/canales (LUCIA)/contenido. Notificación tan pronto como se detecte y en todo caso 24 h.</p></div></details>
+ <details class="qa"><summary>¿Reconexión tras incidente grave?</summary><div class="a"><p>No automática: informe técnico CCN-CERT (exposición, causas, paliativas, riesgo residual) y autorización formal del órgano competente (SGAD). Guía 814.</p></div></details>
+ <details class="qa"><summary>¿SAT?</summary><div class="a"><p>Sondas + correlación + análisis forense + alertas para detectar anomalías/ataques en redes adheridas. Adhesión voluntaria, recomendada media/alta.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s23" data-cat="ccn"><div class="sec-top"><span class="num">23</span><div class="sec-titles"><h2>Herramientas del CCN</h2><p class="sec-desc">PILAR, INES, CLARA, CARMEN, LUCIA.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">Catálogo ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿PILAR e INES?</summary><div class="a"><p>PILAR: análisis/gestión formal de riesgos (sustenta Declaración de Aplicabilidad y plan de tratamiento). INES: gobernanza/reporting de cumplimiento ENS. Gratuitas sector público.</p></div></details>
+ <details class="qa"><summary>¿CLARA, CARMEN, LUCIA?</summary><div class="a"><p>CLARA: auditoría configuración segura (Windows/Linux vs 600/620). CARMEN: detección APT por tráfico. LUCIA: gestión de ciberincidentes del CCN-CERT.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s24" data-cat="ccn"><div class="sec-top"><span class="num">24</span><div class="sec-titles"><h2>Glosario rápido de ciberseguridad</h2><p class="sec-desc">Conceptos base.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">Guías ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Tríada CIA?</summary><div class="a"><p>Confidencialidad, Integridad, Disponibilidad. ENS añade Autenticidad y Trazabilidad.</p></div></details>
+ <details class="qa"><summary>¿Amenaza, vulnerabilidad, riesgo?</summary><div class="a"><p>Amenaza: evento potencial; vulnerabilidad: debilidad explotable; riesgo = probabilidad × impacto considerando salvaguardas. Gestión: identificar, estimar, tratar, revisar.</p></div></details>
+ <details class="qa"><summary>¿APT, mínimo privilegio, defensa en profundidad?</summary><div class="a"><p>APT: ataque dirigido/prolongado con recursos. Mínimo privilegio: solo permisos necesarios. Defensa en profundidad: capas superpuestas.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s25" data-cat="iso"><div class="sec-top"><span class="num">25</span><div class="sec-titles"><h2>ISO/IEC 27001 — SGSI</h2><p class="sec-desc">UNE-ISO/IEC 27001:2023 (2022 + Amd 1:2024).</p></div><span class="tag tag-iso">ISO</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener">iso.org ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y qué certifica?</summary><div class="a"><p>Norma de requisitos para SGSI basada en gestión del riesgo; aplicable a cualquier organización; única certificable de la familia 27000. En España UNE-ISO/IEC 27001:2023.</p></div></details>
+ <details class="qa"><summary>¿Estructura (4-10)?</summary><div class="a"><p>Anexo SL: 4 Contexto; 5 Liderazgo; 6 Planificación; 7 Soporte; 8 Operación; 9 Evaluación desempeño; 10 Mejora. Anexo A controles de referencia.</p></div></details>
+ <details class="qa"><summary>¿Amd 1:2024?</summary><div class="a"><p>Añade cambio climático: 4.1 «determinar si el cambio climático es cuestión pertinente»; 4.2 Nota 2 (partes interesadas con requisitos de clima). No modifica Anexo A.</p></div></details>
+ <details class="qa"><summary>¿Evaluación/tratamiento riesgos (6.1)?</summary><div class="a"><p>Criterios de aceptación/evaluación; identificar riesgos de pérdida CIA; analizar consecuencias/probabilidad; priorizar; seleccionar controles, comparar con Anexo A, SoA y plan de tratamiento aprobado.</p></div></details>
+ <details class="qa"><summary>¿SoA?</summary><div class="a"><p>Obligatoria (6.1.3 d): controles seleccionados, justificación inclusión, estado, justificación exclusiones. Documento central revisado en auditoría.</p></div></details>
+ <details class="qa"><summary>¿Certificación?</summary><div class="a"><p>Entidad acreditada (ENAC), no ISO. Ciclo 3 años: inicial 2 fases, seguimientos anuales, renovación. Exige SGSI operativo y mejora continua.</p></div></details>
+ <details class="qa"><summary>¿Obliga a todos los controles?</summary><div class="a"><p>No: Anexo A catálogo de referencia; selección según riesgos justificando en SoA. Obligatorio cláusulas 4-10.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s26" data-cat="iso"><div class="sec-top"><span class="num">26</span><div class="sec-titles"><h2>ISO/IEC 27002 — Controles</h2><p class="sec-desc">93 controles en 4 temas con atributos.</p></div><span class="tag tag-iso">ISO</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.iso.org/standard/75652.html" target="_blank" rel="noopener">iso.org ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y diferencia con 27001?</summary><div class="a"><p>Desarrolla/explica controles del Anexo A (propósito/orientación). No certificable: guía de buenas prácticas.</p></div></details>
+ <details class="qa"><summary>¿4 temas y ejemplos?</summary><div class="a"><p>5 Organización (políticas 5.1, segregación 5.3, inteligencia amenazas 5.7, inventario 5.9, clasificación 5.12, acceso 5.15-18, proveedores/nube 5.19-23, incidentes 5.24-28, continuidad 5.29-30, legal 5.31-36); 6 Personas (antecedentes 6.1, confidencialidad 6.6, teletrabajo 6.7); 7 Físicos (perímetros 7.1, vigilancia 7.4, puesto despejado 7.7, baja segura 7.14); 8 Tecnológicos (privilegios 8.2, código fuente 8.4, malware 8.7, vulnerabilidades 8.8, configuración 8.9, eliminación 8.10, enmascaramiento 8.11, fugas 8.12, copias 8.13, logs 8.15, monitorización 8.16, criptografía 8.24, desarrollo seguro 8.25-34).</p></div></details>
+ <details class="qa"><summary>¿Atributos?</summary><div class="a"><p>Etiquetas: tipo (#Preventivo/#Detectivo/#Correctivo), propiedades CIA, conceptos ciber (#Identificar/#Proteger/#Detectar/#Responder/#Recuperar), capacidades, dominios. Permiten vistas y correspondencia con NIST/ENS/NIS2.</p></div></details>
+ <details class="qa"><summary>¿Correspondencia 2013?</summary><div class="a"><p>Anexo B tabla 2022↔2013; 11 nuevos: 5.7, 5.23, 5.30, 7.4, 8.9, 8.10, 8.11, 8.12, 8.16, 8.23, 8.28. Total 114→93.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s27" data-cat="ue"><div class="sec-top"><span class="num">27</span><div class="sec-titles"><h2>Directiva NIS2 y Reg. Ejec.</h2><p class="sec-desc">Dir. (UE) 2022/2555 y Reg. Ejec. (UE) 2024/2690.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y deroga?</summary><div class="a"><p>Dir. (UE) 2022/2555 (14-12-2022); deroga NIS1. Amplía sectores, distingue esenciales/importantes, refuerza gestión riesgos (art. 21), notificación (23), dirección (20), sanciones. Transposición 17-10-2024; aplicación 18-10-2024.</p></div></details>
+ <details class="qa"><summary>¿Esenciales e importantes?</summary><div class="a"><p>Esenciales: Anexo I alta criticidad que superan mediana; prestadores cualificados confianza; DNS/TLD; telecom públicas; Administración central; CER; proveedor único; seguridad pública; riesgo sistémico. Importantes: resto Anexos I/II que superan pequeña.</p></div></details>
+ <details class="qa"><summary>¿Sectores Anexo I?</summary><div class="a"><p>Energía, transporte, banca, mercados financieros, sanidad, agua potable/residual, infraestructura digital, TIC B2B, administraciones, espacio.</p></div></details>
+ <details class="qa"><summary>¿Anexo II?</summary><div class="a"><p>Postales, residuos, químicos, alimentación, fabricación, proveedores digitales (mercados/buscadores/redes), investigación.</p></div></details>
+ <details class="qa"><summary>¿Medidas art. 21?</summary><div class="a"><p>All-hazards: análisis riesgos; incidentes; continuidad/copias/crisis; cadena suministro; adquisición/desarrollo/mantenimiento + divulgación vulnerabilidades; eficacia; higiene/formación; criptografía; RRHH/acceso/activos; MFA/autenticación continua.</p></div></details>
+ <details class="qa"><summary>¿Notificación art. 23?</summary><div class="a"><p>Alerta ≤24 h; notificación ≤72 h (evaluación, gravedad, IoC); intermedio si se solicita; final ≤1 mes. Prestadores cualificados: 24 h.</p></div></details>
+ <details class="qa"><summary>¿Gobernanza art. 20?</summary><div class="a"><p>Dirección aprueba/supervisa y responde (personas físicas directivas responsables, incluso prohibición temporal en esenciales). Formación directivos y empleados.</p></div></details>
+ <details class="qa"><summary>¿Sanciones?</summary><div class="a"><p>Esenciales ≥10 M€ o 2% mundial; importantes ≥7 M€ o 1,4%. Medidas no monetarias como última ratio con garantías.</p></div></details>
+ <details class="qa"><summary>¿Cooperación y Reg. Ejec. 2024/2690?</summary><div class="a"><p>Grupo Cooperación, red CSIRT, EU-CyCLONe, puntos únicos, divulgación coordinada, base vulnerabilidades ENISA. Reg. Ejec. concreta requisitos art. 21 para DNS/TLD, nube, CPD, CDN, gestionados, mercados/buscadores/redes, confianza; apoya en ISO 27001/27002.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s28" data-cat="ue"><div class="sec-top"><span class="num">28</span><div class="sec-titles"><h2>CRA · Guía 2026, SbD y SBOM</h2><p class="sec-desc">Reg. (UE) 2024/2847 + Guía C(2026) 5252 + ENISA SbD + CISA SBOM.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation" target="_blank" rel="noopener">Guía Comisión ↗</a><a class="src" href="https://github.com/enisaeu/enisa-sbd-playbook/" target="_blank" rel="noopener">ENISA SbD ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y a quién afecta?</summary><div class="a"><p>Reg. (UE) 2024/2847 (20-11-2024): requisitos horizontales de ciberseguridad para comercialización de productos con elementos digitales (PDE) en todo el ciclo de vida. Afecta a fabricantes/distribuidores/importadores/usuarios profesionales. Excluye productos con legislación sectorial equivalente.</p></div></details>
+ <details class="qa"><summary>¿Fechas escalonadas?</summary><div class="a"><p>Vigor 10-12-2024. Notificación vulnerabilidades explotadas/incidentes: 11-9-2026. Requisitos esenciales + conformidad + marcado CE: 11-12-2027.</p></div></details>
+ <details class="qa"><summary>¿Cuándo se «comercializa»?</summary><div class="a"><p>Primera puesta a disposición para distribución marca entrada y soporte (v1.0.0 suministrada 1-1-2028 = comercializada 1-1-2028). Variantes con componentes/configuraciones/funcionalidades distintas = productos distintos, no copias. Webs que no respaldan función del PDE no entran; código inacabado en fase de diseño/pruebas y código de muestra/demo no se consideran comercializados.</p></div></details>
+ <details class="qa"><summary>¿FOSS sujeto?</summary><div class="a"><p>Depende de actividad comercial. Colaborador con pull/merge y mantenedores que lo incorporan: NO sujeto. Donaciones voluntarias de empresas que integran FOSS: NO. SÍ quien pone edición de pago/empresarial bajo acuerdo comercial, o versiones/actualizaciones solo a donantes.</p></div></details>
+ <details class="qa"><summary>¿Modificación sustancial?</summary><div class="a"><p>Cambio que altera cumplimiento de requisitos esenciales o perfil de riesgo → reevaluar. Evaluación abarca producto en su totalidad. Software con versiones sustanciales: cada versión con soporte declarado (art. 13.8), actualizaciones esperadas y acceso gratuito a la última. No confundir con integración (el integrador comercializa un producto nuevo, no modifica uno ya comercializado).</p></div></details>
+ <details class="qa"><summary>¿Soporte mínimo?</summary><div class="a"><p>Vida útil esperada o mínimo 5 años (lo mayor). Actualizaciones gratuitas, automáticas por defecto, fáciles, transparentes; gestión de vulnerabilidades con parches proporcionados a severidad.</p></div></details>
+ <details class="qa"><summary>¿SBOM (CISA 2026)?</summary><div class="a"><p>Inventario estructurado de componentes. Elementos mínimos: campos (autor, proveedor, nombre, versión, PURL/CPE, hashes), automatización (SPDX, CycloneDX) y prácticas de generación/actualización. Gestión de vulnerabilidades con OpenVEX/CSAF y NIST NVD. El CRA lo exige como parte de documentación técnica. El campo proveedor usa nombres completos, no acrónimos.</p></div></details>
+ <details class="qa"><summary>¿Playbook ENISA SbD?</summary><div class="a"><p>Traduce principios a acciones verificables: privilegio mínimo (identidades únicas, sin administradores compartidos), defensa en profundidad (capas, detección multicapa, ralentizar atacantes), identidad criptográfica única por dispositivo y secretos únicos por defecto (sin credenciales compartidas, protección contra extracción, revocación). Evidencias mínimas y «cumplimiento como código» con OSCAL. Guía introductoria, no manual exhaustivo.</p></div></details>
+ <details class="qa"><summary>¿Competencia técnica evaluadores CRA?</summary><div class="a"><p>Documento v1.0 define competencias por rol (evaluador, responsable, equipo) y apartado (3.2.x) con niveles B/H. Organismos notificados: Módulo B = EN ISO/IEC 17065; Módulo H = EN ISO/IEC 17021-1.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s29" data-cat="ue"><div class="sec-top"><span class="num">29</span><div class="sec-titles"><h2>DORA: Reglamento (UE) 2022/2554</h2><p class="sec-desc">Resiliencia operativa digital del sector financiero.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y desde cuándo?</summary><div class="a"><p>Resiliencia operativa digital del sector financiero; aplicable desde 17-1-2025. Lex specialis frente a NIS2 para entidades financieras. Modifica varios reglamentos/directivas financieras.</p></div></details>
+ <details class="qa"><summary>¿Ámbito y exclusiones?</summary><div class="a"><p>21 categorías (crédito, pago, dinero electrónico, inversión, cripto, DCV, ECC, centros negociación, registros, GFIA, gestoras, suministro datos, seguros, intermediarios, FPE, rating, índices, financiación participativa, titulización, proveedores TIC). Excluidos: GFIA exentos, aseguradoras exentas Solvencia II, FPE ≤15, exentos MiFID, intermediarios micro/pymes, cheques postales.</p></div></details>
+ <details class="qa"><summary>¿Gobernanza (art. 5)?</summary><div class="a"><p>Órgano de dirección con responsabilidad última: estrategia, políticas CIA, cometidos, aprobar/supervisar terceros, continuidad, presupuesto; en no micro, cargo específico de seguimiento de acuerdos TIC.</p></div></details>
+ <details class="qa"><summary>¿Marco gestión riesgo TIC (art. 6)?</summary><div class="a"><p>Identificar-proteger-prevenir, detectar, responder-recuperar, aprender-comunicar; revisión anual; auditoría interna (no micro); estrategia con KPI; multiproveedor opcional; externalización de verificaciones manteniendo responsabilidad.</p></div></details>
+ <details class="qa"><summary>¿Incidentes (17-23)?</summary><div class="a"><p>Registrar todos; clasificar con RTS 2024/1772; notificar graves (RTS 2025/301); notificar voluntariamente ciberamenazas importantes; comunicar a clientes; registrar también operativos/de pagos graves.</p></div></details>
+ <details class="qa"><summary>¿Pruebas y TLPT (24-27)?</summary><div class="a"><p>Programa proporcional; anuales para funciones esenciales/importantes; TLPT (TIBER-EU) cada 3 años para esenciales identificadas; probadores cualificados; reconocimiento mutuo.</p></div></details>
+ <details class="qa"><summary>¿Riesgo de terceros (28-30)?</summary><div class="a"><p>Responsabilidad plena; registro de acuerdos (ITS 2024/2956); evaluación previa; estrategias de salida; cláusulas mínimas; evaluar concentración y subcontratación en terceros países.</p></div></details>
+ <details class="qa"><summary>¿Supervisión de esenciales?</summary><div class="a"><p>Designación conjunta AES con criterios de sustituibilidad/dependencia/impacto; supervisor principal; Foro y Red de Supervisión; información/inspección/recomendaciones; multas coercitivas hasta 1% diario; CTPP terceros países: filial UE en 12 meses.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s30" data-cat="ue"><div class="sec-top"><span class="num">30</span><div class="sec-titles"><h2>DORA · Gestión riesgo TIC (RTS 2024/1774)</h2><p class="sec-desc">Herramientas/métodos/procesos + marco simplificado.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2024/1774/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué regula?</summary><div class="a"><p>Completa arts. 15-16: políticas/procedimientos/herramientas de seguridad TIC (Título II) y marco simplificado (Título III) para entidades art. 16.1. Proporcional.</p></div></details>
+ <details class="qa"><summary>¿Cifrado (2-7)?</summary><div class="a"><p>Políticas con indicadores/responsabilidades; cifrado reposo/tránsito/uso si procede; gestión de claves ciclo completo y atención a amenazas cuánticas; registro de certificados para esenciales/importantes.</p></div></details>
+ <details class="qa"><summary>¿Operaciones/parches (8-12)?</summary><div class="a"><p>Separación producción/desarrollo/pruebas (pruebas en producción solo casos aprobados); exploraciones semanales para esenciales; divulgación responsable; parches con plazos/escalada; logs protegidos y relojes sincronizados.</p></div></details>
+ <details class="qa"><summary>¿Continuidad (24-26)?</summary><div class="a"><p>RTO/RPO; ECC conmutación ≤2 h con centro secundario geográfico distinto; DCV ≤2 h; centros negociación ≤2 h pérdida ~0; pruebas con conmutación/ciberataques/clima/pandemias/cortes; documentar y actualizar.</p></div></details>
+ <details class="qa"><summary>¿Marco simplificado?</summary><div class="a"><p>Gobernanza con responsabilidad del órgano; política única de seguridad; clasificación; acceso con autenticación fuerte; copias con pruebas anuales; informe de revisión electrónico.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s31" data-cat="ue"><div class="sec-top"><span class="num">31</span><div class="sec-titles"><h2>DORA · Clasificación incidentes (RTS 2024/1772)</h2><p class="sec-desc">Criterios y umbrales.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2024/1772/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Criterios?</summary><div class="a"><p>Clientes/contrapartes/transacciones; reputación; duración/interrupción; geografía; pérdidas de datos; esencialidad; consecuencias económicas.</p></div></details>
+ <details class="qa"><summary>¿Cuándo es grave?</summary><div class="a"><p>Afecta servicios esenciales y alcanza umbral de acceso malintencionado con posible pérdida de datos, o cumple ≥2 de los demás umbrales. Recurrentes: ≥2 en 6 meses misma causa (no micro/simplificado).</p></div></details>
+ <details class="qa"><summary>¿Umbrales?</summary><div class="a"><p>&gt;10% clientes o &gt;100.000; &gt;30% contrapartes; &gt;10% transacciones; incidente &gt;24 h o interrupción &gt;2 h en esenciales; ≥2 Estados; costes &gt;100.000 €.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s32" data-cat="ue"><div class="sec-top"><span class="num">32</span><div class="sec-titles"><h2>DORA · Notificación incidentes (RTS 2025/301)</h2><p class="sec-desc">Inicial/intermedia/final.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2025/301/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Plazos?</summary><div class="a"><p>Inicial lo antes posible y ≤4 h desde clasificación grave y ≤24 h desde conocimiento; intermedia ≤72 h desde inicial; final ≤1 mes desde intermedia. Fin de semana/festivo: antes del mediodía del siguiente hábil (salvo crédito/ECC/centros/esenciales NIS2).</p></div></details>
+ <details class="qa"><summary>¿Contenido?</summary><div class="a"><p>Inicial: código, fechas, descripción, criterios, Estados, origen, continuidad. Intermedia: tipo, amenazas, áreas, repercusiones, medidas. Final: causas, resolución, costes, recurrentes.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s33" data-cat="ue"><div class="sec-top"><span class="num">33</span><div class="sec-titles"><h2>DORA · Armonización supervisión (RTS 2025/295)</h2><p class="sec-desc">Inclusión voluntaria, información, plan corrector, subcontratación.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2025/295/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Inclusión voluntaria?</summary><div class="a"><p>Solicitud motivada con estructura, cuota, servicios, sustituibilidad, estrategia; AES decide en 6 meses.</p></div></details>
+ <details class="qa"><summary>¿Plan corrector?</summary><div class="a"><p>Informe con plan coherente con calendario del supervisor; informes intermedios/finales con justificantes.</p></div></details>
+ <details class="qa"><summary>¿Plantilla subcontratación?</summary><div class="a"><p>Inventario de acuerdos, tipos de servicios, subcontratistas, responsabilidades, accesos, ubicaciones, gobernanza, riesgos, continuidad, auditorías.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s34" data-cat="ue"><div class="sec-top"><span class="num">34</span><div class="sec-titles"><h2>DORA · Equipo Examen Conjunto (RTS 2025/420)</h2><p class="sec-desc">Composición, designación, tareas, modalidades.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2025/420/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es?</summary><div class="a"><p>Equipo multidisciplinar (AES + autoridades) que apoya al supervisor principal en supervisión de cada CTPP.</p></div></details>
+ <details class="qa"><summary>¿Composición/modalidades?</summary><div class="a"><p>Designación por competencias; número con Red de Supervisión según intensidad/tamaño/representación; trabajo bajo coordinador con procedimientos comunes y confidencialidad; evaluación periódica de miembros para modificar composición.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s35" data-cat="ue"><div class="sec-top"><span class="num">35</span><div class="sec-titles"><h2>DORA · Registro de Información (ITS 2024/2956)</h2><p class="sec-desc">Plantillas del registro de acuerdos TIC.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_impl/2024/2956/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué regula?</summary><div class="a"><p>Plantillas normalizadas del registro de todos los acuerdos contractuales con proveedores terceros TIC (art. 28.3); base de supervisión y designación anual de esenciales.</p></div></details>
+ <details class="qa"><summary>¿Posición en cadena?</summary><div class="a"><p>Número natural ≥1; directo=1; subcontratistas &gt;1; mismos puestos comparten número; destinatario de subcontrata con posición n-1.</p></div></details>
+ <details class="qa"><summary>¿Plantillas?</summary><div class="a"><p>B_01.01-03 (entidad/consolidación/sucursales), B_02.01-03 (acuerdos), B_03.01-03 (firmantes), B_04.01 (usuarias), B_05.01-02 (proveedores/cadena), B_06.01 (funciones RTO/RPO), B_07.01 (evaluación), B_99.01 (terminología). Calidad: exactitud, completitud, coherencia, integridad, homogeneidad, validez.</p></div></details>
+ <details class="qa"><summary>¿Tipos de servicios TIC?</summary><div class="a"><p>S01-S19: proyectos, desarrollo, soporte, seguridad, datos, análisis, alojamiento, procesamiento, almacenamiento, telecom, red, hardware, licencias, operaciones, consultoría, riesgo TIC, IaaS, PaaS, SaaS.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s36" data-cat="ue"><div class="sec-top"><span class="num">36</span><div class="sec-titles"><h2>LSSI-CE: Servicios de la Sociedad de la Información</h2><p class="sec-desc">Ley 34/2002 + modificaciones Ley 11/2022 (General de Telecomunicaciones).</p></div><span class="tag tag-ue">UE</span></div>
  <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758" target="_blank" rel="noopener">BOE LSSI-CE ↗</a></div>
  <div class="qas">
  <details class="qa" open><summary>¿Qué regula la LSSI-CE?</summary><div class="a"><p>Servicios de la sociedad de la información (SSI): prestación de servicios por vía electrónica, comercio electrónico, comunicaciones comerciales, cookies, deberes de información, responsabilidad de intermediarios. Ámbito: prestadores establecidos en España o que presten servicios a destinatarios españoles.</p></div></details>
@@ -180,9 +474,47 @@ footer{background:#15202e;color:#aebbc9}
  <details class="qa"><summary>¿LSSI-CE vs RGPD/LOPDGDD?</summary><div class="a"><p>LSSI-CE: regula servicios electrónicos, cookies, comunicaciones comerciales. RGPD/LOPDGDD: protección de datos personales. Se complementan: cookies requieren consentimiento LSSI-CE Y tratamiento lícito RGPD; email marketing requiere consentimiento LSSI-CE Y base jurídica RGPD; listas Robinson: LSSI-CE (exclusión publicitaria) + LOPDGDD (art. 23.2).</p></div></details>
  <details class="qa"><summary>¿Modificaciones Ley 11/2022 (General de Telecomunicaciones)?</summary><div class="a"><p>Refuerza protección usuarios: consentimiento expreso para llamadas comerciales (no soft opt-in), prohibición cookie walls, facilidad de rechazo de cookies equivalente a aceptación, información más clara sobre cookies, refuerzo de deberes de información en comunicaciones comerciales. Entrada en vigor: 29-6-2023.</p></div></details>
  </div></section>
- <!-- FIN SECCIÓN LSSI-CE -->
 
- <section class="sec" id="s37" data-cat="enx"><div class="sec-top"><span class="num">37</span><div class="sec-titles"><h2>TISAX — Manual del Participante</h2><p class="sec-desc">Evaluación e intercambio en automoción (ENX/VDA).</p></div><span class="tag tag-enx">ENX</span></div>
+ <!-- SECCIONES EXPANDIDAS DEL REGLAMENTO DE IA (AI ACT) BASADAS EN LAS 15 GUÍAS -->
+ <section class="sec" id="s37" data-cat="ue"><div class="sec-top"><span class="num">37</span><div class="sec-titles"><h2>AI Act: Introducción, Riesgos y Operadores</h2><p class="sec-desc">Reglamento (UE) 2024/1689: enfoque basado en el riesgo.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.consilium.europa.eu/es/policies/artificial-intelligence-act/" target="_blank" rel="noopener">Consejo UE ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Cuál es el objetivo y alcance del Reglamento?</summary><div class="a"><p>El AI Act es el primer marco jurídico integral mundial para regular la IA. Su objetivo es garantizar que los sistemas de IA comercializados en la UE sean seguros, respeten la legislación vigente y los valores de la UE, proporcionando seguridad jurídica para favorecer la inversión y la innovación.</p><p><strong>Exclusiones clave:</strong> No se aplica a sistemas desarrollados exclusivamente para investigación científica, fines militares/defensa/seguridad nacional, software open-source (salvo que se comercialice como alto riesgo o con obligaciones de transparencia), ni al uso puramente personal y no profesional por personas físicas.</p></div></details>
+ <details class="qa"><summary>¿Cómo se clasifican los sistemas de IA por nivel de riesgo?</summary><div class="a"><p>El Reglamento establece una clasificación piramidal:</p><ul><li><strong>Prohibidos:</strong> Suponen una amenaza inaceptable (ej. manipulación subliminal, explotación de vulnerabilidades, puntuación social, identificación biométrica remota en tiempo real en espacios públicos por fuerzas del orden salvo excepciones tasadas).</li><li><strong>Alto riesgo:</strong> Permitidos pero sujetos a requisitos estrictos (arts. 8-15). Se dividen en productos/componentes de seguridad (Anexo I) y finalidades de alto riesgo (Anexo III: biometría, infraestructuras críticas, educación, empleo, servicios esenciales, aplicación de la ley, migración, justicia).</li><li><strong>Transparencia limitada:</strong> Deben informar que se interactúa con una IA (ej. chatbots, deepfakes, sistemas de reconocimiento de emociones).</li><li><strong>Riesgo mínimo:</strong> Permitidos sin restricciones (ej. filtros de spam, videojuegos), con obligaciones básicas como la alfabetización en IA.</li></ul></div></details>
+ <details class="qa"><summary>¿Qué son los Modelos de IA de Propósito General (GPAI)?</summary><div class="a"><p>Son modelos entrenados con gran volumen de datos, con alto grado de generalidad y capaces de realizar una gran variedad de tareas distintas (ej. LLMs). Se clasifican en:</p><ul><li><strong>GPAI estándar:</strong> Obligaciones de transparencia, documentación técnica y respeto a la legislación de derechos de autor.</li><li><strong>GPAI con riesgo sistémico:</strong> (Potencia de cómputo > 10²⁵ FLOPs). Añaden obligaciones de evaluación del modelo, mitigación de riesgos, registro y comunicación de incidentes graves a la Comisión.</li></ul><p>Los modelos open-source tienen un régimen más flexible, salvo que presenten riesgo sistémico.</p></div></details>
+ <details class="qa"><summary>¿Quiénes son los operadores en la cadena de valor?</summary><div class="a"><p>El Reglamento define roles con responsabilidades específicas:</p><ul><li><strong>Proveedor:</strong> Desarrolla o hace desarrollar el sistema y lo introduce en el mercado bajo su nombre/marca.</li><li><strong>Responsable del despliegue:</strong> Utiliza el sistema bajo su autoridad (excepto uso personal no profesional).</li><li><strong>Importador/Distribuidor:</strong> Introducen o comercializan el sistema en el mercado de la UE.</li><li><strong>Representante autorizado:</strong> Establecido en la UE, actúa en nombre del proveedor.</li></ul><p><em>Nota:</em> Un responsable del despliegue pasa a ser considerado "proveedor" si modifica sustancialmente el sistema, cambia su finalidad prevista a una de alto riesgo, o le pone su propio nombre/marca.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s38" data-cat="ue"><div class="sec-top"><span class="num">38</span><div class="sec-titles"><h2>AI Act: Gestión de Riesgos y Calidad</h2><p class="sec-desc">Arts. 9 y 17: Procesos iterativos y documentados.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/es" target="_blank" rel="noopener">Guías Sandbox AEPD ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿En qué consiste el sistema de gestión de riesgos?</summary><div class="a"><p>Es un proceso iterativo y continuo a lo largo de todo el ciclo de vida del sistema (art. 9). Debe centrarse específicamente en los riesgos para la <strong>salud, la seguridad y los derechos fundamentales</strong>.</p><p>Consta de las siguientes etapas:</p><ul><li>Determinación del contexto y del "apetito al riesgo" (nivel de riesgo aceptable).</li><li>Identificación y análisis de riesgos conocidos y previsibles (uso previsto y uso indebido razonablemente previsible).</li><li>Evaluación de riesgos derivados del análisis de datos de vigilancia poscomercialización.</li><li>Adopción de medidas de gestión (eliminar, mitigar, transferir o aceptar el riesgo residual).</li></ul></div></details>
+ <details class="qa"><summary>¿Qué debe incluir el Sistema de Gestión de la Calidad (SGC)?</summary><div class="a"><p>El art. 17 exige un SGC documentado, proporcional al tamaño de la organización, que garantice el cumplimiento normativo. Debe incluir, como mínimo:</p><ul><li>Estrategia de cumplimiento y gestión de modificaciones.</li><li>Técnicas de diseño, desarrollo, control y verificación.</li><li>Procedimientos de examen, prueba y validación.</li><li>Sistemas de gestión de datos y de gestión de riesgos (art. 9).</li><li>Sistema de vigilancia poscomercialización y notificación de incidentes graves.</li><li>Marco de rendición de cuentas y gestión de recursos.</li></ul><p>Las entidades financieras pueden integrar estos aspectos en sus sistemas de gobernanza ya existentes.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s39" data-cat="ue"><div class="sec-top"><span class="num">39</span><div class="sec-titles"><h2>AI Act: Datos, Gobernanza y Transparencia</h2><p class="sec-desc">Arts. 10 y 13: Calidad del dato y explicabilidad.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/es" target="_blank" rel="noopener">Guías Sandbox AEPD ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Cuáles son los requisitos de gobernanza de datos?</summary><div class="a"><p>Los conjuntos de datos de entrenamiento, validación y prueba deben someterse a prácticas de gobernanza (art. 10):</p><ul><li><strong>Pertinencia y representatividad:</strong> Deben reflejar el contexto geográfico, conductual o funcional de uso previsto.</li><li><strong>Completitud y propiedades estadísticas:</strong> Minimización de lagunas y errores.</li><li><strong>Análisis de sesgos:</strong> Examen específico para detectar sesgos que puedan afectar a la salud, seguridad o provocar discriminación prohibida por el Derecho de la UE.</li><li><strong>Categorías especiales de datos:</strong> Solo se permiten para detectar/corregir sesgos si es estrictamente necesario, no se pueden usar datos sintéticos/anonimizados para ello, y deben aplicarse salvaguardas técnicas (seudonimización, control de acceso estricto, eliminación tras el uso).</li></ul></div></details>
+ <details class="qa"><summary>¿Qué exige la transparencia y las instrucciones de uso?</summary><div class="a"><p>El sistema debe ser interpretable y comprensible (art. 13). Las instrucciones de uso deben ser concisas, completas y claras, e incluir:</p><ul><li>Identidad y contacto del proveedor.</li><li>Características, capacidades y limitaciones (incluyendo nivel de precisión, solidez y ciberseguridad esperados).</li><li>Circunstancias previsibles que puedan generar riesgos para derechos fundamentales.</li><li>Medidas de supervisión humana facilitadas técnicamente.</li><li>Especificaciones de los datos de entrada y mecanismos para interpretar los archivos de registro.</li></ul></div></details>
+ </div></section>
+
+ <section class="sec" id="s40" data-cat="ue"><div class="sec-top"><span class="num">40</span><div class="sec-titles"><h2>AI Act: Supervisión Humana, Precisión y Solidez</h2><p class="sec-desc">Arts. 14 y 15: Control humano y resiliencia técnica.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/es" target="_blank" rel="noopener">Guías Sandbox AEPD ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué implica la supervisión humana efectiva?</summary><div class="a"><p>El art. 14 exige que las personas puedan vigilar el sistema para prevenir o minimizar riesgos. Las medidas deben permitir a los supervisores:</p><ul><li>Entender adecuadamente las capacidades y limitaciones del sistema.</li><li>Ser conscientes del "sesgo de automatización" (tendencia a confiar ciegamente en la IA).</li><li>Interpretar correctamente los resultados de salida.</li><li>Decidir no utilizar el sistema o descartar/revertir sus resultados en cualquier situación.</li><li>Intervenir o interrumpir el sistema mediante un "botón de parada" o procedimiento similar.</li></ul><p><em>Caso especial:</em> En identificación biométrica remota, la decisión no puede basarse solo en la IA; requiere la verificación separada de al menos dos personas físicas con competencia y autoridad.</p></div></details>
+ <details class="qa"><summary>¿Cómo se garantiza la precisión y la solidez?</summary><div class="a"><p><strong>Precisión (art. 15.1-3):</strong> El sistema debe alcanzar y mantener un nivel adecuado de precisión, solidez y ciberseguridad durante todo su ciclo de vida, acorde a su finalidad prevista y al estado de la técnica. Debe declararse en las instrucciones de uso.</p><p><strong>Solidez (art. 15.4):</strong> El sistema debe ser resistente a errores, fallos o incoherencias (propios o del entorno). Se deben adoptar medidas técnicas y organizativas, como:</p><ul><li>Planes de prevención contra fallos (fallback plans) y redundancia técnica.</li><li>Mecanismos para que, si la solidez falla, el sistema se interrumpa de forma segura.</li><li>En sistemas que siguen aprendiendo, garantizar que los bucles de retroalimentación no introduzcan sesgos que afecten a futuras operaciones.</li></ul></div></details>
+ </div></section>
+
+ <section class="sec" id="s41" data-cat="ue"><div class="sec-top"><span class="num">41</span><div class="sec-titles"><h2>AI Act: Documentación, Registros y Vigilancia</h2><p class="sec-desc">Arts. 11, 12, 18, 72 y 73: Trazabilidad y control posterior.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/es" target="_blank" rel="noopener">Guías Sandbox AEPD ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué debe contener la Documentación Técnica?</summary><div class="a"><p>El art. 11 y el Anexo IV exigen una documentación exhaustiva (y actualizada) para demostrar la conformidad. Incluye:</p><ul><li>Descripción general, finalidad, versiones e interacción con hardware/software.</li><li>Descripción detallada del desarrollo, arquitectura, datos de entrenamiento/validación/prueba y procedimientos de etiquetado.</li><li>Descripción de la idoneidad de los parámetros de rendimiento.</li><li>Descripción detallada del sistema de gestión de riesgos y de los cambios realizados en el ciclo de vida.</li><li>Lista de normas armonizadas aplicadas (o soluciones alternativas detalladas).</li><li>Copia de la Declaración UE de conformidad.</li></ul></div></details>
+ <details class="qa"><summary>¿Cuáles son las obligaciones de conservación de registros?</summary><div class="a"><p>Los sistemas deben permitir técnicamente el registro automático de acontecimientos (logs) a lo largo de su ciclo de vida (art. 12) para:</p><ul><li>Detectar situaciones de riesgo o modificaciones sustanciales.</li><li>Facilitar la vigilancia poscomercialización.</li><li>Permitir la supervisión humana.</li></ul><p><strong>Conservación:</strong> Proveedores y responsables del despliegue deben conservar estos archivos bajo su control durante un período adecuado, de <strong>al menos 6 meses</strong> (salvo que la normativa de protección de datos exija más tiempo). Las entidades financieras los integrarán en su documentación de gobernanza existente (art. 18: la documentación técnica se conserva 10 años).</p></div></details>
+ <details class="qa"><summary>¿En qué consiste la vigilancia poscomercialización y la notificación de incidentes?</summary><div class="a"><p><strong>Vigilancia poscomercialización (art. 72):</strong> Sistema proactivo para recopilar, documentar y analizar datos sobre el funcionamiento del sistema durante toda su vida útil, basado en un plan documentado.</p><p><strong>Notificación de incidentes graves (art. 73):</strong> Los proveedores deben notificar a las Autoridades de Vigilancia del Mercado (AVM) cualquier incidente que cause fallecimiento, daño grave a la salud, alteración de infraestructuras críticas o vulneración de derechos fundamentales. Plazos máximos:</p><ul><li><strong>2 días:</strong> Para incidentes que afecten a infraestructuras críticas.</li><li><strong>10 días:</strong> En caso de fallecimiento de una persona.</li><li><strong>15 días:</strong> Para el resto de incidentes graves.</li></ul></div></details>
+ </div></section>
+
+ <section class="sec" id="s42" data-cat="enx"><div class="sec-top"><span class="num">42</span><div class="sec-titles"><h2>TISAX — Manual del Participante</h2><p class="sec-desc">Evaluación e intercambio en automoción (ENX/VDA).</p></div><span class="tag tag-enx">ENX</span></div>
  <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.enx.com/handbook/tph-es.html" target="_blank" rel="noopener">Manual oficial ↗</a></div>
  <div class="qas">
  <details class="qa" open><summary>¿Qué es y quién lo gestiona?</summary><div class="a"><p>Mecanismo de evaluación e intercambio de resultados de seguridad con reconocimiento mutuo para el sector automoción. Gestiona ENX Association; cuestionario base VDA ISA.</p></div></details>
@@ -197,13 +529,14 @@ footer{background:#15202e;color:#aebbc9}
 
 <footer>
  <div class="fwrap">
-  <div><h5>Sobre esta biblioteca</h5><p>Respuestas basadas en catálogos públicos de la <a href="https://www.aepd.es/preguntas-frecuentes" target="_blank" rel="noopener">AEPD</a> y <a href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">CCN-CERT</a>, y normas de referencia (ISO, NIS2, CRA + ENISA + CISA, AI Act, TISAX, LSSI-CE, DORA + RTS/ITS). Página no oficial; no constituye asesoramiento jurídico.</p></div>
+  <div><h5>Sobre esta biblioteca</h5><p>Respuestas basadas en catálogos públicos de la <a href="https://www.aepd.es/preguntas-frecuentes" target="_blank" rel="noopener">AEPD</a> y <a href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">CCN-CERT</a>, y normas de referencia (ISO, NIS2, CRA, DORA, LSSI-CE, AI Act, TISAX). Página no oficial; no constituye asesoramiento jurídico.</p></div>
   <div><h5>Fuentes</h5><ul>
    <li><a href="https://www.aepd.es/preguntas-frecuentes" target="_blank" rel="noopener">aepd.es/preguntas-frecuentes</a></li>
    <li><a href="https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html" target="_blank" rel="noopener">ccn-cert.cni.es/faq</a></li>
    <li><a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener">ISO/IEC 27001 · 27002</a></li>
    <li><a href="http://data.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener">NIS2 · EUR-Lex</a></li>
    <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758" target="_blank" rel="noopener">LSSI-CE (Ley 34/2002)</a></li>
+   <li><a href="https://www.consilium.europa.eu/es/policies/artificial-intelligence-act/" target="_blank" rel="noopener">AI Act · Consejo UE</a></li>
    <li><a href="http://data.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener">DORA + RTS/ITS · EUR-Lex</a></li>
    <li><a href="https://www.enx.com/handbook/tph-es.html" target="_blank" rel="noopener">Manual TISAX (ENX)</a></li>
   </ul></div>
@@ -290,7 +623,7 @@ qaItems.forEach(function(d,i){
  d.id=(d.closest('.sec').id)+'-q'+i;
  var star=document.createElement('button');star.type='button';star.className='star';star.textContent='★';star.setAttribute('aria-label','Favorito');
  star.addEventListener('click',function(ev){ev.stopPropagation();ev.preventDefault();toggleFav(d.id,star);});
- var link=document.createElement('button');link.type='button';link.className='plink';link.textContent='';link.setAttribute('aria-label','Copiar enlace');
+ var link=document.createElement('button');link.type='button';link.className='plink';link.textContent='🔗';link.setAttribute('aria-label','Copiar enlace');
  link.addEventListener('click',function(ev){ev.stopPropagation();ev.preventDefault();
   var url=location.href.split('#')[0]+'#'+d.id;
   if(navigator.clipboard){navigator.clipboard.writeText(url);}else{location.hash=d.id;}
