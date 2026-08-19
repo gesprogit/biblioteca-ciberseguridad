@@ -22,6 +22,7 @@
     {"id": "dora-295", "categoria": "UE", "nombre": "DORA RTS 2025/295", "url": "http://data.europa.eu/eli/reg_del/2025/295/oj"},
     {"id": "dora-420", "categoria": "UE", "nombre": "DORA RTS 2025/420", "url": "http://data.europa.eu/eli/reg_del/2025/420/oj"},
     {"id": "dora-2956", "categoria": "UE", "nombre": "DORA ITS 2024/2956", "url": "http://data.europa.eu/eli/reg_impl/2024/2956/oj"},
-    {"id": "tisax", "categoria": "ENX", "nombre": "TISAX (Manual ENX)", "url": "https://www.enx.com/handbook/tph-es.html"}
+    {"id": "tisax", "categoria": "ENX", "nombre": "TISAX (Manual ENX)", "url": "https://www.enx.com/handbook/tph-es.html"},
+    {"id": "lssi-ce", "categoria": "UE", "nombre": "LSSI-CE (Ley 34/2002, BOE)", "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758"}
   ]
 }
