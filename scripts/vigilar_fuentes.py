@@ -2,9 +2,15 @@
 """Vigilancia de fuentes oficiales.
 Compara el contenido actual de cada fuente con el último estado guardado
 y genera data/cambios_detectados.md si detecta modificaciones."""
-import hashlib, json, sys, time
+
+import hashlib
+import json
+import sys
+import time
+import random
 from datetime import datetime, timezone
 from pathlib import Path
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -13,84 +19,178 @@ DATA = RAIZ / "data"
 ESTADO = DATA / "estado_fuentes.json"
 CAMBIOS = DATA / "cambios_detectados.md"
 FUENTES = RAIZ / "fuentes.json"
-UA = "Mozilla/5.0 (compatible; biblioteca-vigilante/1.1)"
-TIMEOUT = 60
+
+# Headers realistas para evitar 403
+UA = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "es-ES,es;q=0.9,en-US;q=0.5,en;q=0.3",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+}
+
+TIMEOUT = 90
 REINTENTOS = 3
 
-def descargar(url):
+# Selectores específicos por fuente
+SELECTORES = {
+    "rgpd": "main, article, body",
+    "nis2": "main, article, body",
+    "nis2-ejec": "main, article, body",
+    "cra": "main, article, body",
+    "aiact": "main, article, body",
+    "dora": "main, article, body",
+    "dora-1774": "main, article, body",
+    "dora-1772": "main, article, body",
+    "dora-301": "main, article, body",
+    "dora-295": "main, article, body",
+    "dora-420": "main, article, body",
+    "dora-2956": "main, article, body",
+}
+
+
+def descargar(url, fid=None):
+    """Descarga una URL con reintentos y headers realistas."""
     ultimo = None
-    for _ in range(REINTENTOS):
+    for intento in range(REINTENTOS):
         try:
-            r = requests.get(url, headers={"User-Agent": UA}, timeout=TIMEOUT)
+            # Delay aleatorio para parecer humano
+            time.sleep(random.uniform(2.0, 4.0))
+            
+            r = requests.get(url, headers=UA, timeout=TIMEOUT, allow_redirects=True)
             r.raise_for_status()
+            
+            # Verificar que no sea contenido vacío
+            if len(r.text.strip()) < 100:
+                raise ValueError(f"Contenido demasiado corto ({len(r.text)} chars)")
+            
             return r.text
+            
         except Exception as e:
             ultimo = e
-            time.sleep(2)
+            if intento < REINTENTOS - 1:
+                time.sleep(3 * (intento + 1))
+    
     raise ultimo
 
-def texto_html(html):
+
+def texto_html(html, fid=None):
+    """Extrae texto limpio del HTML, usando selector específico si existe."""
     sopa = BeautifulSoup(html, "html.parser")
-    for tag in sopa(["script", "style", "noscript", "nav", "footer"]):
+    
+    # Eliminar ruido
+    for tag in sopa(["script", "style", "noscript", "nav", "footer", "header", "aside"]):
         tag.decompose()
-    return " ".join(sopa.get_text(" ", strip=True).split())
+    
+    # Usar selector específico si existe
+    selector = SELECTORES.get(fid)
+    nodo = None
+    
+    if selector:
+        for sel in selector.split(","):
+            nodo = sopa.select_one(sel.strip())
+            if nodo:
+                break
+    
+    if not nodo:
+        nodo = sopa.body or sopa
+    
+    texto = " ".join(nodo.get_text(" ", strip=True).split())
+    return texto
+
 
 def huella(texto):
     return hashlib.sha256(texto.encode("utf-8")).hexdigest()
+
 
 def main():
     DATA.mkdir(exist_ok=True)
     fuentes = json.loads(FUENTES.read_text(encoding="utf-8"))["fuentes"]
     previo = json.loads(ESTADO.read_text(encoding="utf-8")) if ESTADO.exists() else {}
+    
     nuevo, cambios, errores = {}, [], []
-
+    
     for f in fuentes:
         fid = f["id"]
+        print(f"🔍 {fid}: {f['nombre']}...", end=" ")
+        
         try:
-            txt = texto_html(descargar(f["url"]))
+            html = descargar(f["url"], fid)
+            txt = texto_html(html, fid)
             h = huella(txt)
-            nuevo[fid] = {"url": f["url"], "categoria": f.get("categoria", ""),
-                          "hash": h, "longitud": len(txt), "estado": "ok",
-                          "fecha": datetime.now(timezone.utc).isoformat()}
-            if fid in previo and previo[fid].get("hash") != h:
+            
+            nuevo[fid] = {
+                "url": f["url"],
+                "categoria": f.get("categoria", ""),
+                "hash": h,
+                "longitud": len(txt),
+                "estado": "ok",
+                "fecha": datetime.now(timezone.utc).isoformat()
+            }
+            
+            if fid in previo and previo[fid].get("hash") and previo[fid]["hash"] != h:
                 cambios.append(f)
+                print(f"✅ CAMBIO detectado ({len(txt)} chars)")
+            else:
+                print(f"✅ OK ({len(txt)} chars)")
+                
         except Exception as e:
-            errores.append({"nombre": f["nombre"], "error": str(e),
-                            "categoria": f.get("categoria", "")})
-            nuevo[fid] = {"url": f["url"], "categoria": f.get("categoria", ""),
-                          "estado": "error", "error": str(e),
-                          "fecha": datetime.now(timezone.utc).isoformat()}
-
+            errores.append({
+                "nombre": f["nombre"],
+                "error": str(e),
+                "categoria": f.get("categoria", "")
+            })
+            nuevo[fid] = {
+                "url": f["url"],
+                "categoria": f.get("categoria", ""),
+                "estado": "error",
+                "error": str(e),
+                "fecha": datetime.now(timezone.utc).isoformat()
+            }
+            print(f"❌ ERROR: {str(e)[:60]}")
+    
+    # Guardar estado
     ESTADO.write_text(json.dumps(nuevo, ensure_ascii=False, indent=2), encoding="utf-8")
-
-    if cambios:
-        cats = {}
+    
+    # Generar informe de cambios
+    if cambios or errores:
+        cats_cambios = {}
         for c in cambios:
-            cats.setdefault(c.get("categoria", "Otras"), []).append(c)
-        lineas = ["# Cambio detectado en fuentes oficiales", "",
-                  f"Fecha: {datetime.now(timezone.utc).strftime('%d/%m/%Y %H:%M')} UTC", "",
-                  "Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:", ""]
-        for cat, lista in cats.items():
+            cats_cambios.setdefault(c.get("categoria", "Otras"), []).append(c)
+        
+        lineas = [
+            "# Cambio detectado en fuentes oficiales",
+            "",
+            f"Fecha: {datetime.now(timezone.utc).strftime('%d/%m/%Y %H:%M')} UTC",
+            "",
+            "Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:",
+            ""
+        ]
+        
+        for cat, lista in cats_cambios.items():
             lineas.append(f"## {cat}")
             lineas.append("")
             for c in lista:
                 lineas.append(f"- **{c['nombre']}** — {c['url']}")
             lineas.append("")
+        
         if errores:
             lineas.append("## Fuentes con error en esta revisión")
             lineas.append("")
             for e in errores:
                 lineas.append(f"- {e['categoria']} · {e['nombre']}: `{e['error'][:120]}`")
+        
         CAMBIOS.write_text("\n".join(lineas) + "\n", encoding="utf-8")
-        print(f"Fuentes revisadas: {len(fuentes)} | cambios: {len(cambios)} | errores: {len(errores)}")
     else:
         if CAMBIOS.exists():
             CAMBIOS.unlink()
-        print(f"Fuentes revisadas: {len(fuentes)} | sin cambios | errores: {len(errores)}")
-
-    for e in errores:
-        print(f"ERROR: {e['categoria']} · {e['nombre']} -> {e['error']}", file=sys.stderr)
+    
+    print(f"\n📊 Resumen: {len(fuentes)} fuentes | {len(cambios)} cambios | {len(errores)} errores")
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())
