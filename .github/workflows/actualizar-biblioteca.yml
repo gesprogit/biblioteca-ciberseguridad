@@ -1,61 +1,32 @@
-name: Actualizar biblioteca y vigilar fuentes
-
+name: Actualizar biblioteca
 on:
   schedule:
-    - cron: "0 5 * * 1"   # Lunes 05:00 UTC
-  workflow_dispatch:
-
+    - cron: "0 6 * * 1"   # todos los lunes a las 06:00 UTC
+  workflow_dispatch:       # botón para lanzarlo a mano
 permissions:
   contents: write
-  issues: write
-
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Python 3.12
-        uses: actions/setup-python@v5
+      - name: Descargar el repositorio
+        uses: actions/checkout@v5
+      - name: Preparar Python
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-
-      - name: Dependencias
-        run: pip install --quiet requests beautifulsoup4 lxml
-
-      - name: 1. Scraper AEPD (FAQs completas)
-        run: python scripts/scraper_aepd.py
-
-      - name: 2. Vigilar fuentes oficiales
-        run: python scripts/vigilar_fuentes.py
-
-      - name: Configurar Git
+      - name: Instalar dependencias
+        run: pip install --quiet requests beautifulsoup4
+      - name: Actualizar FAQs AEPD en HTML
+        run: python scripts/actualizar_aepd_html.py
+      - name: Confirmar cambios (si los hay)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit y push
-        run: |
-          git add data/
+          git add -A
           if git diff --staged --quiet; then
-            echo "✅ Sin cambios"
+            echo "Sin cambios en las fuentes."
           else
-            git commit -m "🤖 Actualización automática: AEPD + vigilancia [skip ci]"
+            git commit -m "🤖 Actualización automática FAQs AEPD [skip ci]"
             git push
           fi
-
-      - name: Crear etiqueta vigilancia
-        run: gh label create vigilancia --color "fbca04" --force || true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Abrir issue si hay cambios
-        if: hashFiles('data/cambios_detectados.md') != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh issue create \
-            --title "🚨 Cambio en fuentes — $(date -u +%Y-%m-%d)" \
-            --body-file data/cambios_detectados.md \
-            --label vigilancia || true
