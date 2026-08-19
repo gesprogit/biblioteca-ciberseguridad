@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 RAIZ = Path(__file__).resolve().parent.parent
 HTML = RAIZ / "index.html"
 DATA = RAIZ / "data"
-FAqs_JSON = DATA / "aepd_faqs_extraidas.json"
+FAQS_JSON = DATA / "aepd_faqs_extraidas.json"
 
 UA = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
@@ -27,7 +27,7 @@ UA = {
 
 def extraer_faqs_aepd():
     """Extrae todas las FAQs de la AEPD organizadas por sección."""
-    print(" Extrayendo FAQs de la AEPD...")
+    print("🔍 Extrayendo FAQs de la AEPD...")
     
     url_base = "https://www.aepd.es/preguntas-frecuentes"
     
@@ -44,7 +44,7 @@ def extraer_faqs_aepd():
     
     # Obtener todas las categorías
     enlaces_categorias = soup.find_all("a", href=re.compile(r"/preguntas-frecuentes/\d+-"))
-    print(f" Encontradas {len(enlaces_categorias)} categorías")
+    print(f"📂 Encontradas {len(enlaces_categorias)} categorías")
     
     for idx_cat, cat in enumerate(enlaces_categorias, 1):
         nombre_cat = cat.get_text(strip=True)
@@ -101,7 +101,7 @@ def extraer_faqs_aepd():
                     })
                     
                     if idx_faq % 10 == 0:
-                        print(f"   ️ {idx_faq}/{len(enlaces_faqs)}...")
+                        print(f"   ⏱️ {idx_faq}/{len(enlaces_faqs)}...")
                         
                 except Exception as e:
                     print(f"   ⚠️ Error en FAQ: {str(e)[:50]}")
@@ -129,14 +129,12 @@ def actualizar_html(nuevas_faqs):
     soup = BeautifulSoup(html_content, "html.parser")
     
     total_añadidas = 0
-    total_omiti das = 0
+    total_omitidas = 0
     
     for nombre_seccion, faqs in nuevas_faqs.items():
-        # Buscar la sección en el HTML por el número y título
-        # Las secciones tienen formato: "00\nConceptos básicos..."
+        # Buscar la sección en el HTML
         seccion_encontrada = None
         
-        # Buscar todas las secciones con clase "seccion"
         for seccion in soup.find_all("div", class_="seccion"):
             header = seccion.find("div", class_="seccion-header")
             if header:
@@ -159,14 +157,13 @@ def actualizar_html(nuevas_faqs):
         for faq_div in content.find_all("div", class_="faq"):
             pregunta_tag = faq_div.find("div", class_="faq-pregunta")
             if pregunta_tag:
-                # Extraer solo el texto de la pregunta (sin el "+")
                 texto = pregunta_tag.get_text(strip=True).replace("+", "").strip()
                 preguntas_existentes.add(texto)
         
         # Añadir solo las nuevas FAQs
         for faq in faqs:
             if faq["pregunta"] not in preguntas_existentes:
-                # Crear nuevo elemento FAQ con la misma estructura
+                # Crear nuevo elemento FAQ
                 nuevo_faq = soup.new_tag("div", **{"class": "faq"})
                 
                 pregunta_tag = soup.new_tag("div", **{"class": "faq-pregunta"})
@@ -205,7 +202,7 @@ def actualizar_html(nuevas_faqs):
         # Guardar HTML formateado
         HTML.write_text(str(soup), encoding="utf-8")
         print(f"\n✅ {total_añadidas} FAQs nuevas añadidas")
-        print(f"   {total_omitidas} FAQs ya existentes (omitidas)")
+        print(f"   📋 {total_omitidas} FAQs ya existentes (omitidas)")
         return True
     else:
         print(f"\n✅ No hay FAQs nuevas ({total_omitidas} verificadas)")
@@ -219,7 +216,7 @@ def main():
     faqs_actuales = extraer_faqs_aepd()
     
     # Guardar JSON de respaldo
-    FAqs_JSON.write_text(
+    FAQS_JSON.write_text(
         json.dumps(faqs_actuales, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
