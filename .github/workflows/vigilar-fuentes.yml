@@ -23,35 +23,32 @@ FUENTES = RAIZ / "fuentes.json"
 # Headers realistas para evitar 403
 UA = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7",
-    "Accept-Encoding": "gzip, deflate, br",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "es-ES,es;q=0.9,en-US;q=0.5,en;q=0.3",
     "Connection": "keep-alive",
     "Upgrade-Insecure-Requests": "1",
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
     "Sec-Fetch-Site": "none",
-    "Sec-Fetch-User": "?1",
-    "Cache-Control": "max-age=0",
 }
 
-TIMEOUT = 60
+TIMEOUT = 90
 REINTENTOS = 3
 
 # Selectores específicos por fuente (para EUR-Lex y otros problemáticos)
 SELECTORES = {
-    "rgpd": "main, article, .content, body",
-    "nis2": "main, article, .content, body",
-    "nis2-ejec": "main, article, .content, body",
-    "cra": "main, article, .content, body",
-    "aiact": "main, article, .content, body",
-    "dora": "main, article, .content, body",
-    "dora-1774": "main, article, .content, body",
-    "dora-1772": "main, article, .content, body",
-    "dora-301": "main, article, .content, body",
-    "dora-295": "main, article, .content, body",
-    "dora-420": "main, article, .content, body",
-    "dora-2956": "main, article, .content, body",
+    "rgpd": "main, article, body",
+    "nis2": "main, article, body",
+    "nis2-ejec": "main, article, body",
+    "cra": "main, article, body",
+    "aiact": "main, article, body",
+    "dora": "main, article, body",
+    "dora-1774": "main, article, body",
+    "dora-1772": "main, article, body",
+    "dora-301": "main, article, body",
+    "dora-295": "main, article, body",
+    "dora-420": "main, article, body",
+    "dora-2956": "main, article, body",
 }
 
 
@@ -61,17 +58,22 @@ def descargar(url, fid=None):
     for intento in range(REINTENTOS):
         try:
             # Delay aleatorio para parecer humano
-            time.sleep(random.uniform(1.5, 3.5))
+            time.sleep(random.uniform(2.0, 4.0))
+            
             r = requests.get(url, headers=UA, timeout=TIMEOUT, allow_redirects=True)
             r.raise_for_status()
-            # EUR-Lex a veces devuelve 200 pero con contenido vacío o captcha
+            
+            # Verificar que no sea contenido vacío
             if len(r.text.strip()) < 100:
-                raise ValueError(f"Contenido vacío ({len(r.text)} chars)")
+                raise ValueError(f"Contenido demasiado corto ({len(r.text)} chars)")
+            
             return r.text
+            
         except Exception as e:
             ultimo = e
             if intento < REINTENTOS - 1:
                 time.sleep(3 * (intento + 1))
+    
     raise ultimo
 
 
@@ -86,6 +88,7 @@ def texto_html(html, fid=None):
     # Usar selector específico si existe
     selector = SELECTORES.get(fid)
     nodo = None
+    
     if selector:
         for sel in selector.split(","):
             nodo = sopa.select_one(sel.strip())
@@ -159,4 +162,35 @@ def main():
             cats_cambios.setdefault(c.get("categoria", "Otras"), []).append(c)
         
         lineas = [
-            "# Cambio detect
+            "# Cambio detectado en fuentes oficiales",
+            "",
+            f"Fecha: {datetime.now(timezone.utc).strftime('%d/%m/%Y %H:%M')} UTC",
+            "",
+            "Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:",
+            ""
+        ]
+        
+        for cat, lista in cats_cambios.items():
+            lineas.append(f"## {cat}")
+            lineas.append("")
+            for c in lista:
+                lineas.append(f"- **{c['nombre']}** — {c['url']}")
+            lineas.append("")
+        
+        if errores:
+            lineas.append("## Fuentes con error en esta revisión")
+            lineas.append("")
+            for e in errores:
+                lineas.append(f"- {e['categoria']} · {e['nombre']}: `{e['error'][:120]}`")
+        
+        CAMBIOS.write_text("\n".join(lineas) + "\n", encoding="utf-8")
+    else:
+        if CAMBIOS.exists():
+            CAMBIOS.unlink()
+    
+    print(f"\n📊 Resumen: {len(fuentes)} fuentes | {len(cambios)} cambios | {len(errores)} errores")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
