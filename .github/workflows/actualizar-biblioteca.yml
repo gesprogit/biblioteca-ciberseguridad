@@ -27,6 +27,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Sin cambios en las fuentes."
           else
-            git commit -m "🤖 Actualización automática FAQs AEPD [skip ci]"
+            git commit -m " Actualización automática FAQs AEPD [skip ci]"
             git push
           fi
