@@ -1,0 +1,685 @@
+{
+  "ultima_actualizacion": "19/08/2026 14:07",
+  "total_categorias": 18,
+  "total_faqs": 115,
+  "categorias": [
+    {
+      "id": "cat-01",
+      "titulo": "0.- CONCEPTOS BÁSICOS DE PROTECCIÓN DE DATOS",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Qué es un dato personal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0001-que-es-un-dato-personal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se considera la matrícula de un coche dato personal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0002-sobre-la-matricula-de-un-coche"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es la dirección de correo electrónico un dato personal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0003-sobre-direccion-de-correo-electronico"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué son los datos sensibles?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0004-que-son-los-datos-sensibles"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Los datos anonimizados son datos personales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0005-sobre-los-datos-anonimizados"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Y los datos seudonimizados son datos personales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0006-sobre-los-datos-seudonimizados"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué es un tratamiento de datos personales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0007-que-es-un-tratamiento-de-datos-personales"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Quién es un responsable del tratamiento?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0008-que-es-un-responsable-del-tratamiento"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Quién es un encargado del tratamiento?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0009-que-es-un-encargado-del-tratamiento"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puedo hacer una fotografía o una grabación para denunciar una infracción?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos/FAQ-0010-sobre-fotografia-o-grabacion-para-denunciar-infraccion"
+        }
+      ]
+    },
+    {
+      "id": "cat-02",
+      "titulo": "1.- TUS DERECHOS COMO CIUDADANO",
+      "faqs": []
+    },
+    {
+      "id": "cat-03",
+      "titulo": "2.- TUS OBLIGACIONES COMO RESPONSABLE DEL TRATAMIENTO (EMPRESA, PYME, AUTÓNOMO, ORGANISMO PÚBLICO U OTROS)",
+      "faqs": []
+    },
+    {
+      "id": "cat-04",
+      "titulo": "3.- PROTECCIÓN DE DATOS EN EL ÁMBITO LABORAL",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Pueden contener datos de salud los justificantes de ausencia laboral?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0301-pueden-contener-datos-de-salud-los-justificantes-de-ausencia-laboral"
+        },
+        {
+          "pregunta": "Leer más sobre ' Acceso del comité de empresa a un listado de los trabajadores beneficiarios de la acción social.'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0302-acceso-del-comite-de-empresa-a-un-listado-de-los-trabajadores-beneficiarios-de-la-accion-social"
+        },
+        {
+          "pregunta": "Leer más sobre ' Las tarjetas identificativas de los trabajadores, ¿pueden incluir nombre y apellidos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0303-las-tarjetas-identificativas-de-los-trabajadores-pueden-incluir-nombre-apellidos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Pueden cederse los datos de salarios y RNT de una subcontrata a la empresa principal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0305-puede-cederse-los-datos-de-salarios-y-rnt-de-una-subcontrata-a-la-empresa-principal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se puede instalar GPS en los coches de empresa que utilizan los trabajadores?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0306-se-puede-instalar-gps-en-los-coches-de-la-empresa-que-utilizan-los-trabajadores"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se pueden solicitar los antecedentes penales para un puesto de trabajo?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0307-se-pueden-solicitar-los-antecedentes-penales-para-un-puesto-de-trabajo"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puede solicitar el empresario el teléfono y dirección de correo electrónico particular del trabajador?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0308-puede-solicitar-el-empresario-el-telefono-y-direccion-de-correo-electronico-particular-del-trabajador"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es factible comunicar los resultados de reconocimientos médicos al empresario, comité de empresa y sección sindical?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0309-es-factible-comunicar-los-resultados-de-reconocimientos-medicos-al-empresario-comite-de-empresa-y-seccion-sindical"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es necesario el consentimiento del trabajador para implantar un sistema de control horario? ¿Hay que informarle acerca de las medidas de control establecidas?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0311-es-necesario-el-consentimiento-del-trabajador-para-implantar-un-sistema-de-control-horario"
+        },
+        {
+          "pregunta": "Leer más sobre 'En el caso de que se trabaje con proveedores, ¿Cómo se establece esa relación para el control horario?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral/FAQ-0312-en-el-caso-de-que-se-trabaje-con-proveedores-como-se-establece-esa-relacion-para-el-control-horario"
+        }
+      ]
+    },
+    {
+      "id": "cat-05",
+      "titulo": "4.- DELEGADO DE PROTECCIÓN DE DATOS",
+      "faqs": []
+    },
+    {
+      "id": "cat-06",
+      "titulo": "5.- PUBLICIDAD NO DESEADA",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿En qué casos la AEPD puede actuar frente a las llamadas comerciales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0508-casos-en-que-la-AEPD-puede-actuar-frente-a-las-llamadas-comerciales"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Está permitido hacer llamadas automatizadas (sin intervención humana) con fines comerciales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0502-llamadas-automatizadas-sin-intervencion-humana-con-fines-comerciales"
+        },
+        {
+          "pregunta": "Leer más sobre '¿En qué situaciones se permite hacer llamadas no solicitadas con fines comerciales, con intervención humana?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0503-llamadas-no-solicitadas-con-fines-comerciales-con-intervencion-humana"
+        },
+        {
+          "pregunta": "Leer más sobre 'Si mis datos figuran en las guías de abonados, ¿puedo recibir llamadas con fines comerciales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0504-recepcion-llamadas-con-fines-comerciales-si-mis-datos-figuran-en-guias-de-abonados"
+        },
+        {
+          "pregunta": "Leer más sobre 'Estoy inscrito en un sistema de exclusión publicitaria y sigo recibiendo llamadas. ¿Qué puedo hacer?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0505-estoy-inscrito-en-un-sistema-de-exclusion-publicitaria-y-sigo-recibiendo-llamadas"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puedo recibir llamadas publicitarias si soy un empresario individual o un profesional liberal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0506-recepcion-de-llamadas-publicitarias-si-soy-un-empresario-individual-o-un-profesional-liberal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo se garantizan mis derechos de protección de datos cuando recibo una llamada? '",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada/FAQ-0507-como-se-garantizan-mis-derechos-de-proteccion-de-datos-cuando-recibo-una-llamada"
+        }
+      ]
+    },
+    {
+      "id": "cat-07",
+      "titulo": "6.- TRANSFERENCIAS INTERNACIONALES, NORMAS CORPORATIVAS VINCULANTES (BCR) Y CÓDIGOS DE CONDUCTA",
+      "faqs": []
+    },
+    {
+      "id": "cat-08",
+      "titulo": "7.- SOLVENCIA PATRIMONIAL (FICHEROS DE MOROSOS)",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Qué requisitos son necesarios para incluir a una persona física en un tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\")?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0701-que-requisitos-son-necesarios-para-incluir-a-una-persona-fisica-en-un-tratamiento-de-solvencia-patrimonial-y-credito"
+        },
+        {
+          "pregunta": "Leer más sobre 'He sido incluido en un tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\"), pero desconozco en cuál. ¿Qué puedo hacer?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0702-he-sido-incluido-en-un-tratamiento-de-solvencia-patrimonial-y-credito-pero-desconozco-cual"
+        },
+        {
+          "pregunta": "¿Qué requisitos son necesarios para incluir a una persona física en un tratamiento de solvencia patrimonial y crédito (\"fichero de",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0701-que-requisitos-son-necesarios-para-incluir-a-una-persona-fisica-en-un-tratamiento-de-solvencia-patrimonial-y-credito"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cuándo puedo interponer una reclamación ante la AEPD debido a que se me ha incluido en un tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\")?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0703-cuando-puedo-interponer-una-reclamacion-ante-la-aepd-debido-a-que-se-me-ha-incluido-en-un-tratamiendo-de-solvencia-patrimonial-y-credito"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es legal la actuación de una empresa de recobros? ¿Quién les ha cedido mis datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0705-es-legal-la-actuacion-de-una-empresa-de-recobros"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cuánto tiempo puedo estar incluido en un tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\")?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0706-cuanto-tiempo-puedo-estar-incluido-en-un-tratamiento-de-solvencia-patrimonial-y-credito"
+        },
+        {
+          "pregunta": "Leer más sobre 'Me reclaman una deuda llamando a mis familiares y amigos. ¿Es legal esta comunicación?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0707-me-reclaman-una-deuda-llamando-a-mis-familiares-y-amigos"
+        },
+        {
+          "pregunta": "Leer más sobre 'Una empresa de recobros me está reclamando una deuda que no es mía. Y además me han incluido en un tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\") ¿Qué puedo hacer?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0708-una-empresa-de-recobros-me-esta-reclamando-una-deuda-que-no-es-mia"
+        },
+        {
+          "pregunta": "Leer más sobre 'He solicitado la supresión de mis datos al tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\") y no me ha contestado ¿Puedo reclamar?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0709-he-solicitado-la-supresion-de-mis-datos-al-tratamiento-de-solvencia-patrimonial-y-credito-y-no-me-han-contestado"
+        },
+        {
+          "pregunta": "Leer más sobre 'Ya he pagado mi deuda y sigo incluido en un tratamiento de solvencia patrimonial y crédito (\"fichero de morosos\") ¿Qué puedo hacer?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial/FAQ-0710-ya-he-pagado-mi-deuda-y-sigo-incluido-en-un-tratamiento-de-solvencia-patrimonial-y-credito"
+        }
+      ]
+    },
+    {
+      "id": "cat-09",
+      "titulo": "8.- VIDEOVIGILANCIA",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre 'La instalación de videocámaras ¿Supone un tratamiento de datos de carácter personal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0801-la-instalacion-de-videocamaras-supone-un-tratamiento-de-datos-de-caracter-personal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué obligaciones se deben cumplir para la instalación de videocámaras?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0802-que-obligaciones-se-deben-cumplir-para-la-instalacion-de-videocamaras"
+        },
+        {
+          "pregunta": "Leer más sobre 'Quiero poner una cámara en una moto para grabar mis viajes. ¿Es legal esta captación?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0803-quiero-poner-una-camara-en-una-moto-para-grabar-mis-viajes-es-legal-esta-captacion"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se puede grabar la vía pública con fines de seguridad?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0804-se-puede-grabar-la-via-publica-con-fines-de-seguridad"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se pueden instalar cámaras con la finalidad de control empresarial?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0805-se-puede-instalar-camaras-con-la-finalidad-de-control-empresarial"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo deben estar colocadas las cámaras y los monitores de grabación?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0806-como-deben-estar-colocadas-las-camaras-y-los-monitores-de-grabacion"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se pueden grabar los Plenos de los Ayuntamientos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0807-se-pueden-grabar-los-plenos-de-los-ayuntamientos"
+        },
+        {
+          "pregunta": "Leer más sobre 'Tengo instalada una cámara con fines de seguridad que no graba, sólo permite el visionado en tiempo real. ¿Tengo que cumplir alguna obligación?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0808-tengo-instalada-una-camara-con-fines-de-seguridad-que-no-graba-solo-permite-visionado-en-tiempo-real"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se aplica la normativa de protección de datos a la instalación de las  videocámaras ficticias?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0809-se-aplica-la-normativa-de-pd-a-la-instalacion-de-videocamaras-ficticias"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué requisitos son necesarios para instalar videocámaras en comunidades de vecinos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/8-videovigilancia/FAQ-0810-que-requisitos-son-necesarios-para-instalar-videocamaras-en-comunidades-de-vecinos"
+        }
+      ]
+    },
+    {
+      "id": "cat-10",
+      "titulo": "9.- COMUNIDADES DE PROPIETARIOS",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Se aplica la normativa de protección de datos a las comunidades de propietarios?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0901-se-aplica-la-normativa-de-proteccion-de-datos-a-las-comunidades-de-propietarios"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cuáles son las principales obligaciones?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0902-cuales-son-las-principales-obligaciones"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es obligatorio la inscripción de ficheros de la comunidad en la Agencia?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0903-es-obligatorio-la-inscripcion-de-ficheros-de-la-comunidad-en-la-agencia"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es necesario realizar  el análisis de riesgos a los tratamientos de la comunidad de propietarios?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0904-es-necesario-realizar-el-analisis-de-riesgos-a-los-tratamientos-de-la-comunidad-de-propietarios"
+        },
+        {
+          "pregunta": "Leer más sobre 'Las comunidades de propietarios ¿Deben nombrar un delegado de protección de datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0905-las-comunidades-de-propietarios-deben-nombrar-un-delegado-de-proteccion-de-datos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puede tener acceso un propietario a los gastos de su comunidad?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0906-puede-tener-acceso-un-propietario-a-los-gastos-de-su-comunidad"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puede conocer un propietario los empleados de una comunidad?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0907-puede-conocer-un-propietario-los-empleados-de-una-comunidad"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es posible conocer por parte de un vecino el nombre del resto de propietarios del inmueble?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0908-es-posible-conocer-por-parte-de-un-vecino-el-nombre-del-resto-de-propietarios-del-inmueble"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se puede exponer, cumpliendo ciertos requisitos, en el tablón de anuncios de la comunidad la relación de los vecinos morosos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0909-se-puede-exponer-cumpliendo-ciertos-requisitos-en-el-tablon-la-relacion-de-los-vecinos-morosos"
+        },
+        {
+          "pregunta": "Leer más sobre 'En nuestra comunidad de vecinos hay cámaras de videovigilancia ¿Son legales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios/FAQ-0910-en-nuestra-comunidad-de-vecinos-hay-camaras-de-videovigilancia-son-legales"
+        }
+      ]
+    },
+    {
+      "id": "cat-11",
+      "titulo": "10.- MENORES Y EDUCACIÓN",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Cuál es la edad para que los menores puedan prestar consentimiento para tratar sus datos personales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1001-cual-es-la-edad-para-que-los-menores-puedan-prestar-consentimiento-para-tratar-sus-datos-personales"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se pueden recabar y tratar datos personales de menores?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1002-se-puede-recabar-y-tratar-datos-personales-de-menores"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puede un menor de 14 años ejercitar los derechos contemplados en el RGPD?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1003-puede-un-menor-de-14-ejercitar-los-derechos-contemplados-en-el-rgpd"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se pueden tomar imágenes o grabar vídeos en eventos escolares?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1004-se-pueden-tomar-imagenes-o-grabar-videos-en-eventos-escolares"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Pueden acceder los progenitores a las historias clínicas de sus hijos mayores de 14 años? '",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1005-pueden-acceder-los-progenitores-a-las-historias-clinicas-de-sus-hijos-mayores-de-14"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Dónde puedo obtener más información sobre el tratamiento de datos de menores? '",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1006-donde-puedo-obtener-mas-informacion-sobre-el-tratamiento-de-datos-de-menores"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Están obligados los centros docentes a designar un delegado de protección de datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1007-estan-obligados-los-centros-docentes-a-designar-un-dpd"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Para la realización de actividades que implican contacto habitual con menores de edad, es obligatorio aportar un Certificado Negativo de Delitos de Naturaleza Sexual?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1053-sobre-certificado-negativo-de-delitos-de-naturaleza-sexual"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puede un progenitor que no convive con sus hijos menores obtener un certificado de empadronamiento de los pequeños?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1008-puede-un-progenitor-que-no-convive-con-sus-hijos-menores-obtener-un-certificado-de-empadronamiento-de-los-pequenos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Pueden los centros educativos impartir clases y realizar exámenes online sin el consentimiento de los interesados?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion/FAQ-1009-pueden-los-centros-educativos-impartir-clases-y-realizar-examenes-online-sin-el-consentimiento-de-los-interesados"
+        }
+      ]
+    },
+    {
+      "id": "cat-12",
+      "titulo": "11.- TRANSPARENCIA Y PROTECCIÓN DE DATOS",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Qué es el derecho de acceso a la información pública?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1101-que-es-el-derecho-de-acceso-a-la-informacion-publica"
+        },
+        {
+          "pregunta": "Leer más sobre 'Si la información solicitada contiene datos de carácter personal ¿Prevalece el derecho a la protección datos o debe entregarse la información?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1102-si-la-informacion-solicitada-contiene-datos-de-caracter-personal-prevalece-el-derecho-o-debe-entregarse-la-informacion"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se debe conceder el acceso a las retribuciones y productividad del personal de un Ministerio?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1103-se-debe-conceder-acceso-a-las-retribuciones-y-productividad-del-personal-de-un-ministerio"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Se debe facilitar el acceso a las relaciones de puestos de trabajo así como la identidad de la persona que desempeña un determinado puesto en un Ministerio?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1104-se-debe-facilitar-el-acceso-a-las-rpts-asi-como-la-identidad-de-la-persona-que-desempena-un-determinado-puesto-en-un-ministerio"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Existe algún límite para el acceso a las retribuciones y relaciones de puestos de trabajo con identificación de sus titulares?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1105-existe-algun-limite-para-el-acceso-a-las-retribuciones-y-rpts-con-identificacion-de-sus-titulares"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puedo acceder a la documentación del resto de candidatos de un concurso-oposición?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1106-puedo-acceder-a-la-documentacion-del-resto-de-candidatos-de-un-concurso-oposicion"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué es la publicidad activa?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1107-que-es-la-publicidad-activa"
+        },
+        {
+          "pregunta": "Leer más sobre 'Cuando se publican los Convenios y Encomiendas de Gestión ¿Podrían publicarse con las firmas manuscritas de los firmantes?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1108-cuando-se-publican-los-convenios-y-encomiendas-de-gestion-podrian-publicarse-con-las-firmas-manuscritas-de-los-firmantes"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es posible publicar un listado de las comisiones de servicios con indicación de los puestos de origen, puesto de destino e identificación de los empleados públicos, con indicación de sus nombres y apellidos de un Ministerio?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1109-es-posible-publicar-un-listado-de-las-comisiones-de-servicio-con-indicacion-de"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Pueden publicarse las actas de un órgano colegiado incluyendo las deliberaciones de cada uno de sus miembros?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd/FAQ-1110-pueden-publicarse-las-actas-de-un-organo-colegiado-incluyendo-las-deliberaciones-de-cada-uno-de-sus-miembros"
+        }
+      ]
+    },
+    {
+      "id": "cat-13",
+      "titulo": "12.- CUESTIONES SOBRE LA SEDE ELECTRÓNICA",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Qué es la sede electrónica? Trámites electrónicos. Registro electrónico y sede virtual'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1201-que-es-la-sede-electronica"
+        },
+        {
+          "pregunta": "Leer más sobre 'Trámites ante la sede electrónica. Acceso a la sede. Cómputo de plazos'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1202-tramites-ante-la-sede-electronica"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Existe obligación de identificarse siempre para acceder a la Sede?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1203-existe-obligacion-de-identificarse-siempre-para-acceder-a-la-sede"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo se accede a la sede electrónica de la AEPD?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1204-como-se-accede-a-la-sede-electronica-de-la-aepd"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué es un certificado electrónico? ¿Dónde se puede obtener?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1205-que-es-un-certificado-electronico"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Es seguro utilizar los servicios disponibles en la sede electrónica?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1206-es-seguro-utilizar-los-servicios-disponibles-en-la-sede-electronica"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo configurar el Acrobat Reader para que confíe en el certificado raíz del sello electrónico del Registro Electrónico?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1207-como-configurar-el-acrobat-reader-para-que-confie-en-el-certificado-raiz"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo configurar los certificados raíz en el navegador?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1208-como-configurar-los-certificados-raiz-en-el-navegador"
+        },
+        {
+          "pregunta": "Leer más sobre 'Requerimientos técnicos de la sede'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1209-requerimientos-tecnicos-de-la-sede"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué necesito para realizar mis trámites a través de medios electrónicos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/12-sede-electronica/FAQ-1210-que-necesito-para-realizar-mis-tramites-a-traves-de-medios-electronicos"
+        }
+      ]
+    },
+    {
+      "id": "cat-14",
+      "titulo": "13.- RECLAMACIONES",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Cómo puedo interponer una reclamación si han vulnerado mis datos de carácter personal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1301-como-puedo-interponer-una-reclamacion-si-han-vulnerado-mis-datos-de-caracter-personal"
+        },
+        {
+          "pregunta": "Leer más sobre 'He presentado una reclamación ante la AEPD, ¿qué plazos tiene para contestarme?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1308-plazos-para-contestar-una-reclamacion"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puedo interponer una reclamación respecto al ejercicio de los derechos de protección de datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1303-puedo-interponer-una-reclamacion-respecto-al-ejercicio-de-los-derechos-de-proteccion-de-datos"
+        },
+        {
+          "pregunta": "Leer más sobre ' ¿Puedo reclamar directamente a la AEPD si se está incumpliendo la normativa en materia de protección de datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1309-posibilidad-de-reclamar-directamente-ante-incumplimiento"
+        },
+        {
+          "pregunta": "Leer más sobre 'Si interpongo una reclamación y el responsable es sancionado ¿Puedo obtener una indemnización económica?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1302-si-interpongo-una-reclamacion-y-el-responsable-es-sancionado-puedo-obtener-una-indemnizacion-economica"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Ante quién debo reclamar si no estoy de acuerdo con mis facturas de telefonía?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1304-ante-quien-debo-reclamar-sobre-mis-facturas-de-telefonia"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cuáles son las competencias de la Autoridad Catalana de Protección de Datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1305-cuales-son-las-competencias-de-la-autoridad-catalana-de-proteccion-de-datos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cuáles son las competencias de la Autoridad Vasca de Protección de Datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1306-cuales-son-las-competencias-de-la-autoridad-vasca-de-proteccion-de-datos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cuáles son las competencias del Consejo de Transparencia y Protección de Datos de Andalucía?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/13-reclamaciones/FAQ-1307-cuales-son-las-competencias-del-consejo-de-transparencia-y-proteccion-de-datos-de-andalucia"
+        }
+      ]
+    },
+    {
+      "id": "cat-15",
+      "titulo": "14. - PROCESOS ELECTORALES",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Cómo puedo evitar que las formaciones políticas me envíen propaganda electoral postal?\"'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/14-procesos-electorales/FAQ-1401-como-puedo-evitar-que-las-formaciones-politicas-me-envien-propaganda-electoral-postal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué puedo hacer si he recibido propaganda electoral postal, pese a haber solicitado a la Oficina del Censo Electoral la exclusión de mis datos de las listas que se entregan a las candidaturas con esta finalidad?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/14-procesos-electorales/FAQ-1402-que-puedo-hacer-si-he-recibido-propaganda-electoral-postar-pese-a-haber-solicitado-la-exclusion-de-mis-datos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puedo oponerme a que los partidos políticos usen mis datos personales?\"'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/14-procesos-electorales/FAQ-1403-puedo-oponerme-a-que-los-partidos-politicos-usen-mis-datos-personales"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué puedo hacer si he recibido correos electrónicos o mensajes SMS?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/14-procesos-electorales/FAQ-1404-que-puedo-hacer-si-he-recibido-correos-electronicos-o-mensajes-sms"
+        }
+      ]
+    },
+    {
+      "id": "cat-16",
+      "titulo": "15.- CANAL PRIORITARIO PARA CONTENIDOS SENSIBLES EN INTERNET",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿En qué consiste el canal prioritario en caso de difusión ilegítima de contenidos sensibles?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1501-en-que-consiste-el-canal-prioritario-de-difusion-ilegitima-de-contenidos-sensibles"
+        },
+        {
+          "pregunta": "Leer más sobre '¿En qué casos puedo acudir a este canal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1502-en-que-casos-puedo-acudir-a-este-canal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿En qué casos no puedo acudir a este canal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1503-en-que-casos-no-puedo-acudir-a-este-canal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué información necesito aportar a la AEPD cuando haga uso de este canal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1504-que-informacion-necesito-aportar-a-la-aepd-cuando-haga-uso-de-este-canal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo puedo acceder a este canal?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1505-como-puedo-acceder-a-este-canal"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué sucederá después de solicitar la retirada ante la AEPD?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1506-que-sucedera-despues-de-solicitar-la-retirada-ante-la-aepd"
+        },
+        {
+          "pregunta": "Leer más sobre '¿En qué responsabilidades puede incurrir quien difunda ilegítimamente contenidos sensibles de terceros?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/15-canal-prioritario-para-contenidos-sensibles-en-internet/FAQ-1507-en-que-responsabilidades-puede-incurrir-quien-difunda-ilegitimamente-contenidos-sensibles-de-terceros"
+        }
+      ]
+    },
+    {
+      "id": "cat-17",
+      "titulo": "16.- SALUD",
+      "faqs": []
+    },
+    {
+      "id": "cat-18",
+      "titulo": "17.- INTERNET Y REDES SOCIALES",
+      "faqs": [
+        {
+          "pregunta": "Leer más sobre '¿Cómo puedo proteger mi privacidad en internet?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1701-como-puedo-proteger-mi-privacidad-en-internet"
+        },
+        {
+          "pregunta": "Leer más sobre 'Me han suplantado mi identidad, ¿qué puedo hacer ahora?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1702-ante-la-suplantacion-de-mi-identidad-que-puedo-hacer"
+        },
+        {
+          "pregunta": "Leer más sobre '¿A dónde me debo dirigir para poder ejercer un derecho en materia de protección de datos?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1703-donde-me-debo-dirigir-para-poder-ejercer-un-derecho-en-proteccion-de-datos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué puedo hacer si se difunden imágenes en las que aparezco?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1704-que-hacer-si-se-difunden-imagenes-en-las-que-aparezco"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Puedo acudir a la AEPD si han difundido mis datos personales a través de servicios de mensajería, como WhatsApp, Telegram o los servicios de mensajería de las redes sociales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1705-difusion-de-datos-a-traves-de-servicios-de-mensajeria"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Qué es el derecho al olvido y cómo puedo ejercerlo?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1706-ejercicio-del-derecho-al-olvido"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Por qué son importantes las cookies para la protección de datos personales?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1707-importancia-de-las-cookies-en-la-proteccion-de-datos"
+        },
+        {
+          "pregunta": "Leer más sobre '¿Cómo debe garantizar una gran red social que el usuario ha prestado libremente su consentimiento al uso de cookies?'",
+          "respuesta": "Buscador general",
+          "fuente": "https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales/FAQ-1708-sobre-como-garantizar-el-libre-consentimiento-al-uso-de-cookies-por-gran-red-social"
+        }
+      ]
+    }
+  ]
+}
