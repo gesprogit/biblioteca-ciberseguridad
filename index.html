@@ -1,855 +1,638 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biblioteca de Conceptos · Protección de Datos y Ciberseguridad</title>
 <style>
-:root{--azul:#2563eb;--gris:#6b7280;--fondo:#f9fafb}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#1f2937;background:var(--fondo)}
-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:1rem}
-nav{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-nav h1{font-size:1.25rem;color:var(--azul)}
-nav a{text-decoration:none;color:var(--gris);padding:.25rem .5rem;border-radius:.375rem}
-nav a:hover{background:var(--fondo);color:var(--azul)}
-main{max-width:1200px;margin:0 auto;padding:2rem 1rem}
-.buscador{margin-bottom:2rem}
-.buscador input{width:100%;padding:.75rem 1rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem}
-.filtros{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
-.filtro{padding:.25rem .75rem;background:#fff;border:1px solid #d1d5db;border-radius:9999px;cursor:pointer;font-size:.875rem}
-.filtro:hover,.filtro.activo{background:var(--azul);color:#fff;border-color:var(--azul)}
-.seccion{background:#fff;border:1px solid #e5e7eb;border-radius:.5rem;margin-bottom:1.5rem;overflow:hidden}
-.seccion-header{padding:1rem;background:#f9fafb;border-bottom:1px solid #e5e7eb;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.seccion-header:hover{background:#f3f4f6}
-.seccion-header h2{font-size:1.125rem;color:#111827}
-.seccion-header .meta{font-size:.875rem;color:var(--gris)}
-.seccion-content{padding:1rem;display:none}
-.seccion-content.mostrar{display:block}
-.faq{border-bottom:1px solid #f3f4f6;padding:.75rem 0}
-.faq:last-child{border-bottom:none}
-.faq-pregunta{font-weight:600;color:#1f2937;cursor:pointer;display:flex;justify-content:space-between;align-items-start}
-.faq-pregunta:hover{color:var(--azul)}
-.faq-respuesta{display:none;margin-top:.75rem;padding-left:1rem;border-left:2px solid #bfdbfe;color:#374151;font-size:.875rem;line-height:1.7}
-.faq-respuesta.mostrar{display:block}
-.fuente-link{display:inline-block;margin-top:.5rem;font-size:.75rem;color:var(--azul);text-decoration:none}
-.fuente-link:hover{text-decoration:underline}
-.sin-resultados{text-align:center;padding:3rem;color:var(--gris)}
-.favoritos-box{background:#fffef3;border:1px solid #fcd34d;border-radius:.5rem;padding:1rem;margin-bottom:1.5rem}
-.favoritos-box h3{color:#92400e;margin-bottom:.5rem}
-.cronologia{background:#eff6ff;border:1px solid #bfdbfe;border-radius:.5rem;padding:1rem;margin-bottom:1.5rem}
-.cronologia h3{color:#1e40af;margin-bottom:.5rem}
-@media(max-width:768px){nav{gap:.5rem}nav h1{font-size:1rem}.seccion-header h2{font-size:1rem}}
-.animate-spin{animation:spin 1s linear infinite}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-400-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-600-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/latin-700-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/fraunces@latest/latin-700-normal.css');
+@import url('https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-600-normal.css');
+:root{--bg:#f4f3ee;--paper:#fffdf8;--ink:#182230;--muted:#5c6b7d;--line:#e3e0d4;--acc:#0e7a6f;--acc-ink:#0a5a52;--acc-soft:#e3f1ef;--aepd:#2457d6;--aepd-bg:#e8eefc;--ccn:#b53a34;--ccn-bg:#fbeae8;--iso:#6d3fd6;--iso-bg:#efe9fb;--ue:#0e7490;--ue-bg:#e3f1f5;--enx:#a16207;--enx-bg:#faf0da;--shadow:0 1px 2px rgba(24,34,48,.05),0 8px 24px -12px rgba(24,34,48,.14);--r:14px;--warn:#c2410c}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),#2b8ec9);z-index:200}
+header#hdr{position:sticky;top:0;z-index:100;background:rgba(244,243,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar{max-width:1280px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{width:40px;height:40px;flex:none;border-radius:11px;background:linear-gradient(135deg,#10344f,#0e7a6f);display:grid;place-items:center;color:#fff}
+.brand b{font-family:'Fraunces',serif;font-size:1.05rem;display:block;line-height:1.15}
+.brand span{font-size:.72rem;color:var(--muted);text-transform:uppercase}
+#btnToc{display:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;width:40px;height:40px;cursor:pointer;color:var(--ink)}
+.toolbar{max-width:1280px;margin:0 auto;padding:0 22px 12px;display:flex;gap:12px;flex-wrap:wrap}
+.searchbox{position:relative;flex:1;min-width:240px;max-width:520px}
+.searchbox svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.searchbox input{width:100%;padding:10px 44px 10px 40px;border-radius:11px;border:1px solid var(--line);background:var(--paper);font:inherit;font-size:.92rem;outline:none}
+.searchbox input:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(14,122,111,.15)}
+.searchbox kbd{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-family:'JetBrains Mono',monospace;font-size:.7rem;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 13px;font:inherit;font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer}
+.chip.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.rescount{font-size:.8rem;font-weight:600;color:var(--acc-ink);background:var(--acc-soft);padding:6px 12px;border-radius:999px}
+.hero{max-width:1280px;margin:0 auto;padding:40px 22px 10px}
+.kicker{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc-ink);background:var(--acc-soft);border-radius:999px;padding:6px 14px;margin-bottom:14px}
+.hero h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;max-width:900px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),#2b8ec9);-webkit-background-clip:text;color:transparent}
+.hero .lead{margin-top:12px;max-width:880px;color:var(--muted);font-size:1rem}
+.dash{max-width:1280px;margin:0 auto;padding:14px 22px 6px;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.card{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--c,var(--acc));border-radius:var(--r);padding:16px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:.2s}
+.card:hover{transform:translateY(-2px)}
+.card h3{font-size:.95rem;margin-bottom:4px}.card p{font-size:.78rem;color:var(--muted)}
+.card .n{display:inline-block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600;color:var(--acc-ink);background:var(--acc-soft);border-radius:999px;padding:3px 10px}
+.panels{max-width:1280px;margin:12px auto 0;padding:0 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
+.panel h2{font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:4px}
+.panel .psub{font-size:.78rem;color:var(--muted);margin-bottom:12px}
+.timeline{position:relative;padding-left:20px;border-left:2px solid var(--line)}
+.tl-item{position:relative;padding:6px 0 10px 14px;font-size:.82rem}
+.tl-item::before{content:"";position:absolute;left:-27px;top:11px;width:12px;height:12px;border-radius:50%;background:var(--acc);border:2px solid var(--paper)}
+.tl-item.past::before{background:#94a3b8}.tl-item.warn::before{background:var(--warn)}
+.tl-item .tdate{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--acc-ink);font-size:.78rem}
+.tl-item .ttext{color:var(--ink)}.tl-item .tmeta{font-size:.7rem;color:var(--muted)}
+.refgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.ref{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;text-decoration:none;color:var(--ink);font-size:.78rem}
+.ref:hover{border-color:var(--acc);background:var(--acc-soft)}
+.ref b{display:block;font-size:.82rem;color:var(--ink)}
+.ref .rsrc{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.ref.boe{border-left:3px solid #c2410c}.ref.eu{border-left:3px solid var(--ue)}
+.layout{max-width:1280px;margin:0 auto;padding:10px 22px 80px;display:grid;grid-template-columns:250px 1fr;gap:34px;align-items:start}
+aside#toc{position:sticky;top:132px;max-height:calc(100vh - 152px);overflow:auto;scrollbar-width:thin}
+.tgroup h4{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 6px 10px}
+#tocNav a{display:flex;gap:9px;padding:5px 10px;border-radius:8px;font-size:.8rem;color:var(--ink);text-decoration:none;border-left:2px solid transparent}
+#tocNav a.on{background:var(--paper);border-left-color:var(--acc);color:var(--acc-ink)}
+#tocNav a .tn{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--muted);flex:none;width:18px}
+#tocNav a.off{display:none}
+#overlay{display:none}
+main{min-width:0}
+.sec{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;margin-bottom:26px;box-shadow:var(--shadow);scroll-margin-top:150px}
+.sec.off{display:none}
+.sec-top{display:flex;align-items:flex-start;gap:14px}
+.num{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:#fff;background:var(--ink);border-radius:10px;width:44px;height:44px;display:grid;place-items:center;flex:none}
+.sec[data-cat="aepd"] .num{background:var(--aepd)}.sec[data-cat="ccn"] .num{background:var(--ccn)}.sec[data-cat="iso"] .num{background:var(--iso)}.sec[data-cat="ue"] .num{background:var(--ue)}.sec[data-cat="enx"] .num{background:var(--enx)}.sec[data-cat="fav"] .num{background:#eab308}
+.sec-titles h2{font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.25}
+.sec-desc{color:var(--muted);font-size:.88rem;margin-top:2px}
+.tag{flex:none;font-size:.66rem;font-weight:700;text-transform:uppercase;border-radius:999px;padding:5px 12px}
+.tag-aepd{color:var(--aepd);background:var(--aepd-bg)}.tag-ccn{color:var(--ccn);background:var(--ccn-bg)}.tag-iso{color:var(--iso);background:var(--iso-bg)}.tag-ue{color:var(--ue);background:var(--ue-bg)}.tag-enx{color:var(--enx);background:var(--enx-bg)}.tag-fav{color:#a16207;background:#fef3c7}
+.sec-actions{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 6px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.btn-all{font:inherit;font-size:.78rem;font-weight:600;color:var(--acc-ink);background:var(--acc-soft);border:none;border-radius:8px;padding:6px 13px;cursor:pointer}
+.src{font-size:.76rem;color:var(--muted);text-decoration:none;margin-left:auto}
+.qa{border:1px solid var(--line);border-radius:11px;margin-top:12px;background:#fff}
+.qa[open]{border-color:var(--acc)}
+.qa.off{display:none}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:13px 16px;font-weight:600;font-size:.92rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";margin-left:auto;font-family:'JetBrains Mono',monospace;color:var(--muted);width:26px;height:26px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.qa[open] summary::after{content:"–";color:var(--acc-ink);border-color:var(--acc);background:var(--acc-soft)}
+.qa .a{padding:2px 16px 16px;color:#3c4856;font-size:.92rem}
+.qa .a p+p{margin-top:8px}.qa .a ul{margin:6px 0 4px 20px}.qa .a li{margin-top:4px}
+.plink{flex:none;background:none;border:none;cursor:pointer;font-size:.85rem;color:#c9c9c9;padding:2px 4px;line-height:1}
+.plink:hover{color:var(--acc)}
+.star{flex:none;background:none;border:none;cursor:pointer;font-size:1.05rem;color:#d4d4d4;padding:2px 4px;line-height:1}
+.star.on{color:#eab308}.star:hover{color:#ca8a04}
+mark.hl{background:#ffe28a}
+#noRes{background:var(--paper);border:1px dashed var(--line);border-radius:var(--r);padding:40px;text-align:center;margin-bottom:26px}
+.empty-fav{text-align:center;color:var(--muted);padding:30px;font-size:.9rem}
+footer{background:#15202e;color:#aebbc9}
+.fwrap{max-width:1280px;margin:0 auto;padding:46px 22px 26px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:38px}
+.fwrap h5{color:#fff;font-size:.8rem;text-transform:uppercase;margin-bottom:12px}
+.fwrap p,.fwrap li{font-size:.83rem;line-height:1.7}
+.fwrap a{color:#7fd0c5;text-decoration:none}.fwrap ul{list-style:none}
+.fbottom{border-top:1px solid #2a3a4c;max-width:1280px;margin:0 auto;padding:16px 22px;font-size:.75rem;color:#7d8ca0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+#toTop{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;border:none;background:var(--ink);color:#fff;cursor:pointer;opacity:0;pointer-events:none;z-index:90}
+#toTop.show{opacity:1;pointer-events:auto}
+@media(max-width:980px){#btnToc{display:flex}.layout{grid-template-columns:1fr}.panels{grid-template-columns:1fr}aside#toc{position:fixed;inset:0 auto 0 0;width:min(320px,84vw);height:100%;background:var(--paper);z-index:150;padding:24px 18px;transform:translateX(-102%);transition:.3s;top:0}aside#toc.open{transform:none}#overlay{display:block;position:fixed;inset:0;background:rgba(20,30,40,.45);z-index:140;opacity:0;pointer-events:none}#overlay.show{opacity:1;pointer-events:auto}}
+@media(max-width:640px){.sec{padding:18px 16px}.sec-top{flex-wrap:wrap}.tag{margin-left:58px}.searchbox kbd{display:none}.fwrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<header>
-<nav>
-<h1>🛡️ Biblioteca de Conceptos</h1>
-<a href="#aepd">AEPD</a>
-<a href="#ccn">CCN-CERT</a>
-<a href="#normas">Normas y marcos</a>
-<a href="#favoritos">⭐ Favoritos</a>
-</nav>
+<div id="progress"></div>
+<header id="hdr">
+ <div class="topbar">
+  <button id="btnToc" aria-label="Abrir índice">☰</button>
+  <div class="brand"><div class="logo">🛡️</div><div><b>Biblioteca de Conceptos</b><span>Privacidad · Seguridad · Ciberseguridad</span></div></div>
+ </div>
+ <div class="toolbar">
+  <div class="searchbox"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="q" type="search" placeholder="Buscar conceptos, preguntas, normas…" autocomplete="off"><kbd>/</kbd></div>
+  <div class="chips" id="chips">
+   <button class="chip active" data-f="all">Todo</button>
+   <button class="chip" data-f="aepd">AEPD</button>
+   <button class="chip" data-f="ccn">CCN-CERT</button>
+   <button class="chip" data-f="normas">Normas y marcos</button>
+   <button class="chip" data-f="fav">⭐ Favoritos</button>
+  </div>
+  <span id="resCount" class="rescount" hidden></span>
+ </div>
 </header>
 
-<main>
+<section class="hero">
+ <span class="kicker">📚 Biblioteca de consulta rápida</span>
+ <h1>Protección de datos, seguridad de la información y <em>ciberseguridad</em></h1>
+ <p class="lead">Recopilación con respuestas basadas en fuentes oficiales: AEPD, CCN-CERT, ISO/IEC 27001 y 27002, NIS2 y Reg. Ejec. 2024/2690, CRA (Reg. 2024/2847 + Guía Comisión 2026 + ENISA SBD + CISA SBOM), Reglamento de IA, TISAX y el paquete DORA completo (Reglamento + RTS + ITS).</p>
+</section>
 
-<div class="cronologia">
-<h3>📚 Biblioteca de consulta rápida</h3>
-<p><strong>Protección de datos, seguridad de la información y ciberseguridad</strong></p>
-<p style="margin-top:.5rem;font-size:.875rem;color:var(--gris)">Recopilación con respuestas basadas en fuentes oficiales: AEPD, CCN-CERT, ISO/IEC 27001 y 27002, NIS2 y Reg. Ejec. 2024/2690, CRA (Reg. 2024/2847 + Guía Comisión 2026 + ENISA SBD + CISA SBOM), Reglamento de IA, TISAX y el paquete DORA completo (Reglamento + RTS + ITS).</p>
-</div>
-
-<div class="cronologia">
-<h3>⏳ Cronología de fechas clave</h3>
-<p>Hitos de aplicación, transposición y notificación.</p>
-</div>
-
-<div class="buscador">
-<input type="text" id="buscador" placeholder="Buscar en toda la biblioteca...">
-<div class="filtros">
-<button class="filtro activo" data-filtro="todas">Todo</button>
-<button class="filtro" data-filtro="aepd">AEPD</button>
-<button class="filtro" data-filtro="ccn">CCN</button>
-<button class="filtro" data-filtro="iso">ISO</button>
-<button class="filtro" data-filtro="ue">UE</button>
-</div>
+<div class="dash" id="dash"></div>
+<div class="panels">
+ <section class="panel"><h2>⏳ Cronología de fechas clave</h2><p class="psub">Hitos de aplicación, transposición y notificación.</p><div class="timeline" id="tlBox"></div></section>
+ <section class="panel"><h2>📜 Referencias oficiales (EUR-Lex · BOE)</h2><p class="psub">Enlaces directos a los textos publicados.</p><div class="refgrid" id="refBox"></div></section>
 </div>
 
-<div id="sin-resultados" class="sin-resultados" style="display:none">
-<p>Sin resultados</p>
-<p style="font-size:.875rem">Prueba con otro término o cambia el filtro.</p>
+<div class="layout">
+ <aside id="toc"><nav id="tocNav" aria-label="Índice"></nav></aside>
+ <div id="overlay"></div>
+ <main id="main">
+ <div id="noRes" hidden><h3>Sin resultados</h3><p>Prueba con otro término o cambia el filtro.</p></div>
+ <section class="sec" id="sFav" data-cat="fav"><div class="sec-top"><span class="num">⭐</span><div class="sec-titles"><h2>Tus preguntas favoritas</h2><p class="sec-desc">Preguntas marcadas con ⭐. Se guardan en este navegador.</p></div><span class="tag tag-fav">Favoritos</span></div>
+ <div class="sec-actions"><button class="btn-all" id="clearFav" type="button">Vaciar favoritos</button></div>
+ <div class="qas" id="favList"></div></section>
+
+ <section class="sec" id="s0" data-cat="aepd"><div class="sec-top"><span class="num">00</span><div class="sec-titles"><h2>Conceptos básicos de protección de datos</h2><p class="sec-desc">Definiciones del RGPD y la LOPDGDD.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/0-conceptos-basicos" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es un dato personal?</summary><div class="a"><p>Cualquier información sobre una persona física identificada o identificable (nombre, DNI, localización, identificador en línea, rasgos físicos/fisiológicos/genéticos/económicos). Incluye imágenes, sonidos o biométricos que identifiquen sin esfuerzo desproporcionado; por eso una IP, matrícula o identificador publicitario son datos personales si pueden vincularse a una persona.</p></div></details>
+ <details class="qa"><summary>¿Matrícula y email son datos personales?</summary><div class="a"><p>La matrícula sí (el registro DGT la vincula a una persona). El email con datos identificativos (nombre.apellido@) sí; los genéricos de función (info@) en principio no, salvo que identifiquen a una persona concreta.</p></div></details>
+ <details class="qa"><summary>¿Qué son los datos sensibles?</summary><div class="a"><p>Categorías especiales del art. 9 RGPD: origen racial/étnico, opiniones políticas, convicciones, afiliación sindical, genéticos, biométricos, salud, vida sexual/orientación. Prohibidos por regla general; solo caben supuestos tasados del art. 9.2.</p></div></details>
+ <details class="qa"><summary>¿Anonimizados vs. seudonimizados?</summary><div class="a"><p>Anonimizados irreversibles quedan fuera del RGPD. Seudonimizados siguen siendo datos personales (reidentificables con información adicional) y se les aplica el Reglamento; la seudonimización es medida técnica recomendada (arts. 25 y 32).</p></div></details>
+ <details class="qa"><summary>¿Responsable vs. encargado?</summary><div class="a"><p>Responsable (art. 4.7): determina fines y medios. Encargado (art. 4.8): trata datos por cuenta del responsable. Relación formalizada por contrato del art. 28 (objeto, duración, finalidad, tipos de datos, obligaciones).</p></div></details>
+ <details class="qa"><summary>¿Principios y bases jurídicas?</summary><div class="a"><p>Art. 5: licitud/lealtad/transparencia, limitación de finalidad, minimización, exactitud, limitación de conservación, integridad/confidencialidad, responsabilidad proactiva. Art. 6: consentimiento, contrato, obligación legal, intereses vitales, interés público, interés legítimo.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s1" data-cat="aepd"><div class="sec-top"><span class="num">01</span><div class="sec-titles"><h2>Tus derechos como ciudadano</h2><p class="sec-desc">Derechos ARSOPOL (arts. 15-22 RGPD).</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/1-tus-derechos" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué derechos tengo (ARSOPOL)?</summary><div class="a"><p>Acceso (art. 15), Rectificación (16), Supresión/olvido (17), Oposición (21), Portabilidad (20), Limitación (18) y no ser objeto de decisiones únicamente automatizadas con efectos jurídicos (22).</p></div></details>
+ <details class="qa"><summary>¿Cómo los ejerzo y en qué plazo responden?</summary><div class="a"><p>Ejercicio gratuito por cualquier medio que deje constancia. El responsable responde en un mes (prorrogable a dos si es compleja). Si no responde o deniega, reclamación ante la AEPD en seis meses (art. 65 LOPDGDD).</p></div></details>
+ <details class="qa"><summary>¿Pueden cobrarme por el acceso?</summary><div class="a"><p>No; gratuidad incluida la primera copia (art. 12.5). Solo si la solicitud es manifiestamente infundada/excesiva cabe tarifa razonable, debiendo el responsable demostrarlo.</p></div></details>
+ <details class="qa"><summary>¿Qué es el derecho al olvido?</summary><div class="a"><p>Supresión aplicada al entorno digital (arts. 93-94 LOPDGDD): exigir a buscadores/redes eliminar enlaces/contenidos falsos, obsoletos o excesivos. La AEPD pondera relevancia pública, interés informativo y tiempo (doctrina TJUE).</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s2" data-cat="aepd"><div class="sec-top"><span class="num">02</span><div class="sec-titles"><h2>Obligaciones del responsable</h2><p class="sec-desc">Empresas, pymes, autónomos y organismos.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/2-tus-obligaciones-como-responsable-del-tratamiento" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Privacidad desde el diseño y por defecto?</summary><div class="a"><p>Art. 25: aplicar medidas desde el diseño para aplicar los principios e integrar garantías; por defecto tratar solo los datos necesarios (cantidad, alcance, conservación, accesibilidad).</p></div></details>
+ <details class="qa"><summary>¿Cuándo es obligatoria una EIPD?</summary><div class="a"><p>Art. 35: alto riesgo probable, en particular con nuevas tecnologías: perfilado con efectos jurídicos, gran escala de categorías especiales, observación sistemática de zonas públicas, colectivos vulnerables, combinaciones inesperadas. La AEPD publica lista orientativa y Guía.</p></div></details>
+ <details class="qa"><summary>¿Qué incluye el RAT?</summary><div class="a"><p>Art. 30: identidad de responsable/encargado/DPD, fines, categorías de interesados/datos, destinatarios, transferencias y garantías, plazos de supresión, medidas de seguridad. A disposición de la autoridad.</p></div></details>
+ <details class="qa"><summary>¿Qué hacer ante una brecha?</summary><div class="a"><p>Art. 33: notificar a la AEPD en máx. 72 h salvo improbable riesgo; contenido: naturaleza, categorías/nº afectados, contacto DPD, consecuencias, medidas. Si alto riesgo, comunicar a afectados (art. 34). Documentar toda brecha internamente.</p></div></details>
+ <details class="qa"><summary>¿Obligaciones al contratar un encargado?</summary><div class="a"><p>Art. 28: garantías suficientes; contrato con objeto/duración/finalidad, confidencialidad, seguridad, subencargo con autorización, asistencia en derechos/EIPD/brechas, supresión/devolución y auditorías.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s3" data-cat="aepd"><div class="sec-top"><span class="num">03</span><div class="sec-titles"><h2>Protección de datos en el ámbito laboral</h2><p class="sec-desc">Empresa y personas trabajadoras.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/3-proteccion-de-datos-en-el-ambito-laboral" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Justificantes con datos de salud?</summary><div class="a"><p>Minimización: el empresario puede exigir justificante de ausencia pero no el diagnóstico. Si lo necesita por prevención (art. 22 LPRL), limitado a lo estrictamente necesario.</p></div></details>
+ <details class="qa"><summary>¿GPS en vehículos de empresa?</summary><div class="a"><p>Sí (art. 20.3 ET) con información previa, proporcionalidad y sin uso exclusivamente particular; no en descanso si hay uso privado; no zonas privadas.</p></div></details>
+ <details class="qa"><summary>¿Consentimiento para registro horario?</summary><div class="a"><p>No: obligación legal (art. 34.9 ET). Registro diario con inicio/final, informar a la plantilla, conservar 4 años y ponerlo a disposición de trabajadores/Inspección.</p></div></details>
+ <details class="qa"><summary>¿Desconexión digital?</summary><div class="a"><p>Art. 88 LOPDGDD: no atender comunicaciones fuera de jornada/descanso/vacaciones. Política interna previa audiencia de representantes con modalidades, formación y supuestos excepcionales.</p></div></details>
+ <details class="qa"><summary>¿Acceso a dispositivos corporativos?</summary><div class="a"><p>Art. 87: derecho a la intimidad; acceso solo con criterios previos (política de uso aceptable) con participación de representantes e información al trabajador; si hay uso privado, definir supuestos; nunca información privada sin advertencia.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s4" data-cat="aepd"><div class="sec-top"><span class="num">04</span><div class="sec-titles"><h2>Delegado de Protección de Datos (DPD)</h2><p class="sec-desc">Obligatoriedad, funciones y garantías.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/4-dpd" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Cuándo es obligatorio?</summary><div class="a"><p>Art. 37 RGPD: autoridades/organismos públicos; observación habitual/sistemática a gran escala; gran escala de categorías especiales/condenas. Art. 34 LOPDGDD añade: colegios profesionales, centros docentes, operadores telecom, entidades de crédito/aseguradoras/inversión, energía, centros sanitarios, seguridad privada, federaciones con datos de menores, etc.</p></div></details>
+ <details class="qa"><summary>¿Funciones del DPD?</summary><div class="a"><p>Art. 39: informar/asesorar; supervisar cumplimiento (formación, auditorías); asesorar en EIPD; cooperar con la AEPD y ser punto de contacto; atender a interesados.</p></div></details>
+ <details class="qa"><summary>¿Externo y garantías?</summary><div class="a"><p>Sí, personal o externo por contrato; un DPD por grupo accesible. Art. 38: publicar contacto y comunicar a la AEPD (10 días); sin instrucciones; informa al más alto nivel; inamovible; sin conflicto de intereses.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s5" data-cat="aepd"><div class="sec-top"><span class="num">05</span><div class="sec-titles"><h2>Publicidad no deseada</h2><p class="sec-desc">Llamadas, SMS, email y postal.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/5-publicidad-no-deseada" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Llamadas comerciales sin consentimiento?</summary><div class="a"><p>Desde 29-6-2023, art. 66.1.b Ley 11/2022 exige consentimiento previo, salvo relación contractual previa con productos similares y oposición posible (soft opt-in art. 21.2 LSSI). Consultar Lista Robinson antes de campañas por interés legítimo (art. 23.2 LOPDGDD).</p></div></details>
+ <details class="qa"><summary>¿Email publicitario sin consentimiento?</summary><div class="a"><p>Prohibido sin consentimiento expreso (art. 21.1 LSSI). Excepción soft opt-in: relación previa, datos lícitos, productos similares y oposición sencilla y gratuita en recogida y cada envío.</p></div></details>
+ <details class="qa"><summary>¿Sigo recibiendo publicidad tras oponerme?</summary><div class="a"><p>Conserva pruebas, reitera oposición, verifica Lista Robinson y reclama ante la AEPD identificando al responsable.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s6" data-cat="aepd"><div class="sec-top"><span class="num">06</span><div class="sec-titles"><h2>Transferencias internacionales, BCR y códigos</h2><p class="sec-desc">Envío de datos fuera del EEE (arts. 44-49 RGPD).</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/6-transferencias-internacionales-bcr-codigos-de-conducta" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Decisión de adecuación?</summary><div class="a"><p>Decisión de la Comisión (art. 45) que declara nivel adecuado; permite transferir sin garantías adicionales. Vigentes: Andorra, Argentina, Canadá (comercial), Corea, EAU (sector), EE.UU. (Data Privacy Framework), Faroe, Guernsey, Israel, Isla de Man, Japón, Jersey, NZ, RU, Suiza.</p></div></details>
+ <details class="qa"><summary>¿Cláusulas tipo y BCR?</summary><div class="a"><p>CCT: Decisión (UE) 2021/914 (4 módulos). Tras Schrems II, evaluar el destino (TIA) y adoptar medidas suplementarias si el nivel no es equivalente. BCR (art. 47): políticas internas aprobadas por autoridad para transferencias intragrupo.</p></div></details>
+ <details class="qa"><summary>¿Excepciones art. 49?</summary><div class="a"><p>Consentimiento explícito; contrato/medidas precontractuales; contrato en interés del interesado; interés público; intereses vitales; reconocimiento/defensa de derechos; registros públicos. Restrictivas: no para transferencias masivas/sistemáticas.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s7" data-cat="aepd"><div class="sec-top"><span class="num">07</span><div class="sec-titles"><h2>Solvencia patrimonial (ficheros de morosos)</h2><p class="sec-desc">Inclusión, consulta y exclusión.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/7-solvencia-patrimonial" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Requisitos para incluirme?</summary><div class="a"><p>Art. 20 LOPDGDD: requerimiento previo; deuda cierta/vencida/exigible (>50 € físicos / >400 € jurídicos); <5 años; deber de información al contratar. Falta alguno = indebida.</p></div></details>
+ <details class="qa"><summary>¿Cuánto tiempo conservan mis datos?</summary><div class="a"><p>Máx. 5 años desde exigible; después suprimirse aunque subsista. El pago no exige supresión inmediata pero da derecho a que conste.</p></div></details>
+ <details class="qa"><summary>¿Inclusión indebida?</summary><div class="a"><p>Ejercer acceso/rectificación/supresión; si no atienden en un mes, reclamación AEPD. Además indemnización judicial, incluidos daños morales.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s8" data-cat="aepd"><div class="sec-top"><span class="num">08</span><div class="sec-titles"><h2>Videovigilancia</h2><p class="sec-desc">Cámaras, control laboral y comunidades.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/8-videovigilancia" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Instalar cámaras = tratamiento?</summary><div class="a"><p>Sí: la imagen identifica; captar/grabar/conservar/acceder es tratamiento sujeto a RGPD (Guía de Videovigilancia).</p></div></details>
+ <details class="qa"><summary>¿Obligaciones al instalar?</summary><div class="a"><p>Proporcionalidad (solo sin medios menos invasivos); cartel visible; información completa; conservación máx. 1 mes salvo excepciones; no captar vía pública salvo franja mínima.</p></div></details>
+ <details class="qa"><summary>¿Comunidad de vecinos?</summary><div class="a"><p>Acuerdo previo de la Junta; comunidad responsable, administrador encargado; solo zonas comunes; cartel; grabaciones 1 mes; acceso solo autorizado.</p></div></details>
+ <details class="qa"><summary>¿Cámaras ficticias / cámara propia?</summary><div class="a"><p>Ficticias: sin captar no hay tratamiento. Grabaciones domésticas amparadas por excepción doméstica (art. 2.2.c) si no se difunden; difundir íntimos sin consentimiento da lugar a Canal Prioritario.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s9" data-cat="aepd"><div class="sec-top"><span class="num">09</span><div class="sec-titles"><h2>Comunidades de propietarios</h2><p class="sec-desc">Gestión de fincas.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/9-comunidades-de-propietarios" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Se aplica la normativa?</summary><div class="a"><p>Sí cuando tratan datos de personas físicas (propietarios, arrendatarios, empleados). Comunidad responsable, administrador encargado. AEPD no resuelve disputas vecinales.</p></div></details>
+ <details class="qa"><summary>¿Lista de morosos en el tablón?</summary><div class="a"><p>Regla general no: vulnera confidencialidad. Art. 9.1.h LPH solo edictos si no es posible notificar, contenido mínimo y plazo limitado. Publicar nombres+deudas ha sido sancionado.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s10" data-cat="aepd"><div class="sec-top"><span class="num">10</span><div class="sec-titles"><h2>Menores y educación</h2><p class="sec-desc">Consentimiento, centros y Canal Joven.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/10-menores-y-educacion" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Edad para consentir?</summary><div class="a"><p>14 años (art. 7.1 LOPDGDD). Menos de 14: patria potestad/tutela y lenguaje adaptado. Misma regla para servicios de la sociedad de la información.</p></div></details>
+ <details class="qa"><summary>¿Fotos de alumnos sin autorización?</summary><div class="a"><p>No: consentimiento específico/informado/expreso de padres/tutores, distinto por finalidad; minimización; retirada en cualquier momento.</p></div></details>
+ <details class="qa"><summary>¿Canal Joven?</summary><div class="a"><p>Recursos en tudecideseninternet.es (ciberacoso, sexting, grooming); Canal Prioritario para retirada urgente de íntimos (72 h).</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s11" data-cat="aepd"><div class="sec-top"><span class="num">11</span><div class="sec-titles"><h2>Transparencia y protección de datos</h2><p class="sec-desc">Publicidad activa y acceso a información pública.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/11-transparencia-y-pd" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Transparencia vs RGPD?</summary><div class="a"><p>Sin datos o con no sensibles rige acceso (Ley 19/2013); con datos personales, art. 5.2 LOPDGDD remite al 15.3 Ley 19/2013: ponderación expresa (finalidad, legitimación, menores, categorías especiales, tiempo), seudonimización/acceso parcial.</p></div></details>
+ <details class="qa"><summary>¿Retribuciones de empleados públicos?</summary><div class="a"><p>Art. 8.1.b: publicidad activa de altos cargos/máximos responsables. Resto: agregadas por categoría/puesto; nominal exige ponderación.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s12" data-cat="aepd"><div class="sec-top"><span class="num">12</span><div class="sec-titles"><h2>Sede electrónica de la AEPD</h2><p class="sec-desc">Trámites y gestiones.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://sedeaepd.gob.es/sede-electronica/home" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Acceso y trámites?</summary><div class="a"><p>sedeaepd.gob.es con certificado/DNIe/Cl@ve: tutela, denuncias, consultas, brechas (72 h), nombramiento DPD (10 días), códigos de conducta. Justificante con CSV.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s13" data-cat="aepd"><div class="sec-top"><span class="num">13</span><div class="sec-titles"><h2>Reclamaciones</h2><p class="sec-desc">Cómo y cuándo reclamar.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/13-reclamaciones" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Reclamar antes al responsable?</summary><div class="a"><p>Para derechos sí (requerimiento previo; solo si no responde/deniega cabe reclamación). Otras vulneraciones: denuncia directa.</p></div></details>
+ <details class="qa"><summary>¿Plazos y coste?</summary><div class="a"><p>Admisión 3 meses (silencio=admitida); tutela 9 meses; sancionador 9-12. Gratuita, sin abogado ni costas.</p></div></details>
+ <details class="qa"><summary>¿Sanciones?</summary><div class="a"><p>Muy graves hasta 20 M€ o 4%; graves 10 M€ o 2%; leves hasta 400.000 €. Gradúan por gravedad, duración, intencionalidad, cooperación. Compatible con indemnizaciones.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s14" data-cat="aepd"><div class="sec-top"><span class="num">14</span><div class="sec-titles"><h2>Procesos electorales</h2><p class="sec-desc">Datos por partidos en campaña.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/14-procesos-electorales" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Datos de redes por partidos?</summary><div class="a"><p>No sin base: STC 76/2019 anuló art. 58 bis.2 LOREG (recopilar opiniones políticas de webs/fuentes públicas) por vulnerar arts. 16.1 y 18.4 CE.</p></div></details>
+ <details class="qa"><summary>¿Propaganda email/SMS?</summary><div class="a"><p>Consentimiento previo y expreso (art. 21.1 LSSI); no soft opt-in. Postal amparada en art. 53 LOREG con censo; cabe exclusión de copias del censo.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s15" data-cat="aepd"><div class="sec-top"><span class="num">15</span><div class="sec-titles"><h2>Canal prioritario contenidos sensibles</h2><p class="sec-desc">Difusión no consentida de íntimos.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/canalprioritario" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Retirada urgente?</summary><div class="a"><p>Formulario aepd.es/canalprioritario con hechos, plataforma, URL y pruebas. Especial vulnerabilidad → orden de retirada en 72 h. Adheridos: Google, Meta, X, TikTok, Snapchat, Telegram, adultas. Tramitación anónima posible.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s16" data-cat="aepd"><div class="sec-top"><span class="num">16</span><div class="sec-titles"><h2>Salud</h2><p class="sec-desc">Historia clínica y datos de salud.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/16-salud" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Quién accede a mi historia clínica?</summary><div class="a"><p>Paciente (art. 16 Ley 41/2002) y personal implicado (secreto). Terceros solo supuestos tasados; familiares solo con autorización o excepción legal.</p></div></details>
+ <details class="qa"><summary>¿Conservación?</summary><div class="a"><p>Mínimo 5 años desde cada alta (art. 17); garantías de seguridad; CCAA pueden ampliar.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s17" data-cat="aepd"><div class="sec-top"><span class="num">17</span><div class="sec-titles"><h2>Internet y redes sociales</h2><p class="sec-desc">Olvido, publicaciones y perfiles.</p></div><span class="tag tag-aepd">AEPD</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.aepd.es/preguntas-frecuentes/17-internet-y-redes-sociales" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Olvido frente a buscador?</summary><div class="a"><p>Solicitud al buscador; responde en un mes; si no, reclamación AEPD (pondera relevancia, papel público, interés, tiempo).</p></div></details>
+ <details class="qa"><summary>¿Foto publicada por tercero?</summary><div class="a"><p>Pedir supresión al autor/plataforma (art. 17); si no, reclamación AEPD; íntimos sin consentimiento → Canal Prioritario. Difusión no consentida puede ser ilícito penal (art. 197.7 CP).</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s18" data-cat="ccn"><div class="sec-top"><span class="num">18</span><div class="sec-titles"><h2>El CCN-CERT</h2><p class="sec-desc">Capacidad de Respuesta a Incidentes del CNI.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html" target="_blank" rel="noopener">Fuente ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es?</summary><div class="a"><p>Capacidad de Respuesta a Incidentes del CCN (CNI). Centro de alerta y respuesta nacional para AAPP, entidades vinculadas y operadores esenciales; detección temprana, respuesta, avisos, herramientas, coordinación.</p></div></details>
+ <details class="qa"><summary>¿CCN-CERT vs INCIBE-CERT vs ESPDEF-CERT?</summary><div class="a"><p>CCN-CERT: sector público/esenciales. INCIBE-CERT: ciudadanos/pymes/privadas no CCN. ESPDEF-CERT: Defensa. Coordinación (RD 311/2022, Ley 36/2015, PIC/N) cuando cruza ámbitos.</p></div></details>
+ <details class="qa"><summary>¿Normativa de sustento?</summary><div class="a"><p>Ley 11/2002 (CNI); RD 421/2004 (CCN); RD 311/2022 (ENS, coordinación nacional); Ley 8/2011; transposición NIS2. Guías CCN-STIC de referencia.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s19" data-cat="ccn"><div class="sec-top"><span class="num">19</span><div class="sec-titles"><h2>ENS: fundamentos</h2><p class="sec-desc">RD 311/2022, deroga RD 3/2010.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" rel="noopener">CCN-STIC 800 ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y a quién obliga?</summary><div class="a"><p>Marco con principios, requisitos mínimos y medidas para proteger CIA+autenticidad+trazabilidad de información/servicios electrónicos del sector público. Obliga a AAPP y privadas que prestan servicios/proveen soluciones a AAPP por contrato/convenio.</p></div></details>
+ <details class="qa"><summary>¿ENS vs RGPD?</summary><div class="a"><p>Complementarios no equivalentes: RGPD datos personales; ENS sistemas públicos (con o sin datos). ENS facilita demostrar art. 32 RGPD pero no sustituye obligaciones RGPD.</p></div></details>
+ <details class="qa"><summary>¿Novedades RD 311/2022?</summary><div class="a"><p>Gestión continua; catálogo alineado con ISO 27001/27002:2022; más peso a ciberseguridad operativa e incidentes; niveles crítico/muy alto; refuerzo responsabilidad; extensión a sector público institucional; ITS de notificación.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s20" data-cat="ccn"><div class="sec-top"><span class="num">20</span><div class="sec-titles"><h2>Categorización y niveles</h2><p class="sec-desc">Básica/media/alta + crítico/muy alto.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" rel="noopener">CCN-STIC-803 ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Categorizar un sistema?</summary><div class="a"><p>Asignar nivel (bajo/medio/alto) según impacto de un incidente sobre las cinco dimensiones. Antes de producción y revisión periódica/ante cambios.</p></div></details>
+ <details class="qa"><summary>¿Dimensiones con distinto impacto?</summary><div class="a"><p>Categoría global = la más exigente de todas las dimensiones.</p></div></details>
+ <details class="qa"><summary>¿«No aplica» vs «No definido»?</summary><div class="a"><p>Cumplimentar es obligatorio. «No definido» = medida aplicable no implementada (impide indicador). «No aplica» solo si realmente no aplica. Sin sistemas de una categoría: «0».</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s21" data-cat="ccn"><div class="sec-top"><span class="num">21</span><div class="sec-titles"><h2>Medidas, auditoría y certificación ENS</h2><p class="sec-desc">Declaración/Certificación (arts. 34 y 38).</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" rel="noopener">Guías auditoría ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Declaración vs Certificación?</summary><div class="a"><p>Declaración: autoevaluación (básica). Certificación: auditoría por entidad acreditada (ENAC), obligatoria media/alta; validez 2 años con renovación. Guías 806/807.</p></div></details>
+ <details class="qa"><summary>¿ISO/IEC 15408?</summary><div class="a"><p>Certificación de referencia para evaluar seguridad de productos TIC; garantías independientes; valorada en productos cualificados ENS.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s22" data-cat="ccn"><div class="sec-top"><span class="num">22</span><div class="sec-titles"><h2>Notificación y gestión de incidentes</h2><p class="sec-desc">ITS de Notificación de Incidentes.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">Avisos ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿A quién notificar?</summary><div class="a"><p>Sujetos ENS: CCN-CERT en general; coordinación Interior/ESPDEF según ámbito; privadas no ENS a INCIBE-CERT. ITS concreta plazos/canales (LUCIA)/contenido. Notificación tan pronto como se detecte y en todo caso 24 h.</p></div></details>
+ <details class="qa"><summary>¿Reconexión tras incidente grave?</summary><div class="a"><p>No automática: informe técnico CCN-CERT (exposición, causas, paliativas, riesgo residual) y autorización formal del órgano competente (SGAD). Guía 814.</p></div></details>
+ <details class="qa"><summary>¿SAT?</summary><div class="a"><p>Sondas + correlación + análisis forense + alertas para detectar anomalías/ataques en redes adheridas. Adhesión voluntaria, recomendada media/alta.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s23" data-cat="ccn"><div class="sec-top"><span class="num">23</span><div class="sec-titles"><h2>Herramientas del CCN</h2><p class="sec-desc">PILAR, INES, CLARA, CARMEN, LUCIA.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">Catálogo ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿PILAR e INES?</summary><div class="a"><p>PILAR: análisis/gestión formal de riesgos (sustenta Declaración de Aplicabilidad y plan de tratamiento). INES: gobernanza/reporting de cumplimiento ENS. Gratuitas sector público.</p></div></details>
+ <details class="qa"><summary>¿CLARA, CARMEN, LUCIA?</summary><div class="a"><p>CLARA: auditoría configuración segura (Windows/Linux vs 600/620). CARMEN: detección APT por tráfico. LUCIA: gestión de ciberincidentes del CCN-CERT.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s24" data-cat="ccn"><div class="sec-top"><span class="num">24</span><div class="sec-titles"><h2>Glosario rápido de ciberseguridad</h2><p class="sec-desc">Conceptos base.</p></div><span class="tag tag-ccn">CCN</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">Guías ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Tríada CIA?</summary><div class="a"><p>Confidencialidad, Integridad, Disponibilidad. ENS añade Autenticidad y Trazabilidad.</p></div></details>
+ <details class="qa"><summary>¿Amenaza, vulnerabilidad, riesgo?</summary><div class="a"><p>Amenaza: evento potencial; vulnerabilidad: debilidad explotable; riesgo = probabilidad × impacto considerando salvaguardas. Gestión: identificar, estimar, tratar, revisar.</p></div></details>
+ <details class="qa"><summary>¿APT, mínimo privilegio, defensa en profundidad?</summary><div class="a"><p>APT: ataque dirigido/prolongado con recursos. Mínimo privilegio: solo permisos necesarios. Defensa en profundidad: capas superpuestas.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s25" data-cat="iso"><div class="sec-top"><span class="num">25</span><div class="sec-titles"><h2>ISO/IEC 27001 — SGSI</h2><p class="sec-desc">UNE-ISO/IEC 27001:2023 (2022 + Amd 1:2024).</p></div><span class="tag tag-iso">ISO</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener">iso.org ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y qué certifica?</summary><div class="a"><p>Norma de requisitos para SGSI basada en gestión del riesgo; aplicable a cualquier organización; única certificable de la familia 27000. En España UNE-ISO/IEC 27001:2023.</p></div></details>
+ <details class="qa"><summary>¿Estructura (4-10)?</summary><div class="a"><p>Anexo SL: 4 Contexto; 5 Liderazgo; 6 Planificación; 7 Soporte; 8 Operación; 9 Evaluación desempeño; 10 Mejora. Anexo A controles de referencia.</p></div></details>
+ <details class="qa"><summary>¿Amd 1:2024?</summary><div class="a"><p>Añade cambio climático: 4.1 «determinar si el cambio climático es cuestión pertinente»; 4.2 Nota 2 (partes interesadas con requisitos de clima). No modifica Anexo A.</p></div></details>
+ <details class="qa"><summary>¿Evaluación/tratamiento riesgos (6.1)?</summary><div class="a"><p>Criterios de aceptación/evaluación; identificar riesgos de pérdida CIA; analizar consecuencias/probabilidad; priorizar; seleccionar controles, comparar con Anexo A, SoA y plan de tratamiento aprobado.</p></div></details>
+ <details class="qa"><summary>¿SoA?</summary><div class="a"><p>Obligatoria (6.1.3 d): controles seleccionados, justificación inclusión, estado, justificación exclusiones. Documento central revisado en auditoría.</p></div></details>
+ <details class="qa"><summary>¿Certificación?</summary><div class="a"><p>Entidad acreditada (ENAC), no ISO. Ciclo 3 años: inicial 2 fases, seguimientos anuales, renovación. Exige SGSI operativo y mejora continua.</p></div></details>
+ <details class="qa"><summary>¿Obliga a todos los controles?</summary><div class="a"><p>No: Anexo A catálogo de referencia; selección según riesgos justificando en SoA. Obligatorio cláusulas 4-10.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s26" data-cat="iso"><div class="sec-top"><span class="num">26</span><div class="sec-titles"><h2>ISO/IEC 27002 — Controles</h2><p class="sec-desc">93 controles en 4 temas con atributos.</p></div><span class="tag tag-iso">ISO</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.iso.org/standard/75652.html" target="_blank" rel="noopener">iso.org ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y diferencia con 27001?</summary><div class="a"><p>Desarrolla/explica controles del Anexo A (propósito/orientación). No certificable: guía de buenas prácticas.</p></div></details>
+ <details class="qa"><summary>¿4 temas y ejemplos?</summary><div class="a"><p>5 Organización (políticas 5.1, segregación 5.3, inteligencia amenazas 5.7, inventario 5.9, clasificación 5.12, acceso 5.15-18, proveedores/nube 5.19-23, incidentes 5.24-28, continuidad 5.29-30, legal 5.31-36); 6 Personas (antecedentes 6.1, confidencialidad 6.6, teletrabajo 6.7); 7 Físicos (perímetros 7.1, vigilancia 7.4, puesto despejado 7.7, baja segura 7.14); 8 Tecnológicos (privilegios 8.2, código fuente 8.4, malware 8.7, vulnerabilidades 8.8, configuración 8.9, eliminación 8.10, enmascaramiento 8.11, fugas 8.12, copias 8.13, logs 8.15, monitorización 8.16, criptografía 8.24, desarrollo seguro 8.25-34).</p></div></details>
+ <details class="qa"><summary>¿Atributos?</summary><div class="a"><p>Etiquetas: tipo (#Preventivo/#Detectivo/#Correctivo), propiedades CIA, conceptos ciber (#Identificar/#Proteger/#Detectar/#Responder/#Recuperar), capacidades, dominios. Permiten vistas y correspondencia con NIST/ENS/NIS2.</p></div></details>
+ <details class="qa"><summary>¿Correspondencia 2013?</summary><div class="a"><p>Anexo B tabla 2022↔2013; 11 nuevos: 5.7, 5.23, 5.30, 7.4, 8.9, 8.10, 8.11, 8.12, 8.16, 8.23, 8.28. Total 114→93.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s27" data-cat="ue"><div class="sec-top"><span class="num">27</span><div class="sec-titles"><h2>Directiva NIS2 y Reg. Ejec.</h2><p class="sec-desc">Dir. (UE) 2022/2555 y Reg. Ejec. (UE) 2024/2690.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y deroga?</summary><div class="a"><p>Dir. (UE) 2022/2555 (14-12-2022); deroga NIS1. Amplía sectores, distingue esenciales/importantes, refuerza gestión riesgos (art. 21), notificación (23), dirección (20), sanciones. Transposición 17-10-2024; aplicación 18-10-2024.</p></div></details>
+ <details class="qa"><summary>¿Esenciales e importantes?</summary><div class="a"><p>Esenciales: Anexo I alta criticidad que superan mediana; prestadores cualificados confianza; DNS/TLD; telecom públicas; Administración central; CER; proveedor único; seguridad pública; riesgo sistémico. Importantes: resto Anexos I/II que superan pequeña.</p></div></details>
+ <details class="qa"><summary>¿Sectores Anexo I?</summary><div class="a"><p>Energía, transporte, banca, mercados financieros, sanidad, agua potable/residual, infraestructura digital, TIC B2B, administraciones, espacio.</p></div></details>
+ <details class="qa"><summary>¿Anexo II?</summary><div class="a"><p>Postales, residuos, químicos, alimentación, fabricación, proveedores digitales (mercados/buscadores/redes), investigación.</p></div></details>
+ <details class="qa"><summary>¿Medidas art. 21?</summary><div class="a"><p>All-hazards: análisis riesgos; incidentes; continuidad/copias/crisis; cadena suministro; adquisición/desarrollo/mantenimiento + divulgación vulnerabilidades; eficacia; higiene/formación; criptografía; RRHH/acceso/activos; MFA/autenticación continua.</p></div></details>
+ <details class="qa"><summary>¿Notificación art. 23?</summary><div class="a"><p>Alerta ≤24 h; notificación ≤72 h (evaluación, gravedad, IoC); intermedio si se solicita; final ≤1 mes. Prestadores cualificados: 24 h.</p></div></details>
+ <details class="qa"><summary>¿Gobernanza art. 20?</summary><div class="a"><p>Dirección aprueba/supervisa y responde (personas físicas directivas responsables, incluso prohibición temporal en esenciales). Formación directivos y empleados.</p></div></details>
+ <details class="qa"><summary>¿Sanciones?</summary><div class="a"><p>Esenciales ≥10 M€ o 2% mundial; importantes ≥7 M€ o 1,4%. Medidas no monetarias como última ratio con garantías.</p></div></details>
+ <details class="qa"><summary>¿Cooperación y Reg. Ejec. 2024/2690?</summary><div class="a"><p>Grupo Cooperación, red CSIRT, EU-CyCLONe, puntos únicos, divulgación coordinada, base vulnerabilidades ENISA. Reg. Ejec. concreta requisitos art. 21 para DNS/TLD, nube, CPD, CDN, gestionados, mercados/buscadores/redes, confianza; apoya en ISO 27001/27002.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s28" data-cat="ue"><div class="sec-top"><span class="num">28</span><div class="sec-titles"><h2>CRA · Guía 2026, SbD y SBOM</h2><p class="sec-desc">Reg. (UE) 2024/2847 + Guía C(2026) 5252 + ENISA SbD + CISA SBOM.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation" target="_blank" rel="noopener">Guía Comisión ↗</a><a class="src" href="https://github.com/enisaeu/enisa-sbd-playbook/" target="_blank" rel="noopener">ENISA SbD ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y a quién afecta?</summary><div class="a"><p>Reg. (UE) 2024/2847 (20-11-2024): requisitos horizontales de ciberseguridad para comercialización de productos con elementos digitales (PDE) en todo el ciclo de vida. Afecta a fabricantes/distribuidores/importadores/usuarios profesionales. Excluye productos con legislación sectorial equivalente.</p></div></details>
+ <details class="qa"><summary>¿Fechas escalonadas?</summary><div class="a"><p>Vigor 10-12-2024. Notificación vulnerabilidades explotadas/incidentes: 11-9-2026. Requisitos esenciales + conformidad + marcado CE: 11-12-2027.</p></div></details>
+ <details class="qa"><summary>¿Cuándo se «comercializa»?</summary><div class="a"><p>Primera puesta a disposición para distribución marca entrada y soporte (v1.0.0 suministrada 1-1-2028 = comercializada 1-1-2028). Variantes con componentes/configuraciones/funcionalidades distintas = productos distintos, no copias. Webs que no respaldan función del PDE no entran; código inacabado en fase de diseño/pruebas y código de muestra/demo no se consideran comercializados.</p></div></details>
+ <details class="qa"><summary>¿FOSS sujeto?</summary><div class="a"><p>Depende de actividad comercial. Colaborador con pull/merge y mantenedores que lo incorporan: NO sujeto. Donaciones voluntarias de empresas que integran FOSS: NO. SÍ quien pone edición de pago/empresarial bajo acuerdo comercial, o versiones/actualizaciones solo a donantes.</p></div></details>
+ <details class="qa"><summary>¿Modificación sustancial?</summary><div class="a"><p>Cambio que altera cumplimiento de requisitos esenciales o perfil de riesgo → reevaluar. Evaluación abarca producto en su totalidad. Software con versiones sustanciales: cada versión con soporte declarado (art. 13.8), actualizaciones esperadas y acceso gratuito a la última. No confundir con integración (el integrador comercializa un producto nuevo, no modifica uno ya comercializado).</p></div></details>
+ <details class="qa"><summary>¿Soporte mínimo?</summary><div class="a"><p>Vida útil esperada o mínimo 5 años (lo mayor). Actualizaciones gratuitas, automáticas por defecto, fáciles, transparentes; gestión de vulnerabilidades con parches proporcionados a severidad.</p></div></details>
+ <details class="qa"><summary>¿SBOM (CISA 2026)?</summary><div class="a"><p>Inventario estructurado de componentes. Elementos mínimos: campos (autor, proveedor, nombre, versión, PURL/CPE, hashes), automatización (SPDX, CycloneDX) y prácticas de generación/actualización. Gestión de vulnerabilidades con OpenVEX/CSAF y NIST NVD. El CRA lo exige como parte de documentación técnica. El campo proveedor usa nombres completos, no acrónimos.</p></div></details>
+ <details class="qa"><summary>¿Playbook ENISA SbD?</summary><div class="a"><p>Traduce principios a acciones verificables: privilegio mínimo (identidades únicas, sin administradores compartidos), defensa en profundidad (capas, detección multicapa, ralentizar atacantes), identidad criptográfica única por dispositivo y secretos únicos por defecto (sin credenciales compartidas, protección contra extracción, revocación). Evidencias mínimas y «cumplimiento como código» con OSCAL. Guía introductoria, no manual exhaustivo.</p></div></details>
+ <details class="qa"><summary>¿Competencia técnica evaluadores CRA?</summary><div class="a"><p>Documento v1.0 define competencias por rol (evaluador, responsable, equipo) y apartado (3.2.x) con niveles B/H. Organismos notificados: Módulo B = EN ISO/IEC 17065; Módulo H = EN ISO/IEC 17021-1.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s29" data-cat="ue"><div class="sec-top"><span class="num">29</span><div class="sec-titles"><h2>DORA: Reglamento (UE) 2022/2554</h2><p class="sec-desc">Resiliencia operativa digital del sector financiero.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y desde cuándo?</summary><div class="a"><p>Resiliencia operativa digital del sector financiero; aplicable desde 17-1-2025. Lex specialis frente a NIS2 para entidades financieras. Modifica varios reglamentos/directivas financieras.</p></div></details>
+ <details class="qa"><summary>¿Ámbito y exclusiones?</summary><div class="a"><p>21 categorías (crédito, pago, dinero electrónico, inversión, cripto, DCV, ECC, centros negociación, registros, GFIA, gestoras, suministro datos, seguros, intermediarios, FPE, rating, índices, financiación participativa, titulización, proveedores TIC). Excluidos: GFIA exentos, aseguradoras exentas Solvencia II, FPE ≤15, exentos MiFID, intermediarios micro/pymes, cheques postales.</p></div></details>
+ <details class="qa"><summary>¿Gobernanza (art. 5)?</summary><div class="a"><p>Órgano de dirección con responsabilidad última: estrategia, políticas CIA, cometidos, aprobar/supervisar terceros, continuidad, presupuesto; en no micro, cargo específico de seguimiento de acuerdos TIC.</p></div></details>
+ <details class="qa"><summary>¿Marco gestión riesgo TIC (art. 6)?</summary><div class="a"><p>Identificar-proteger-prevenir, detectar, responder-recuperar, aprender-comunicar; revisión anual; auditoría interna (no micro); estrategia con KPI; multiproveedor opcional; externalización de verificaciones manteniendo responsabilidad.</p></div></details>
+ <details class="qa"><summary>¿Incidentes (17-23)?</summary><div class="a"><p>Registrar todos; clasificar con RTS 2024/1772; notificar graves (RTS 2025/301); notificar voluntariamente ciberamenazas importantes; comunicar a clientes; registrar también operativos/de pagos graves.</p></div></details>
+ <details class="qa"><summary>¿Pruebas y TLPT (24-27)?</summary><div class="a"><p>Programa proporcional; anuales para funciones esenciales/importantes; TLPT (TIBER-EU) cada 3 años para esenciales identificadas; probadores cualificados; reconocimiento mutuo.</p></div></details>
+ <details class="qa"><summary>¿Riesgo de terceros (28-30)?</summary><div class="a"><p>Responsabilidad plena; registro de acuerdos (ITS 2024/2956); evaluación previa; estrategias de salida; cláusulas mínimas; evaluar concentración y subcontratación en terceros países.</p></div></details>
+ <details class="qa"><summary>¿Supervisión de esenciales?</summary><div class="a"><p>Designación conjunta AES con criterios de sustituibilidad/dependencia/impacto; supervisor principal; Foro y Red de Supervisión; información/inspección/recomendaciones; multas coercitivas hasta 1% diario; CTPP terceros países: filial UE en 12 meses.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s30" data-cat="ue"><div class="sec-top"><span class="num">30</span><div class="sec-titles"><h2>DORA · Gestión riesgo TIC (RTS 2024/1774)</h2><p class="sec-desc">Herramientas/métodos/procesos + marco simplificado.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2024/1774/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué regula?</summary><div class="a"><p>Completa arts. 15-16: políticas/procedimientos/herramientas de seguridad TIC (Título II) y marco simplificado (Título III) para entidades art. 16.1. Proporcional.</p></div></details>
+ <details class="qa"><summary>¿Cifrado (2-7)?</summary><div class="a"><p>Políticas con indicadores/responsabilidades; cifrado reposo/tránsito/uso si procede; gestión de claves ciclo completo y atención a amenazas cuánticas; registro de certificados para esenciales/importantes.</p></div></details>
+ <details class="qa"><summary>¿Operaciones/parches (8-12)?</summary><div class="a"><p>Separación producción/desarrollo/pruebas (pruebas en producción solo casos aprobados); exploraciones semanales para esenciales; divulgación responsable; parches con plazos/escalada; logs protegidos y relojes sincronizados.</p></div></details>
+ <details class="qa"><summary>¿Continuidad (24-26)?</summary><div class="a"><p>RTO/RPO; ECC conmutación ≤2 h con centro secundario geográfico distinto; DCV ≤2 h; centros negociación ≤2 h pérdida ~0; pruebas con conmutación/ciberataques/clima/pandemias/cortes; documentar y actualizar.</p></div></details>
+ <details class="qa"><summary>¿Marco simplificado?</summary><div class="a"><p>Gobernanza con responsabilidad del órgano; política única de seguridad; clasificación; acceso con autenticación fuerte; copias con pruebas anuales; informe de revisión electrónico.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s31" data-cat="ue"><div class="sec-top"><span class="num">31</span><div class="sec-titles"><h2>DORA · Clasificación incidentes (RTS 2024/1772)</h2><p class="sec-desc">Criterios y umbrales.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2024/1772/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Criterios?</summary><div class="a"><p>Clientes/contrapartes/transacciones; reputación; duración/interrupción; geografía; pérdidas de datos; esencialidad; consecuencias económicas.</p></div></details>
+ <details class="qa"><summary>¿Cuándo es grave?</summary><div class="a"><p>Afecta servicios esenciales y alcanza umbral de acceso malintencionado con posible pérdida de datos, o cumple ≥2 de los demás umbrales. Recurrentes: ≥2 en 6 meses misma causa (no micro/simplificado).</p></div></details>
+ <details class="qa"><summary>¿Umbrales?</summary><div class="a"><p>&gt;10% clientes o &gt;100.000; &gt;30% contrapartes; &gt;10% transacciones; incidente &gt;24 h o interrupción &gt;2 h en esenciales; ≥2 Estados; costes &gt;100.000 €.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s32" data-cat="ue"><div class="sec-top"><span class="num">32</span><div class="sec-titles"><h2>DORA · Notificación incidentes (RTS 2025/301)</h2><p class="sec-desc">Inicial/intermedia/final.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2025/301/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Plazos?</summary><div class="a"><p>Inicial lo antes posible y ≤4 h desde clasificación grave y ≤24 h desde conocimiento; intermedia ≤72 h desde inicial; final ≤1 mes desde intermedia. Fin de semana/festivo: antes del mediodía del siguiente hábil (salvo crédito/ECC/centros/esenciales NIS2).</p></div></details>
+ <details class="qa"><summary>¿Contenido?</summary><div class="a"><p>Inicial: código, fechas, descripción, criterios, Estados, origen, continuidad. Intermedia: tipo, amenazas, áreas, repercusiones, medidas. Final: causas, resolución, costes, recurrentes.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s33" data-cat="ue"><div class="sec-top"><span class="num">33</span><div class="sec-titles"><h2>DORA · Armonización supervisión (RTS 2025/295)</h2><p class="sec-desc">Inclusión voluntaria, información, plan corrector, subcontratación.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2025/295/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Inclusión voluntaria?</summary><div class="a"><p>Solicitud motivada con estructura, cuota, servicios, sustituibilidad, estrategia; AES decide en 6 meses.</p></div></details>
+ <details class="qa"><summary>¿Plan corrector?</summary><div class="a"><p>Informe con plan coherente con calendario del supervisor; informes intermedios/finales con justificantes.</p></div></details>
+ <details class="qa"><summary>¿Plantilla subcontratación?</summary><div class="a"><p>Inventario de acuerdos, tipos de servicios, subcontratistas, responsabilidades, accesos, ubicaciones, gobernanza, riesgos, continuidad, auditorías.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s34" data-cat="ue"><div class="sec-top"><span class="num">34</span><div class="sec-titles"><h2>DORA · Equipo Examen Conjunto (RTS 2025/420)</h2><p class="sec-desc">Composición, designación, tareas, modalidades.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_del/2025/420/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es?</summary><div class="a"><p>Equipo multidisciplinar (AES + autoridades) que apoya al supervisor principal en supervisión de cada CTPP.</p></div></details>
+ <details class="qa"><summary>¿Composición/modalidades?</summary><div class="a"><p>Designación por competencias; número con Red de Supervisión según intensidad/tamaño/representación; trabajo bajo coordinador con procedimientos comunes y confidencialidad; evaluación periódica de miembros para modificar composición.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s35" data-cat="ue"><div class="sec-top"><span class="num">35</span><div class="sec-titles"><h2>DORA · Registro de Información (ITS 2024/2956)</h2><p class="sec-desc">Plantillas del registro de acuerdos TIC.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="http://data.europa.eu/eli/reg_impl/2024/2956/oj" target="_blank" rel="noopener">EUR-Lex ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué regula?</summary><div class="a"><p>Plantillas normalizadas del registro de todos los acuerdos contractuales con proveedores terceros TIC (art. 28.3); base de supervisión y designación anual de esenciales.</p></div></details>
+ <details class="qa"><summary>¿Posición en cadena?</summary><div class="a"><p>Número natural ≥1; directo=1; subcontratistas &gt;1; mismos puestos comparten número; destinatario de subcontrata con posición n-1.</p></div></details>
+ <details class="qa"><summary>¿Plantillas?</summary><div class="a"><p>B_01.01-03 (entidad/consolidación/sucursales), B_02.01-03 (acuerdos), B_03.01-03 (firmantes), B_04.01 (usuarias), B_05.01-02 (proveedores/cadena), B_06.01 (funciones RTO/RPO), B_07.01 (evaluación), B_99.01 (terminología). Calidad: exactitud, completitud, coherencia, integridad, homogeneidad, validez.</p></div></details>
+ <details class="qa"><summary>¿Tipos de servicios TIC?</summary><div class="a"><p>S01-S19: proyectos, desarrollo, soporte, seguridad, datos, análisis, alojamiento, procesamiento, almacenamiento, telecom, red, hardware, licencias, operaciones, consultoría, riesgo TIC, IaaS, PaaS, SaaS.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s36" data-cat="ue"><div class="sec-top"><span class="num">36</span><div class="sec-titles"><h2>Reglamento de Inteligencia Artificial (AI Act)</h2><p class="sec-desc">Reg. (UE) 2024/1689: enfoque basado en riesgo.</p></div><span class="tag tag-ue">UE</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.consilium.europa.eu/es/policies/artificial-intelligence-act/" target="_blank" rel="noopener">Consejo UE ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es?</summary><div class="a"><p>Primer marco jurídico integral para la IA; seguridad, transparencia, trazabilidad y derechos fundamentales; se aplica a proveedores/desarrolladores/importadores/implantadores con efectos en la UE.</p></div></details>
+ <details class="qa"><summary>¿Niveles de riesgo?</summary><div class="a"><p>Inaceptable (prohibidas), alto (obligaciones estrictas), limitado (transparencia), mínimo (sin obligaciones).</p></div></details>
+ <details class="qa"><summary>¿Prácticas prohibidas?</summary><div class="a"><p>Manipulación subliminal, puntuación social, explotación de vulnerabilidades, identificación biométrica remota en tiempo real en espacios públicos (salvo excepciones), scraping facial no selectivo, inferencia de emociones en trabajo/educación.</p></div></details>
+ <details class="qa"><summary>¿Obligaciones alto riesgo?</summary><div class="a"><p>Gestión de riesgos, calidad/gobernanza de datos, documentación técnica, transparencia, supervisión humana, exactitud/robustez/ciberseguridad, evaluación de conformidad previa. Ámbitos: biometría, infraestructuras críticas, educación, empleo, servicios esenciales, aplicación ley, migración, justicia.</p></div></details>
+ <details class="qa"><summary>¿GPAI?</summary><div class="a"><p>Modelos versátiles con obligaciones de transparencia/documentación/derechos de autor; sistémicos (&gt;10²⁵ FLOP) añaden evaluaciones, pruebas adversarias, notificación de incidentes graves.</p></div></details>
+ <details class="qa"><summary>¿Entrada en aplicación?</summary><div class="a"><p>Vigor 1-8-2024; prohibiciones a los 6 meses; GPAI a los 12; alto riesgo Anexo III a los 24; alto riesgo Anexo I a los 36.</p></div></details>
+ </div></section>
+
+ <section class="sec" id="s37" data-cat="enx"><div class="sec-top"><span class="num">37</span><div class="sec-titles"><h2>TISAX — Manual del Participante</h2><p class="sec-desc">Evaluación e intercambio en automoción (ENX/VDA).</p></div><span class="tag tag-enx">ENX</span></div>
+ <div class="sec-actions"><button class="btn-all">Expandir todo</button><a class="src" href="https://www.enx.com/handbook/tph-es.html" target="_blank" rel="noopener">Manual oficial ↗</a></div>
+ <div class="qas">
+ <details class="qa" open><summary>¿Qué es y quién lo gestiona?</summary><div class="a"><p>Mecanismo de evaluación e intercambio de resultados de seguridad con reconocimiento mutuo para el sector automoción. Gestiona ENX Association; cuestionario base VDA ISA.</p></div></details>
+ <details class="qa"><summary>¿Proceso?</summary><div class="a"><p>Registro (alcance/objetivos), evaluación por proveedor aprobado, intercambio vía TISAX Exchange previa liberación explícita. Activo = evaluado; pasivo = receptor.</p></div></details>
+ <details class="qa"><summary>¿Objetivos y niveles AL?</summary><div class="a"><p>12 objetivos (Info high/very high, Confidential, Strictly confidential, High/Very high availability, Proto parts/vehicles, Test vehicles, Proto events, Data, Special data). AL2/AL3 según necesidad de protección.</p></div></details>
+ <details class="qa"><summary>¿Madurez y plan correctivo?</summary><div class="a"><p>Niveles 0-5 (Incompleto→Optimizando). Plan correctivo con causa raíz y fechas: &gt;3 meses justificadas, &gt;6 con evidencias, máx 9 meses; seguimientos hasta cerrar.</p></div></details>
+ <details class="qa"><summary>¿Etiquetas, validez, divulgación?</summary><div class="a"><p>Etiquetas con jerarquía; validez 3 años con renovación; niveles A-E; publicar solo con resultado conforme; compartir selectivo incluso no conforme; permisos no revocables durante validez.</p></div></details>
+ </div></section>
+
+ </main>
 </div>
 
-<div class="favoritos-box" id="favoritos">
-<h3>⭐ Tus preguntas favoritas</h3>
-<p style="font-size:.875rem;color:var(--gris)">Preguntas marcadas con ⭐. Se guardan en este navegador.</p>
-<div id="lista-favoritos" style="margin-top:.5rem"></div>
-<button id="vaciar-favoritos" style="margin-top:.5rem;font-size:.75rem;padding:.25rem .5rem;background:#fcd34d;border:none;border-radius:.25rem;cursor:pointer">Vaciar favoritos</button>
-</div>
-
-<!-- SECCIÓN AEPD DINÁMICA -->
-<div id="contenedor-aepd" class="mt-4">
-<div class="text-center py-8">
-<div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-<p class="mt-2 text-gray-600">Cargando FAQs de la AEPD...</p>
-</div>
-</div>
-
-<!-- SECCIÓN CCN-CERT -->
-<div class="seccion" data-categoria="ccn" id="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>18 · El CCN-CERT</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Capacidad de Respuesta a Incidentes del CNI.</p>
-<a href="https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html" target="_blank" class="fuente-link">[Fuente oficial CCN-CERT ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es?<span>+</span></div>
-<div class="faq-respuesta">Capacidad de Respuesta a Incidentes del CCN (CNI). Centro de alerta y respuesta nacional para AAPP, entidades vinculadas y operadores esenciales; detección temprana, respuesta, avisos, herramientas, coordinación.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿CCN-CERT vs INCIBE-CERT vs ESPDEF-CERT?<span>+</span></div>
-<div class="faq-respuesta">CCN-CERT: sector público/esenciales. INCIBE-CERT: ciudadanos/pymes/privadas no CCN. ESPDEF-CERT: Defensa. Coordinación (RD 311/2022, Ley 36/2015, PIC/N) cuando cruza ámbitos.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Normativa de sustento?<span>+</span></div>
-<div class="faq-respuesta">Ley 11/2002 (CNI); RD 421/2004 (CCN); RD 311/2022 (ENS, coordinación nacional); Ley 8/2011; transposición NIS2. Guías CCN-STIC de referencia.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>19 · ENS: fundamentos</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">RD 311/2022, deroga RD 3/2010.</p>
-<a href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" class="fuente-link">[CCN-STIC 800 ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y a quién obliga?<span>+</span></div>
-<div class="faq-respuesta">Marco con principios, requisitos mínimos y medidas para proteger CIA+autenticidad+trazabilidad de información/servicios electrónicos del sector público. Obliga a AAPP y privadas que prestan servicios/proveen soluciones a AAPP por contrato/convenio.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿ENS vs RGPD?<span>+</span></div>
-<div class="faq-respuesta">Complementarios no equivalentes: RGPD datos personales; ENS sistemas públicos (con o sin datos). ENS facilita demostrar art. 32 RGPD pero no sustituye obligaciones RGPD.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Novedades RD 311/2022?<span>+</span></div>
-<div class="faq-respuesta">Gestión continua; catálogo alineado con ISO 27001/27002:2022; más peso a ciberseguridad operativa e incidentes; niveles crítico/muy alto; refuerzo responsabilidad; extensión a sector público institucional; ITS de notificación.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>20 · Categorización y niveles</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Básica/media/alta + crítico/muy alto.</p>
-<a href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" class="fuente-link">[CCN-STIC-803 ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Categorizar un sistema?<span>+</span></div>
-<div class="faq-respuesta">Asignar nivel (bajo/medio/alto) según impacto de un incidente sobre las cinco dimensiones. Antes de producción y revisión periódica/ante cambios.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Dimensiones con distinto impacto?<span>+</span></div>
-<div class="faq-respuesta">Categoría global = la más exigente de todas las dimensiones.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿«No aplica» vs «No definido»?<span>+</span></div>
-<div class="faq-respuesta">Cumplimentar es obligatorio. «No definido» = medida aplicable no implementada (impide indicador). «No aplica» solo si realmente no aplica. Sin sistemas de una categoría: «0».</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>21 · Medidas, auditoría y certificación ENS</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Declaración/Certificación (arts. 34 y 38).</p>
-<a href="https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html" target="_blank" class="fuente-link">[Guías auditoría ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Declaración vs Certificación?<span>+</span></div>
-<div class="faq-respuesta">Declaración: autoevaluación (básica). Certificación: auditoría por entidad acreditada (ENAC), obligatoria media/alta; validez 2 años con renovación. Guías 806/807.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿ISO/IEC 15408?<span>+</span></div>
-<div class="faq-respuesta">Certificación de referencia para evaluar seguridad de productos TIC; garantías independientes; valorada en productos cualificados ENS.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>22 · Notificación y gestión de incidentes</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">ITS de Notificación de Incidentes.</p>
-<a href="https://www.ccn-cert.cni.es/es/" target="_blank" class="fuente-link">[Avisos ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿A quién notificar?<span>+</span></div>
-<div class="faq-respuesta">Sujetos ENS: CCN-CERT en general; coordinación Interior/ESPDEF según ámbito; privadas no ENS a INCIBE-CERT. ITS concreta plazos/canales (LUCIA)/contenido. Notificación tan pronto como se detecte y en todo caso 24 h.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Reconexión tras incidente grave?<span>+</span></div>
-<div class="faq-respuesta">No automática: informe técnico CCN-CERT (exposición, causas, paliativas, riesgo residual) y autorización formal del órgano competente (SGAD). Guía 814.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿SAT?<span>+</span></div>
-<div class="faq-respuesta">Sondas + correlación + análisis forense + alertas para detectar anomalías/ataques en redes adheridas. Adhesión voluntaria, recomendada media/alta.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>23 · Herramientas del CCN</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">PILAR, INES, CLARA, CARMEN, LUCIA.</p>
-<a href="https://www.ccn-cert.cni.es/es/" target="_blank" class="fuente-link">[Catálogo ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿PILAR e INES?<span>+</span></div>
-<div class="faq-respuesta">PILAR: análisis/gestión formal de riesgos (sustenta Declaración de Aplicabilidad y plan de tratamiento). INES: gobernanza/reporting de cumplimiento ENS. Gratuitas sector público.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿CLARA, CARMEN, LUCIA?<span>+</span></div>
-<div class="faq-respuesta">CLARA: auditoría configuración segura (Windows/Linux vs 600/620). CARMEN: detección APT por tráfico. LUCIA: gestión de ciberincidentes del CCN-CERT.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ccn">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>24 · Glosario rápido de ciberseguridad</h2>
-<span class="meta">CCN</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Conceptos base.</p>
-<a href="https://www.ccn-cert.cni.es/es/" target="_blank" class="fuente-link">[Guías ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Tríada CIA?<span>+</span></div>
-<div class="faq-respuesta">Confidencialidad, Integridad, Disponibilidad. ENS añade Autenticidad y Trazabilidad.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Amenaza, vulnerabilidad, riesgo?<span>+</span></div>
-<div class="faq-respuesta">Amenaza: evento potencial; vulnerabilidad: debilidad explotable; riesgo = probabilidad × impacto considerando salvaguardas. Gestión: identificar, estimar, tratar, revisar.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿APT, mínimo privilegio, defensa en profundidad?<span>+</span></div>
-<div class="faq-respuesta">APT: ataque dirigido/prolongado con recursos. Mínimo privilegio: solo permisos necesarios. Defensa en profundidad: capas superpuestas.</div>
-</div>
-</div>
-</div>
-
-<!-- SECCIÓN ISO -->
-<div class="seccion" data-categoria="iso" id="iso">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>25 · ISO/IEC 27001 — SGSI</h2>
-<span class="meta">ISO</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">UNE-ISO/IEC 27001:2023 (2022 + Amd 1:2024).</p>
-<a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" class="fuente-link">[iso.org ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y qué certifica?<span>+</span></div>
-<div class="faq-respuesta">Norma de requisitos para SGSI basada en gestión del riesgo; aplicable a cualquier organización; única certificable de la familia 27000. En España UNE-ISO/IEC 27001:2023.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Estructura (4-10)?<span>+</span></div>
-<div class="faq-respuesta">Anexo SL: 4 Contexto; 5 Liderazgo; 6 Planificación; 7 Soporte; 8 Operación; 9 Evaluación desempeño; 10 Mejora. Anexo A controles de referencia.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Amd 1:2024?<span>+</span></div>
-<div class="faq-respuesta">Añade cambio climático: 4.1 «determinar si el cambio climático es cuestión pertinente»; 4.2 Nota 2 (partes interesadas con requisitos de clima). No modifica Anexo A.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Evaluación/tratamiento riesgos (6.1)?<span>+</span></div>
-<div class="faq-respuesta">Criterios de aceptación/evaluación; identificar riesgos de pérdida CIA; analizar consecuencias/probabilidad; priorizar; seleccionar controles, comparar con Anexo A, SoA y plan de tratamiento aprobado.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿SoA?<span>+</span></div>
-<div class="faq-respuesta">Obligatoria (6.1.3 d): controles seleccionados, justificación inclusión, estado, justificación exclusiones. Documento central revisado en auditoría.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Certificación?<span>+</span></div>
-<div class="faq-respuesta">Entidad acreditada (ENAC), no ISO. Ciclo 3 años: inicial 2 fases, seguimientos anuales, renovación. Exige SGSI operativo y mejora continua.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Obliga a todos los controles?<span>+</span></div>
-<div class="faq-respuesta">No: Anexo A catálogo de referencia; selección según riesgos justificando en SoA. Obligatorio cláusulas 4-10.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="iso">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>26 · ISO/IEC 27002 — Controles</h2>
-<span class="meta">ISO</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">93 controles en 4 temas con atributos.</p>
-<a href="https://www.iso.org/standard/75652.html" target="_blank" class="fuente-link">[iso.org ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y diferencia con 27001?<span>+</span></div>
-<div class="faq-respuesta">Desarrolla/explica controles del Anexo A (propósito/orientación). No certificable: guía de buenas prácticas.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿4 temas y ejemplos?<span>+</span></div>
-<div class="faq-respuesta">5 Organización (políticas 5.1, segregación 5.3, inteligencia amenazas 5.7, inventario 5.9, clasificación 5.12, acceso 5.15-18, proveedores/nube 5.19-23, incidentes 5.24-28, continuidad 5.29-30, legal 5.31-36); 6 Personas (antecedentes 6.1, confidencialidad 6.6, teletrabajo 6.7); 7 Físicos (perímetros 7.1, vigilancia 7.4, puesto despejado 7.7, baja segura 7.14); 8 Tecnológicos (privilegios 8.2, código fuente 8.4, malware 8.7, vulnerabilidades 8.8, configuración 8.9, eliminación 8.10, enmascaramiento 8.11, fugas 8.12, copias 8.13, logs 8.15, monitorización 8.16, criptografía 8.24, desarrollo seguro 8.25-34).</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Atributos?<span>+</span></div>
-<div class="faq-respuesta">Etiquetas: tipo (#Preventivo/#Detectivo/#Correctivo), propiedades CIA, conceptos ciber (#Identificar/#Proteger/#Detectar/#Responder/#Recuperar), capacidades, dominios. Permiten vistas y correspondencia con NIST/ENS/NIS2.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Correspondencia 2013?<span>+</span></div>
-<div class="faq-respuesta">Anexo B tabla 2022↔2013; 11 nuevos: 5.7, 5.23, 5.30, 7.4, 8.9, 8.10, 8.11, 8.12, 8.16, 8.23, 8.28. Total 114→93.</div>
-</div>
-</div>
-</div>
-
-<!-- SECCIÓN UE -->
-<div class="seccion" data-categoria="ue" id="normas">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>27 · Directiva NIS2 y Reg. Ejec.</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Dir. (UE) 2022/2555 y Reg. Ejec. (UE) 2024/2690.</p>
-<a href="http://data.europa.eu/eli/dir/2022/2555/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y deroga?<span>+</span></div>
-<div class="faq-respuesta">Dir. (UE) 2022/2555 (14-12-2022); deroga NIS1. Amplía sectores, distingue esenciales/importantes, refuerza gestión riesgos (art. 21), notificación (23), dirección (20), sanciones. Transposición 17-10-2024; aplicación 18-10-2024.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Esenciales e importantes?<span>+</span></div>
-<div class="faq-respuesta">Esenciales: Anexo I alta criticidad que superan mediana; prestadores cualificados confianza; DNS/TLD; telecom públicas; Administración central; CER; proveedor único; seguridad pública; riesgo sistémico. Importantes: resto Anexos I/II que superan pequeña.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Sectores Anexo I?<span>+</span></div>
-<div class="faq-respuesta">Energía, transporte, banca, mercados financieros, sanidad, agua potable/residual, infraestructura digital, TIC B2B, administraciones, espacio.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Anexo II?<span>+</span></div>
-<div class="faq-respuesta">Postales, residuos, químicos, alimentación, fabricación, proveedores digitales (mercados/buscadores/redes), investigación.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Medidas art. 21?<span>+</span></div>
-<div class="faq-respuesta">All-hazards: análisis riesgos; incidentes; continuidad/copias/crisis; cadena suministro; adquisición/desarrollo/mantenimiento + divulgación vulnerabilidades; eficacia; higiene/formación; criptografía; RRHH/acceso/activos; MFA/autenticación continua.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Notificación art. 23?<span>+</span></div>
-<div class="faq-respuesta">Alerta ≤24 h; notificación ≤72 h (evaluación, gravedad, IoC); intermedio si se solicita; final ≤1 mes. Prestadores cualificados: 24 h.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Gobernanza art. 20?<span>+</span></div>
-<div class="faq-respuesta">Dirección aprueba/supervisa y responde (personas físicas directivas responsables, incluso prohibición temporal en esenciales). Formación directivos y empleados.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Sanciones?<span>+</span></div>
-<div class="faq-respuesta">Esenciales ≥10 M€ o 2% mundial; importantes ≥7 M€ o 1,4%. Medidas no monetarias como última ratio con garantías.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Cooperación y Reg. Ejec. 2024/2690?<span>+</span></div>
-<div class="faq-respuesta">Grupo Cooperación, red CSIRT, EU-CyCLONe, puntos únicos, divulgación coordinada, base vulnerabilidades ENISA. Reg. Ejec. concreta requisitos art. 21 para DNS/TLD, nube, CPD, CDN, gestionados, mercados/buscadores/redes, confianza; apoya en ISO 27001/27002.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>28 · CRA · Guía 2026, SbD y SBOM</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Reg. (UE) 2024/2847 + Guía C(2026) 5252 + ENISA SbD + CISA SBOM.</p>
-<a href="https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation" target="_blank" class="fuente-link">[Guía Comisión ]</a>
-<a href="https://github.com/enisaeu/enisa-sbd-playbook/" target="_blank" class="fuente-link" style="margin-left:.5rem">[ENISA SbD ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y a quién afecta?<span>+</span></div>
-<div class="faq-respuesta">Reg. (UE) 2024/2847 (20-11-2024): requisitos horizontales de ciberseguridad para comercialización de productos con elementos digitales (PDE) en todo el ciclo de vida. Afecta a fabricantes/distribuidores/importadores/usuarios profesionales. Excluye productos con legislación sectorial equivalente.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Fechas escalonadas?<span>+</span></div>
-<div class="faq-respuesta">Vigor 10-12-2024. Notificación vulnerabilidades explotadas/incidentes: 11-9-2026. Requisitos esenciales + conformidad + marcado CE: 11-12-2027.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Cuándo se «comercializa»?<span>+</span></div>
-<div class="faq-respuesta">Primera puesta a disposición para distribución marca entrada y soporte (v1.0.0 suministrada 1-1-2028 = comercializada 1-1-2028). Variantes con componentes/configuraciones/funcionalidades distintas = productos distintos, no copias. Webs que no respaldan función del PDE no entran; código inacabado en fase de diseño/pruebas y código de muestra/demo no se consideran comercializados.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿FOSS sujeto?<span>+</span></div>
-<div class="faq-respuesta">Depende de actividad comercial. Colaborador con pull/merge y mantenedores que lo incorporan: NO sujeto. Donaciones voluntarias de empresas que integran FOSS: NO. SÍ quien pone edición de pago/empresarial bajo acuerdo comercial, o versiones/actualizaciones solo a donantes.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Modificación sustancial?<span>+</span></div>
-<div class="faq-respuesta">Cambio que altera cumplimiento de requisitos esenciales o perfil de riesgo → reevaluar. Evaluación abarca producto en su totalidad. Software con versiones sustanciales: cada versión con soporte declarado (art. 13.8), actualizaciones esperadas y acceso gratuito a la última. No confundir con integración (el integrador comercializa un producto nuevo, no modifica uno ya comercializado).</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Soporte mínimo?<span>+</span></div>
-<div class="faq-respuesta">Vida útil esperada o mínimo 5 años (lo mayor). Actualizaciones gratuitas, automáticas por defecto, fáciles, transparentes; gestión de vulnerabilidades con parches proporcionados a severidad.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿SBOM (CISA 2026)?<span>+</span></div>
-<div class="faq-respuesta">Inventario estructurado de componentes. Elementos mínimos: campos (autor, proveedor, nombre, versión, PURL/CPE, hashes), automatización (SPDX, CycloneDX) y prácticas de generación/actualización. Gestión de vulnerabilidades con OpenVEX/CSAF y NIST NVD. El CRA lo exige como parte de documentación técnica. El campo proveedor usa nombres completos, no acrónimos.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Playbook ENISA SbD?<span>+</span></div>
-<div class="faq-respuesta">Traduce principios a acciones verificables: privilegio mínimo (identidades únicas, sin administradores compartidos), defensa en profundidad (capas, detección multicapa, ralentizar atacantes), identidad criptográfica única por dispositivo y secretos únicos por defecto (sin credenciales compartidas, protección contra extracción, revocación). Evidencias mínimas y «cumplimiento como código» con OSCAL. Guía introductoria, no manual exhaustivo.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Competencia técnica evaluadores CRA?<span>+</span></div>
-<div class="faq-respuesta">Documento v1.0 define competencias por rol (evaluador, responsable, equipo) y apartado (3.2.x) con niveles B/H. Organismos notificados: Módulo B = EN ISO/IEC 17065; Módulo H = EN ISO/IEC 17021-1.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>29 · DORA: Reglamento (UE) 2022/2554</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Resiliencia operativa digital del sector financiero.</p>
-<a href="http://data.europa.eu/eli/reg/2022/2554/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y desde cuándo?<span>+</span></div>
-<div class="faq-respuesta">Resiliencia operativa digital del sector financiero; aplicable desde 17-1-2025. Lex specialis frente a NIS2 para entidades financieras. Modifica varios reglamentos/directivas financieras.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Ámbito y exclusiones?<span>+</span></div>
-<div class="faq-respuesta">21 categorías (crédito, pago, dinero electrónico, inversión, cripto, DCV, ECC, centros negociación, registros, GFIA, gestoras, suministro datos, seguros, intermediarios, FPE, rating, índices, financiación participativa, titulización, proveedores TIC). Excluidos: GFIA exentos, aseguradoras exentas Solvencia II, FPE ≤15, exentos MiFID, intermediarios micro/pymes, cheques postales.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Gobernanza (art. 5)?<span>+</span></div>
-<div class="faq-respuesta">Órgano de dirección con responsabilidad última: estrategia, políticas CIA, cometidos, aprobar/supervisar terceros, continuidad, presupuesto; en no micro, cargo específico de seguimiento de acuerdos TIC.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Marco gestión riesgo TIC (art. 6)?<span>+</span></div>
-<div class="faq-respuesta">Identificar-proteger-prevenir, detectar, responder-recuperar, aprender-comunicar; revisión anual; auditoría interna (no micro); estrategia con KPI; multiproveedor opcional; externalización de verificaciones manteniendo responsabilidad.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Incidentes (17-23)?<span>+</span></div>
-<div class="faq-respuesta">Registrar todos; clasificar con RTS 2024/1772; notificar graves (RTS 2025/301); notificar voluntariamente ciberamenazas importantes; comunicar a clientes; registrar también operativos/de pagos graves.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Pruebas y TLPT (24-27)?<span>+</span></div>
-<div class="faq-respuesta">Programa proporcional; anuales para funciones esenciales/importantes; TLPT (TIBER-EU) cada 3 años para esenciales identificadas; probadores cualificados; reconocimiento mutuo.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Riesgo de terceros (28-30)?<span>+</span></div>
-<div class="faq-respuesta">Responsabilidad plena; registro de acuerdos (ITS 2024/2956); evaluación previa; estrategias de salida; cláusulas mínimas; evaluar concentración y subcontratación en terceros países.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Supervisión de esenciales?<span>+</span></div>
-<div class="faq-respuesta">Designación conjunta AES con criterios de sustituibilidad/dependencia/impacto; supervisor principal; Foro y Red de Supervisión; información/inspección/recomendaciones; multas coercitivas hasta 1% diario; CTPP terceros países: filial UE en 12 meses.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>30 · DORA · Gestión riesgo TIC (RTS 2024/1774)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Herramientas/métodos/procesos + marco simplificado.</p>
-<a href="http://data.europa.eu/eli/reg_del/2024/1774/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué regula?<span>+</span></div>
-<div class="faq-respuesta">Completa arts. 15-16: políticas/procedimientos/herramientas de seguridad TIC (Título II) y marco simplificado (Título III) para entidades art. 16.1. Proporcional.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Cifrado (2-7)?<span>+</span></div>
-<div class="faq-respuesta">Políticas con indicadores/responsabilidades; cifrado reposo/tránsito/uso si procede; gestión de claves ciclo completo y atención a amenazas cuánticas; registro de certificados para esenciales/importantes.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Operaciones/parches (8-12)?<span>+</span></div>
-<div class="faq-respuesta">Separación producción/desarrollo/pruebas (pruebas en producción solo casos aprobados); exploraciones semanales para esenciales; divulgación responsable; parches con plazos/escalada; logs protegidos y relojes sincronizados.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Continuidad (24-26)?<span>+</span></div>
-<div class="faq-respuesta">RTO/RPO; ECC conmutación ≤2 h con centro secundario geográfico distinto; DCV ≤2 h; centros negociación ≤2 h pérdida ~0; pruebas con conmutación/ciberataques/clima/pandemias/cortes; documentar y actualizar.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Marco simplificado?<span>+</span></div>
-<div class="faq-respuesta">Gobernanza con responsabilidad del órgano; política única de seguridad; clasificación; acceso con autenticación fuerte; copias con pruebas anuales; informe de revisión electrónico.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>31 · DORA · Clasificación incidentes (RTS 2024/1772)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Criterios y umbrales.</p>
-<a href="http://data.europa.eu/eli/reg_del/2024/1772/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Criterios?<span>+</span></div>
-<div class="faq-respuesta">Clientes/contrapartes/transacciones; reputación; duración/interrupción; geografía; pérdidas de datos; esencialidad; consecuencias económicas.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Cuándo es grave?<span>+</span></div>
-<div class="faq-respuesta">Afecta servicios esenciales y alcanza umbral de acceso malintencionado con posible pérdida de datos, o cumple ≥2 de los demás umbrales. Recurrentes: ≥2 en 6 meses misma causa (no micro/simplificado).</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Umbrales?<span>+</span></div>
-<div class="faq-respuesta">&gt;10% clientes o &gt;100.000; &gt;30% contrapartes; &gt;10% transacciones; incidente &gt;24 h o interrupción &gt;2 h en esenciales; ≥2 Estados; costes &gt;100.000 €.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>32 · DORA · Notificación incidentes (RTS 2025/301)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Inicial/intermedia/final.</p>
-<a href="http://data.europa.eu/eli/reg_del/2025/301/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Plazos?<span>+</span></div>
-<div class="faq-respuesta">Inicial lo antes posible y ≤4 h desde clasificación grave y ≤24 h desde conocimiento; intermedia ≤72 h desde inicial; final ≤1 mes desde intermedia. Fin de semana/festivo: antes del mediodía del siguiente hábil (salvo crédito/ECC/centros/esenciales NIS2).</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Contenido?<span>+</span></div>
-<div class="faq-respuesta">Inicial: código, fechas, descripción, criterios, Estados, origen, continuidad. Intermedia: tipo, amenazas, áreas, repercusiones, medidas. Final: causas, resolución, costes, recurrentes.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>33 · DORA · Armonización supervisión (RTS 2025/295)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Inclusión voluntaria, información, plan corrector, subcontratación.</p>
-<a href="http://data.europa.eu/eli/reg_del/2025/295/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Inclusión voluntaria?<span>+</span></div>
-<div class="faq-respuesta">Solicitud motivada con estructura, cuota, servicios, sustituibilidad, estrategia; AES decide en 6 meses.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Plan corrector?<span>+</span></div>
-<div class="faq-respuesta">Informe con plan coherente con calendario del supervisor; informes intermedios/finales con justificantes.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Plantilla subcontratación?<span>+</span></div>
-<div class="faq-respuesta">Inventario de acuerdos, tipos de servicios, subcontratistas, responsabilidades, accesos, ubicaciones, gobernanza, riesgos, continuidad, auditorías.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>34 · DORA · Equipo Examen Conjunto (RTS 2025/420)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Composición, designación, tareas, modalidades.</p>
-<a href="http://data.europa.eu/eli/reg_del/2025/420/oj" target="_blank" class="fuente-link">[EUR-Lex ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es?<span>+</span></div>
-<div class="faq-respuesta">Equipo multidisciplinar (AES + autoridades) que apoya al supervisor principal en supervisión de cada CTPP.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Composición/modalidades?<span>+</span></div>
-<div class="faq-respuesta">Designación por competencias; número con Red de Supervisión según intensidad/tamaño/representación; trabajo bajo coordinador con procedimientos comunes y confidencialidad; evaluación periódica de miembros para modificar composición.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>35 · DORA · Registro de Información (ITS 2024/2956)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Plantillas del registro de acuerdos TIC.</p>
-<a href="http://data.europa.eu/eli/reg_impl/2024/2956/oj" target="_blank" class="fuente-link">[EUR-Lex ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué regula?<span>+</span></div>
-<div class="faq-respuesta">Plantillas normalizadas del registro de todos los acuerdos contractuales con proveedores terceros TIC (art. 28.3); base de supervisión y designación anual de esenciales.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Posición en cadena?<span>+</span></div>
-<div class="faq-respuesta">Número natural ≥1; directo=1; subcontratistas &gt;1; mismos puestos comparten número; destinatario de subcontrata con posición n-1.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Plantillas?<span>+</span></div>
-<div class="faq-respuesta">B_01.01-03 (entidad/consolidación/sucursales), B_02.01-03 (acuerdos), B_03.01-03 (firmantes), B_04.01 (usuarias), B_05.01-02 (proveedores/cadena), B_06.01 (funciones RTO/RPO), B_07.01 (evaluación), B_99.01 (terminología). Calidad: exactitud, completitud, coherencia, integridad, homogeneidad, validez.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Tipos de servicios TIC?<span>+</span></div>
-<div class="faq-respuesta">S01-S19: proyectos, desarrollo, soporte, seguridad, datos, análisis, alojamiento, procesamiento, almacenamiento, telecom, red, hardware, licencias, operaciones, consultoría, riesgo TIC, IaaS, PaaS, SaaS.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="ue">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>36 · Reglamento de Inteligencia Artificial (AI Act)</h2>
-<span class="meta">UE</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Reg. (UE) 2024/1689: enfoque basado en riesgo.</p>
-<a href="https://www.consilium.europa.eu/es/policies/artificial-intelligence-act/" target="_blank" class="fuente-link">[Consejo UE ↗]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es?<span>+</span></div>
-<div class="faq-respuesta">Primer marco jurídico integral para la IA; seguridad, transparencia, trazabilidad y derechos fundamentales; se aplica a proveedores/desarrolladores/importadores/implantadores con efectos en la UE.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Niveles de riesgo?<span>+</span></div>
-<div class="faq-respuesta">Inaceptable (prohibidas), alto (obligaciones estrictas), limitado (transparencia), mínimo (sin obligaciones).</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Prácticas prohibidas?<span>+</span></div>
-<div class="faq-respuesta">Manipulación subliminal, puntuación social, explotación de vulnerabilidades, identificación biométrica remota en tiempo real en espacios públicos (salvo excepciones), scraping facial no selectivo, inferencia de emociones en trabajo/educación.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Obligaciones alto riesgo?<span>+</span></div>
-<div class="faq-respuesta">Gestión de riesgos, calidad/gobernanza de datos, documentación técnica, transparencia, supervisión humana, exactitud/robustez/ciberseguridad, evaluación de conformidad previa. Ámbitos: biometría, infraestructuras críticas, educación, empleo, servicios esenciales, aplicación ley, migración, justicia.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿GPAI?<span>+</span></div>
-<div class="faq-respuesta">Modelos versátiles con obligaciones de transparencia/documentación/derechos de autor; sistémicos (&gt;10²⁵ FLOP) añaden evaluaciones, pruebas adversarias, notificación de incidentes graves.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Entrada en aplicación?<span>+</span></div>
-<div class="faq-respuesta">Vigor 1-8-2024; prohibiciones a los 6 meses; GPAI a los 12; alto riesgo Anexo III a los 24; alto riesgo Anexo I a los 36.</div>
-</div>
-</div>
-</div>
-
-<div class="seccion" data-categoria="enx">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>37 · TISAX — Manual del Participante</h2>
-<span class="meta">ENX</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Evaluación e intercambio en automoción (ENX/VDA).</p>
-<a href="https://www.enx.com/handbook/tph-es.html" target="_blank" class="fuente-link">[Manual oficial ]</a>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Qué es y quién lo gestiona?<span>+</span></div>
-<div class="faq-respuesta">Mecanismo de evaluación e intercambio de resultados de seguridad con reconocimiento mutuo para el sector automoción. Gestiona ENX Association; cuestionario base VDA ISA.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Proceso?<span>+</span></div>
-<div class="faq-respuesta">Registro (alcance/objetivos), evaluación por proveedor aprobado, intercambio vía TISAX Exchange previa liberación explícita. Activo = evaluado; pasivo = receptor.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Objetivos y niveles AL?<span>+</span></div>
-<div class="faq-respuesta">12 objetivos (Info high/very high, Confidential, Strictly confidential, High/Very high availability, Proto parts/vehicles, Test vehicles, Proto events, Data, Special data). AL2/AL3 según necesidad de protección.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Madurez y plan correctivo?<span>+</span></div>
-<div class="faq-respuesta">Niveles 0-5 (Incompleto→Optimizando). Plan correctivo con causa raíz y fechas: &gt;3 meses justificadas, &gt;6 con evidencias, máx 9 meses; seguimientos hasta cerrar.</div>
-</div>
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">¿Etiquetas, validez, divulgación?<span>+</span></div>
-<div class="faq-respuesta">Etiquetas con jerarquía; validez 3 años con renovación; niveles A-E; publicar solo con resultado conforme; compartir selectivo incluso no conforme; permisos no revocables durante validez.</div>
-</div>
-</div>
-</div>
-
-<footer style="margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb;font-size:.875rem;color:var(--gris)">
-<div style="display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
-<div>
-<h4 style="color:#111827;margin-bottom:.5rem">Sobre esta biblioteca</h4>
-<p>Respuestas basadas en catálogos públicos de la <a href="https://www.aepd.es/preguntas-frecuentes" style="color:var(--azul)">AEPD</a> y <a href="https://www.ccn-cert.cni.es/es/" style="color:var(--azul)">CCN-CERT</a>, y normas de referencia (ISO, NIS2, CRA + ENISA + CISA, AI Act, TISAX, DORA + RTS/ITS). Página no oficial; no constituye asesoramiento jurídico.</p>
-</div>
-<div>
-<h4 style="color:#111827;margin-bottom:.5rem">Fuentes</h4>
-<ul style="list-style:none;line-height:2">
-<li><a href="https://www.aepd.es/preguntas-frecuentes" style="color:var(--azul)">aepd.es/preguntas-frecuentes</a></li>
-<li><a href="https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html" style="color:var(--azul)">ccn-cert.cni.es/faq</a></li>
-<li><a href="https://www.iso.org/isoiec-27001-information-security.html" style="color:var(--azul)">ISO/IEC 27001 · 27002</a></li>
-<li><a href="http://data.europa.eu/eli/dir/2022/2555/oj" style="color:var(--azul)">NIS2 · EUR-Lex</a></li>
-<li><a href="http://data.europa.eu/eli/reg/2022/2554/oj" style="color:var(--azul)">DORA + RTS/ITS · EUR-Lex</a></li>
-<li><a href="https://www.enx.com/handbook/tph-es.html" style="color:var(--azul)">Manual TISAX (ENX)</a></li>
-</ul>
-</div>
-<div>
-<h4 style="color:#111827;margin-bottom:.5rem">Aviso</h4>
-<p>Las normas ISO/IEC están sujetas a derechos de autor (texto íntegro en ISO o UNE/AENOR). Consulta siempre las fuentes oficiales.</p>
-</div>
-</div>
-<p style="margin-top:1.5rem;text-align:center">Biblioteca de Conceptos · Protección de Datos y Ciberseguridad<br><small>Actualizado: agosto 2026</small></p>
+<footer>
+ <div class="fwrap">
+  <div><h5>Sobre esta biblioteca</h5><p>Respuestas basadas en catálogos públicos de la <a href="https://www.aepd.es/preguntas-frecuentes" target="_blank" rel="noopener">AEPD</a> y <a href="https://www.ccn-cert.cni.es/es/" target="_blank" rel="noopener">CCN-CERT</a>, y normas de referencia (ISO, NIS2, CRA + ENISA + CISA, AI Act, TISAX, DORA + RTS/ITS). Página no oficial; no constituye asesoramiento jurídico.</p></div>
+  <div><h5>Fuentes</h5><ul>
+   <li><a href="https://www.aepd.es/preguntas-frecuentes" target="_blank" rel="noopener">aepd.es/preguntas-frecuentes</a></li>
+   <li><a href="https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html" target="_blank" rel="noopener">ccn-cert.cni.es/faq</a></li>
+   <li><a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener">ISO/IEC 27001 · 27002</a></li>
+   <li><a href="http://data.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener">NIS2 · EUR-Lex</a></li>
+   <li><a href="http://data.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener">DORA + RTS/ITS · EUR-Lex</a></li>
+   <li><a href="https://www.enx.com/handbook/tph-es.html" target="_blank" rel="noopener">Manual TISAX (ENX)</a></li>
+  </ul></div>
+  <div><h5>Aviso</h5><p>Las normas ISO/IEC están sujetas a derechos de autor (texto íntegro en ISO o UNE/AENOR). Consulta siempre las fuentes oficiales.</p></div>
+ </div>
+ <div class="fbottom"><span>Biblioteca de Conceptos · Protección de Datos y Ciberseguridad</span><span>Actualizado: agosto 2026</span></div>
 </footer>
-
-</main>
+<button id="toTop" aria-label="Volver arriba">↑</button>
 
 <script>
-// Funciones de acordeón
-function toggleSeccion(header) {
-const content = header.nextElementSibling;
-content.classList.toggle('mostrar');
+(function(){
+"use strict";
+var hoy=new Date();function p(d,m,y){return new Date(y,m-1,d);}
+var tl=[
+ {d:p(25,5,2018),t:'25 mayo 2018',tx:'RGPD plenamente aplicable',meta:'Reg. (UE) 2016/679'},
+ {d:p(6,12,2018),t:'6 dic 2018',tx:'Publicación LOPDGDD',meta:'Ley 3/2018 (BOE)'},
+ {d:p(17,1,2025),t:'17 ene 2025',tx:'DORA aplicable',meta:'Reg. (UE) 2022/2554'},
+ {d:p(2,2,2025),t:'2 feb 2025',tx:'AI Act: prácticas prohibidas',meta:'Reg. (UE) 2024/1689'},
+ {d:p(2,8,2025),t:'2 ago 2025',tx:'AI Act: obligaciones GPAI',meta:'Gobernanza/transparencia'},
+ {d:p(2,8,2026),t:'2 ago 2026',tx:'AI Act: alto riesgo (Anexo III)',meta:'Evaluación de conformidad'},
+ {d:p(11,9,2026),t:'11 sep 2026',tx:'CRA: notificación vulnerabilidades',meta:'Reg. (UE) 2024/2847'},
+ {d:p(11,12,2027),t:'11 dic 2027',tx:'CRA: requisitos esenciales + marcado CE',meta:'Aplicación completa'},
+ {d:p(11,6,2028),t:'11 jun 2028',tx:'CRA: fin validez certificados UE (RED)',meta:'Art. 69.1 CRA'}
+];
+tl.sort(function(a,b){return a.d-b.d;});
+var tlBox=document.getElementById('tlBox');
+tl.forEach(function(e){var cls=e.d<hoy?'past':(e.d.getFullYear()===hoy.getFullYear()?'warn':'');
+ tlBox.insertAdjacentHTML('beforeend','<div class="tl-item '+cls+'"><div class="tdate">'+e.t+'</div><div class="ttext">'+e.tx+'</div><div class="tmeta">'+e.meta+'</div></div>');});
+var refs=[
+ {t:'RGPD · Reg. (UE) 2016/679',u:'http://data.europa.eu/eli/reg/2016/679/oj',s:'EUR-Lex',c:'eu'},
+ {t:'LOPDGDD · Ley 3/2018',u:'https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673',s:'BOE',c:'boe'},
+ {t:'NIS2 · Dir. (UE) 2022/2555',u:'http://data.europa.eu/eli/dir/2022/2555/oj',s:'EUR-Lex',c:'eu'},
+ {t:'NIS2 · Reg. Ejec. 2024/2690',u:'http://data.europa.eu/eli/reg_impl/2024/2690/oj',s:'EUR-Lex',c:'eu'},
+ {t:'CRA · Reg. (UE) 2024/2847',u:'http://data.europa.eu/eli/reg/2024/2847/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA · Reg. (UE) 2022/2554',u:'http://data.europa.eu/eli/reg/2022/2554/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA RTS 2024/1774',u:'http://data.europa.eu/eli/reg_del/2024/1774/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA RTS 2024/1772',u:'http://data.europa.eu/eli/reg_del/2024/1772/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA RTS 2025/301',u:'http://data.europa.eu/eli/reg_del/2025/301/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA RTS 2025/295',u:'http://data.europa.eu/eli/reg_del/2025/295/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA RTS 2025/420',u:'http://data.europa.eu/eli/reg_del/2025/420/oj',s:'EUR-Lex',c:'eu'},
+ {t:'DORA ITS 2024/2956',u:'http://data.europa.eu/eli/reg_impl/2024/2956/oj',s:'EUR-Lex',c:'eu'},
+ {t:'AI Act · Reg. (UE) 2024/1689',u:'http://data.europa.eu/eli/reg/2024/1689/oj',s:'EUR-Lex',c:'eu'},
+ {t:'ENS · RD 311/2022',u:'https://www.boe.es/buscar/act.php?id=BOE-A-2022-7353',s:'BOE',c:'boe'}
+];
+var refBox=document.getElementById('refBox');
+refs.forEach(function(r){refBox.insertAdjacentHTML('beforeend','<a class="ref '+r.c+'" href="'+r.u+'" target="_blank" rel="noopener"><b>'+r.t+'</b><div class="rsrc">'+r.s+'</div></a>');});
+
+var sections=[].slice.call(document.querySelectorAll('.sec'));
+var qaItems=[].slice.call(document.querySelectorAll('.qa'));
+var tocNav=document.getElementById('tocNav');var dash=document.getElementById('dash');
+var q=document.getElementById('q');var resCount=document.getElementById('resCount');var noRes=document.getElementById('noRes');
+var chipsBox=document.getElementById('chips');var tocLinks={};
+var groups=[{k:'aepd',l:'AEPD · Protección de datos'},{k:'ccn',l:'CCN-CERT · Ciberseguridad y ENS'},{k:'iso',l:'ISO/IEC 27001 · 27002'},{k:'ue',l:'UE · NIS2 · CRA · DORA · IA'},{k:'enx',l:'ENX · TISAX'}];
+var colores={aepd:'#2457d6',ccn:'#b53a34',iso:'#6d3fd6',ue:'#0e7490',enx:'#a16207',fav:'#eab308'};
+groups.forEach(function(g){
+ var items=sections.filter(function(s){return s.dataset.cat===g.k;});
+ if(!items.length)return;
+ var card=document.createElement('a');card.className='card';card.style.setProperty('--c',colores[g.k]);card.href='#'+items[0].id;
+ card.innerHTML='<h3>'+g.l+'</h3><p>'+items.map(function(s){return s.querySelector('h2').textContent;}).slice(0,2).join(' · ')+'…</p><span class="n">'+items.reduce(function(n,s){return n+s.querySelectorAll('.qa').length;},0)+' preguntas →</span>';
+ dash.appendChild(card);
+ var wrap=document.createElement('div');wrap.className='tgroup';
+ var h=document.createElement('h4');h.textContent=g.l;wrap.appendChild(h);
+ items.forEach(function(s){
+  var a=document.createElement('a');a.href='#'+s.id;
+  var n=document.createElement('span');n.className='tn';n.textContent=s.querySelector('.num').textContent;
+  a.appendChild(n);a.appendChild(document.createTextNode(s.querySelector('h2').textContent));
+  a.addEventListener('click',closeDrawer);
+  wrap.appendChild(a);tocLinks[s.id]=a;
+ });
+ tocNav.appendChild(wrap);
+});
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){var l=tocLinks[e.target.id];if(l&&e.isIntersecting){Object.keys(tocLinks).forEach(function(k){tocLinks[k].classList.remove('on');});l.classList.add('on');}});},{rootMargin:'-25% 0px -65% 0px'});
+sections.forEach(function(s){spy.observe(s);});
+sections.forEach(function(sec){
+ var btn=sec.querySelector('.btn-all');if(!btn||btn.id==='clearFav')return;
+ btn.addEventListener('click',function(){var all=[].slice.call(sec.querySelectorAll('.qa'));var any=all.some(function(d){return !d.open;});all.forEach(function(d){d.open=any;});syncBtn(sec);});
+});
+function syncBtn(sec){var b=sec.querySelector('.btn-all');if(!b||b.id==='clearFav')return;var all=[].slice.call(sec.querySelectorAll('.qa'));b.textContent=(all.length&&all.every(function(d){return d.open;}))?'Contraer todo':'Expandir todo';}
+document.addEventListener('toggle',function(ev){var s=ev.target.closest?ev.target.closest('.sec'):null;if(s)syncBtn(s);},true);
+
+/* Permalinks + favoritos */
+qaItems.forEach(function(d,i){
+ d.id=(d.closest('.sec').id)+'-q'+i;
+ var star=document.createElement('button');star.type='button';star.className='star';star.textContent='★';star.setAttribute('aria-label','Favorito');
+ star.addEventListener('click',function(ev){ev.stopPropagation();ev.preventDefault();toggleFav(d.id,star);});
+ var link=document.createElement('button');link.type='button';link.className='plink';link.textContent='🔗';link.setAttribute('aria-label','Copiar enlace');
+ link.addEventListener('click',function(ev){ev.stopPropagation();ev.preventDefault();
+  var url=location.href.split('#')[0]+'#'+d.id;
+  if(navigator.clipboard){navigator.clipboard.writeText(url);}else{location.hash=d.id;}
+  d.open=true;});
+ var sum=d.querySelector('summary');
+ sum.insertBefore(link,sum.firstChild);
+ sum.insertBefore(star,sum.firstChild);
+ d._sum=sum;d._ans=d.querySelector('.a');
+});
+var FAV_KEY='biblio_fav_v1';
+function loadFav(){try{return JSON.parse(localStorage.getItem(FAV_KEY))||{};}catch(e){return {};}}
+function saveFav(o){localStorage.setItem(FAV_KEY,JSON.stringify(o));}
+function toggleFav(id,btn){
+ var fav=loadFav();
+ if(fav[id]){delete fav[id];btn.classList.remove('on');}
+ else{var qa=document.getElementById(id);fav[id]={q:qa.querySelector('summary').textContent.replace(/^[★🔗\s]+/,''),a:qa.querySelector('.a').innerHTML,sec:qa.closest('.sec').querySelector('h2').textContent};btn.classList.add('on');}
+ saveFav(fav);paintFav();
 }
-
-function toggleFaq(pregunta) {
-const respuesta = pregunta.nextElementSibling;
-const icono = pregunta.querySelector('span');
-respuesta.classList.toggle('mostrar');
-icono.textContent = respuesta.classList.contains('mostrar') ? '−' : '+';
+function paintFav(){
+ var list=document.getElementById('favList');var fav=loadFav();var keys=Object.keys(fav);
+ if(!keys.length){list.innerHTML='<p class="empty-fav">Aún no tienes favoritos. Pulsa ★ en cualquier pregunta.</p>';return;}
+ list.innerHTML=keys.map(function(k){var f=fav[k];return '<details class="qa"><summary>'+f.q+'</summary><div class="a">'+f.a+'<p style="font-size:.75rem;color:var(--muted);margin-top:10px;border-top:1px dashed var(--line);padding-top:8px">Sección: '+f.sec+'</p></div></details>';}).join('');
 }
+document.getElementById('clearFav').addEventListener('click',function(){if(!confirm('¿Vaciar favoritos?'))return;localStorage.removeItem(FAV_KEY);qaItems.forEach(function(d){var s=d.querySelector('.star');if(s)s.classList.remove('on');});paintFav();apply();});
+(function(){var fav=loadFav();Object.keys(fav).forEach(function(k){var qa=document.getElementById(k);if(qa){var s=qa.querySelector('.star');if(s)s.classList.add('on');}});paintFav();})();
 
-// Cargar FAQs de la AEPD desde JSON generado automáticamente
-async function cargarAEPD() {
-try {
-const response = await fetch('data/aepd_contenido.json?t=' + Date.now());
-if (!response.ok) throw new Error('No se pudo cargar');
-const data = await response.json();
-
-const contenedor = document.getElementById('contenedor-aepd');
-let html = '';
-
-data.categorias.forEach((cat, idx) => {
-const num = String(idx).padStart(2, '0');
-html += `
-<div class="seccion" data-categoria="aepd">
-<div class="seccion-header" onclick="toggleSeccion(this)">
-<h2>${num} · ${cat.titulo}</h2>
-<span class="meta">AEPD</span>
-</div>
-<div class="seccion-content">
-<p style="margin-bottom:1rem;font-size:.875rem;color:var(--gris)">Definiciones del RGPD y la LOPDGDD.</p>
-<a href="https://www.aepd.es/preguntas-frecuentes" target="_blank" class="fuente-link">[Fuente oficial AEPD ↗]</a>
-`;
-
-cat.faqs.forEach((faq, faqIdx) => {
-const faqId = `aepd-${idx}-${faqIdx}`;
-html += `
-<div class="faq">
-<div class="faq-pregunta" onclick="toggleFaq(this)">${faq.pregunta}<span>+</span></div>
-<div class="faq-respuesta" id="${faqId}">
-${faq.respuesta.replace(/\n\n/g, '<br><br>')}
-<div style="margin-top:.5rem;padding-top:.5rem;border-top:1px solid #f3f4f6">
-<a href="${faq.fuente}" target="_blank" style="font-size:.75rem;color:var(--azul);text-decoration:none">Ver en web de la AEPD ↗</a>
-</div>
-</div>
-</div>
-`;
-});
-
-html += `</div></div>`;
-});
-
-contenedor.innerHTML = html;
-
-} catch (error) {
-console.error("Error cargando AEPD:", error);
-document.getElementById('contenedor-aepd').innerHTML = `
-<div class="seccion">
-<div class="seccion-content mostrar">
-<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:.5rem;padding:1rem;text-align:center;color:#991b1b">
-<p style="font-weight:600">Error al cargar las FAQs de la AEPD</p>
-<p style="font-size:.875rem;margin-top:.5rem">Por favor, recarga la página. Si persiste, ejecuta el workflow de actualización.</p>
-</div>
-</div>
-</div>
-`;
+/* Búsqueda + filtros */
+function normStr(s){return Array.from(s).map(function(c){return c.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}).join('');}
+function clearMarks(r){if(!r)return;r.querySelectorAll('mark.hl').forEach(function(m){var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize();});}
+function markText(r,qy){if(!r)return;var w=document.createTreeWalker(r,NodeFilter.SHOW_TEXT,null);var nodes=[];var n;while((n=w.nextNode()))nodes.push(n);
+ nodes.forEach(function(tn){var raw=tn.nodeValue;var low=normStr(raw);var i=low.indexOf(qy);if(i<0)return;var f=document.createDocumentFragment();var last=0;
+ while(i>=0){f.appendChild(document.createTextNode(raw.slice(last,i)));var mk=document.createElement('mark');mk.className='hl';mk.textContent=raw.slice(i,i+qy.length);f.appendChild(mk);last=i+qy.length;i=low.indexOf(qy,last);}
+ f.appendChild(document.createTextNode(raw.slice(last)));tn.parentNode.replaceChild(f,tn);});}
+var activeFilter='all';
+function catMatch(c){if(activeFilter==='all')return true;if(activeFilter==='fav')return false;if(activeFilter==='normas')return ['iso','ue','enx'].indexOf(c)!==-1;return c===activeFilter;}
+function apply(){
+ var qy=normStr(q.value.trim());var on=qy.length>=2;var found=0;
+ qaItems.forEach(function(d){clearMarks(d._sum);clearMarks(d._ans);var vis=true;
+  if(on){vis=normStr(d.textContent).indexOf(qy)!==-1;if(vis){d.open=true;markText(d._sum,qy);markText(d._ans,qy);found++;}}
+  d.classList.toggle('off',!vis);});
+ sections.forEach(function(s){if(s.id==='sFav')return;var ok=catMatch(s.dataset.cat);var has=!on||s.querySelector('.qa:not(.off)');var show=ok&&has;s.classList.toggle('off',!show);if(tocLinks[s.id])tocLinks[s.id].classList.toggle('off',!show);if(show)syncBtn(s);});
+ var favSec=document.getElementById('sFav');
+ if(activeFilter==='fav'){sections.forEach(function(s){if(s.id!=='sFav')s.classList.add('off');if(tocLinks[s.id])tocLinks[s.id].classList.add('off');});favSec.classList.remove('off');paintFav();}
+ if(on){resCount.hidden=false;resCount.textContent=found+(found===1?' coincidencia':' coincidencias');noRes.hidden=found>0;}else{resCount.hidden=true;noRes.hidden=true;}
 }
-}
+var t=null;q.addEventListener('input',function(){clearTimeout(t);t=setTimeout(apply,130);});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';apply();q.blur();}});
+document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();q.select();}});
+chipsBox.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;[].slice.call(chipsBox.querySelectorAll('.chip')).forEach(function(c){c.classList.remove('active');});b.classList.add('active');activeFilter=b.dataset.f;apply();});
 
-// Buscador
-document.getElementById('buscador').addEventListener('input', function(e) {
-const term = e.target.value.toLowerCase();
-const secciones = document.querySelectorAll('.seccion');
-let visibleCount = 0;
-
-secciones.forEach(sec => {
-const faqs = sec.querySelectorAll('.faq');
-let secVisible = false;
-
-faqs.forEach(faq => {
-const pregunta = faq.querySelector('.faq-pregunta').textContent.toLowerCase();
-const respuesta = faq.querySelector('.faq-respuesta').textContent.toLowerCase();
-const show = !term || pregunta.includes(term) || respuesta.includes(term);
-faq.style.display = show ? 'block' : 'none';
-if (show) secVisible = true;
-});
-
-sec.style.display = secVisible ? 'block' : 'none';
-if (secVisible) visibleCount++;
-});
-
-document.getElementById('sin-resultados').style.display = visibleCount ? 'none' : 'block';
-});
-
-// Filtros
-document.querySelectorAll('.filtro').forEach(btn => {
-btn.addEventListener('click', function() {
-document.querySelectorAll('.filtro').forEach(b => b.classList.remove('activo'));
-this.classList.add('activo');
-const filtro = this.dataset.filtro;
-document.querySelectorAll('.seccion').forEach(sec => {
-const cat = sec.dataset.categoria;
-sec.style.display = (filtro === 'todas' || cat === filtro) ? 'block' : 'none';
-});
-});
-});
-
-// Favoritos
-function cargarFavoritos() {
-const favs = JSON.parse(localStorage.getItem('favoritos') || '[]');
-const container = document.getElementById('lista-favoritos');
-if (!favs.length) {
-container.innerHTML = '<p style="font-size:.875rem;color:var(--gris)">No hay favoritos guardados.</p>';
-return;
-}
-container.innerHTML = favs.map(f => `
-<div style="padding:.5rem;background:#fff;border:1px solid #fcd34d;border-radius:.25rem;margin-bottom:.5rem">
-<button onclick="eliminarFavorito('${f.id}')" style="float:right;font-size:.75rem;color:#92400e;background:none;border:none;cursor:pointer">×</button>
-<div style="font-size:.875rem;font-weight:600">${f.pregunta}</div>
-</div>
-`).join('');
-}
-
-function toggleFavorito(id, pregunta) {
-let favs = JSON.parse(localStorage.getItem('favoritos') || '[]');
-if (favs.find(f => f.id === id)) {
-favs = favs.filter(f => f.id !== id);
-} else {
-favs.push({id, pregunta});
-}
-localStorage.setItem('favoritos', JSON.stringify(favs));
-cargarFavoritos();
-}
-
-function eliminarFavorito(id) {
-let favs = JSON.parse(localStorage.getItem('favoritos') || '[]');
-favs = favs.filter(f => f.id !== id);
-localStorage.setItem('favoritos', JSON.stringify(favs));
-cargarFavoritos();
-}
-
-document.getElementById('vaciar-favoritos').addEventListener('click', function() {
-localStorage.removeItem('favoritos');
-cargarFavoritos();
-});
-
-// Inicializar
-document.addEventListener('DOMContentLoaded', function() {
-cargarAEPD();
-cargarFavoritos();
-});
+var progress=document.getElementById('progress');var toTop=document.getElementById('toTop');
+function onScroll(){var d=document.documentElement;var m=d.scrollHeight-window.innerHeight;progress.style.width=(m>0?(window.scrollY/m)*100:0)+'%';toTop.classList.toggle('show',window.scrollY>700);}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+var aside=document.getElementById('toc');var btnToc=document.getElementById('btnToc');var overlay=document.getElementById('overlay');
+function closeDrawer(){aside.classList.remove('open');overlay.classList.remove('show');}
+btnToc.addEventListener('click',function(){aside.classList.toggle('open');overlay.classList.toggle('show',aside.classList.contains('open'));});
+overlay.addEventListener('click',closeDrawer);
+})();
 </script>
-
 </body>
 </html>
