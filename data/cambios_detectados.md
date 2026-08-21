@@ -1,27 +1,12 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 20/08/2026 06:42 UTC
+Fecha: 21/08/2026 06:43 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
 
-## AEPD
-
-- **FAQ AEPD** — https://www.aepd.es/preguntas-frecuentes
-- **Canal Prioritario AEPD** — https://www.aepd.es/canalprioritario
-- **LOPDGDD (BOE)** — https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673
-
-## CCN
-
-- **ENS (RD 311/2022, BOE)** — https://www.boe.es/buscar/act.php?id=BOE-A-2022-7353
-
 ## UE
 
-- **Guía CRA Comisión 2026** — https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
 - **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
-
-## ENX
-
-- **TISAX (Manual ENX)** — https://www.enx.com/handbook/tph-es.html
 
 ## Fuentes con error en esta revisión
 
