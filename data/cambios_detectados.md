@@ -1,12 +1,8 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 27/08/2026 17:20 UTC
+Fecha: 28/08/2026 18:13 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
-
-## AEPD
-
-- **RGPD (EUR-Lex)** — http://data.europa.eu/eli/reg/2016/679/oj
 
 ## UE
 
@@ -20,8 +16,6 @@ Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones 
 - **DORA RTS 2024/1772** — http://data.europa.eu/eli/reg_del/2024/1772/oj
 - **DORA RTS 2025/301** — http://data.europa.eu/eli/reg_del/2025/301/oj
 - **DORA RTS 2025/295** — http://data.europa.eu/eli/reg_del/2025/295/oj
-- **DORA RTS 2025/420** — http://data.europa.eu/eli/reg_del/2025/420/oj
-- **DORA ITS 2024/2956** — http://data.europa.eu/eli/reg_impl/2024/2956/oj
 
 ## Fuentes con error en esta revisión
 
