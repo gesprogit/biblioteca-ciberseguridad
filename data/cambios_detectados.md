@@ -1,11 +1,18 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 11/09/2026 10:37 UTC
+Fecha: 12/09/2026 10:05 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
 
+## AEPD
+
+- **RGPD (EUR-Lex)** — http://data.europa.eu/eli/reg/2016/679/oj
+
 ## UE
 
+- **Directiva NIS2** — http://data.europa.eu/eli/dir/2022/2555/oj
+- **Reg. Ejec. (UE) 2024/2690** — http://data.europa.eu/eli/reg_impl/2024/2690/oj
+- **CRA Reg. (UE) 2024/2847** — http://data.europa.eu/eli/reg/2024/2847/oj
 - **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
 
 ## Fuentes con error en esta revisión
