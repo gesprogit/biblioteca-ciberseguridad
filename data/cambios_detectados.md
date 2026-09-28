@@ -1,6 +1,6 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 27/09/2026 11:24 UTC
+Fecha: 28/09/2026 12:54 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
 
@@ -13,7 +13,6 @@ Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones 
 - **Directiva NIS2** — http://data.europa.eu/eli/dir/2022/2555/oj
 - **Reg. Ejec. (UE) 2024/2690** — http://data.europa.eu/eli/reg_impl/2024/2690/oj
 - **CRA Reg. (UE) 2024/2847** — http://data.europa.eu/eli/reg/2024/2847/oj
-- **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
 - **AI Act Reg. (UE) 2024/1689** — http://data.europa.eu/eli/reg/2024/1689/oj
 - **DORA Reg. (UE) 2022/2554** — http://data.europa.eu/eli/reg/2022/2554/oj
 - **DORA RTS 2024/1774** — http://data.europa.eu/eli/reg_del/2024/1774/oj
