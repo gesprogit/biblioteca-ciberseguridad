@@ -1,8 +1,12 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 17/10/2026 10:09 UTC
+Fecha: 18/10/2026 10:24 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
+
+## AEPD
+
+- **RGPD (EUR-Lex)** — http://data.europa.eu/eli/reg/2016/679/oj
 
 ## UE
 
