@@ -1,16 +1,8 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 19/10/2026 12:07 UTC
+Fecha: 20/10/2026 10:56 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
-
-## AEPD
-
-- **RGPD (EUR-Lex)** — http://data.europa.eu/eli/reg/2016/679/oj
-
-## UE
-
-- **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
 
 ## Fuentes con error en esta revisión
 
