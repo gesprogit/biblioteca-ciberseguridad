@@ -1,12 +1,11 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 27/10/2026 11:37 UTC
+Fecha: 28/10/2026 12:07 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
 
 ## Fuentes con error en esta revisión
 
-- AEPD · Canal Prioritario AEPD: `500 Server Error: Internal Server Error for url: https://www.aepd.es/canalprioritario`
 - CCN · FAQ CCN-CERT: `403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html`
 - CCN · Guías CCN-STIC 800 (ENS): `403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-segurid`
 - ISO · ISO/IEC 27001: `403 Client Error: Forbidden for url: https://www.iso.org/isoiec-27001-information-security.html`
