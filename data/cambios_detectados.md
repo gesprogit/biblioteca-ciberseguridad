@@ -1,8 +1,12 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 28/10/2026 12:07 UTC
+Fecha: 29/10/2026 12:17 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
+
+## UE
+
+- **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
 
 ## Fuentes con error en esta revisión
 
@@ -10,4 +14,3 @@ Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones 
 - CCN · Guías CCN-STIC 800 (ENS): `403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-segurid`
 - ISO · ISO/IEC 27001: `403 Client Error: Forbidden for url: https://www.iso.org/isoiec-27001-information-security.html`
 - ISO · ISO/IEC 27002: `403 Client Error: Forbidden for url: https://www.iso.org/standard/75652.html`
-- UE · Guía CRA Comisión 2026: `403 Client Error: Forbidden for url: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-`
