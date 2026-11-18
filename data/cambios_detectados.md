@@ -1,12 +1,13 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 17/11/2026 15:30 UTC
+Fecha: 18/11/2026 15:06 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
 
 ## UE
 
 - **Guía CRA Comisión 2026** — https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
+- **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
 
 ## Fuentes con error en esta revisión
 
