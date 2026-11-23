@@ -5,7 +5,7 @@
     "hash": "fee7b631a85f3308694bf607b36ffb92e13786fab55ca85d46728f998dde9825",
     "longitud": 857,
     "estado": "ok",
-    "fecha": "2026-11-22T14:00:25.229341+00:00"
+    "fecha": "2026-11-23T17:20:28.034122+00:00"
   },
   "aepd-canal": {
     "url": "https://www.aepd.es/canalprioritario",
@@ -13,7 +13,7 @@
     "hash": "d7e617fc3d6a66578ea1b526a89b011eba702e167c38e358822aa67ba5f26ff9",
     "longitud": 1799,
     "estado": "ok",
-    "fecha": "2026-11-22T14:00:28.287977+00:00"
+    "fecha": "2026-11-23T17:20:32.596059+00:00"
   },
   "lopdgdd": {
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673",
@@ -21,7 +21,7 @@
     "hash": "3bf1b18d4da1abc236bca4f3292680178c2d078b5637649f88170feaacbe1a51",
     "longitud": 250381,
     "estado": "ok",
-    "fecha": "2026-11-22T14:00:32.223140+00:00"
+    "fecha": "2026-11-23T17:20:36.454514+00:00"
   },
   "rgpd": {
     "url": "http://data.europa.eu/eli/reg/2016/679/oj",
@@ -29,21 +29,21 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:00:34.936881+00:00"
+    "fecha": "2026-11-23T17:20:39.716126+00:00"
   },
   "ccn-faq": {
     "url": "https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
     "categoria": "CCN",
     "estado": "error",
     "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/sobre-nosotros/faq.html",
-    "fecha": "2026-11-22T14:00:54.486951+00:00"
+    "fecha": "2026-11-23T17:20:58.213993+00:00"
   },
   "ccn-stic-800": {
     "url": "https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html",
     "categoria": "CCN",
     "estado": "error",
     "error": "403 Client Error: Forbidden for url: https://www.ccn-cert.cni.es/es/series-ccn-stic/800-guia-esquema-nacional-de-seguridad.html",
-    "fecha": "2026-11-22T14:01:13.581747+00:00"
+    "fecha": "2026-11-23T17:21:17.987893+00:00"
   },
   "ens": {
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-7353",
@@ -51,21 +51,21 @@
     "hash": "9afe0b2c0caed1822880c0cbc8b35629812c95b4394456d61a47250ad0b3d136",
     "longitud": 3355,
     "estado": "ok",
-    "fecha": "2026-11-22T14:01:17.467592+00:00"
+    "fecha": "2026-11-23T17:21:21.890568+00:00"
   },
   "iso-27001": {
     "url": "https://www.iso.org/isoiec-27001-information-security.html",
     "categoria": "ISO",
     "estado": "error",
     "error": "403 Client Error: Forbidden for url: https://www.iso.org/isoiec-27001-information-security.html",
-    "fecha": "2026-11-22T14:01:36.736619+00:00"
+    "fecha": "2026-11-23T17:21:40.779694+00:00"
   },
   "iso-27002": {
     "url": "https://www.iso.org/standard/75652.html",
     "categoria": "ISO",
     "estado": "error",
     "error": "403 Client Error: Forbidden for url: https://www.iso.org/standard/75652.html",
-    "fecha": "2026-11-22T14:01:54.358490+00:00"
+    "fecha": "2026-11-23T17:21:58.204984+00:00"
   },
   "nis2": {
     "url": "http://data.europa.eu/eli/dir/2022/2555/oj",
@@ -73,7 +73,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:01:58.607588+00:00"
+    "fecha": "2026-11-23T17:22:01.709913+00:00"
   },
   "nis2-ejec": {
     "url": "http://data.europa.eu/eli/reg_impl/2024/2690/oj",
@@ -81,7 +81,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:02.087856+00:00"
+    "fecha": "2026-11-23T17:22:04.097697+00:00"
   },
   "cra": {
     "url": "http://data.europa.eu/eli/reg/2024/2847/oj",
@@ -89,7 +89,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:05.846256+00:00"
+    "fecha": "2026-11-23T17:22:07.199058+00:00"
   },
   "cra-guia": {
     "url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
@@ -97,15 +97,15 @@
     "hash": "8bc55ccb7cbde439aa8de12151df9450eb8de16d35ed9283dd306d5d0f3db71f",
     "longitud": 3129,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:08.345261+00:00"
+    "fecha": "2026-11-23T17:22:11.131623+00:00"
   },
   "enisa-sbd": {
     "url": "https://github.com/enisaeu/enisa-sbd-playbook/",
     "categoria": "UE",
-    "hash": "bc2539bd13d28a5b0d8ed2055ac9cc111e810f3e14552e5d1b2606b5bbaf944b",
+    "hash": "1cbc3eba0f7bd53165dc7e36c50f84710c5b26d2e59cbef33108411d8fd88971",
     "longitud": 8144,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:12.126737+00:00"
+    "fecha": "2026-11-23T17:22:14.569291+00:00"
   },
   "aiact": {
     "url": "http://data.europa.eu/eli/reg/2024/1689/oj",
@@ -113,7 +113,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:15.336297+00:00"
+    "fecha": "2026-11-23T17:22:18.187730+00:00"
   },
   "dora": {
     "url": "http://data.europa.eu/eli/reg/2022/2554/oj",
@@ -121,7 +121,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:18.042103+00:00"
+    "fecha": "2026-11-23T17:22:20.816305+00:00"
   },
   "dora-1774": {
     "url": "http://data.europa.eu/eli/reg_del/2024/1774/oj",
@@ -129,7 +129,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:21.918386+00:00"
+    "fecha": "2026-11-23T17:22:23.136830+00:00"
   },
   "dora-1772": {
     "url": "http://data.europa.eu/eli/reg_del/2024/1772/oj",
@@ -137,7 +137,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:26.156122+00:00"
+    "fecha": "2026-11-23T17:22:26.988652+00:00"
   },
   "dora-301": {
     "url": "http://data.europa.eu/eli/reg_del/2025/301/oj",
@@ -145,7 +145,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:29.003783+00:00"
+    "fecha": "2026-11-23T17:22:29.745386+00:00"
   },
   "dora-295": {
     "url": "http://data.europa.eu/eli/reg_del/2025/295/oj",
@@ -153,7 +153,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:33.008707+00:00"
+    "fecha": "2026-11-23T17:22:33.696449+00:00"
   },
   "dora-420": {
     "url": "http://data.europa.eu/eli/reg_del/2025/420/oj",
@@ -161,7 +161,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:36.398698+00:00"
+    "fecha": "2026-11-23T17:22:37.235950+00:00"
   },
   "dora-2956": {
     "url": "http://data.europa.eu/eli/reg_impl/2024/2956/oj",
@@ -169,7 +169,7 @@
     "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "longitud": 0,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:39.951083+00:00"
+    "fecha": "2026-11-23T17:22:41.364257+00:00"
   },
   "tisax": {
     "url": "https://www.enx.com/handbook/tph-es.html",
@@ -177,7 +177,7 @@
     "hash": "ca33ad90603b7db923c97666024b8a7e634b5cd11abb4135ba446e90f69fa5ab",
     "longitud": 243183,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:43.882213+00:00"
+    "fecha": "2026-11-23T17:22:46.027852+00:00"
   },
   "lssi-ce": {
     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758",
@@ -185,6 +185,6 @@
     "hash": "267e64fc9d391b28c842d0c47685362d083f693275f1d6932504876a0f9ee5f4",
     "longitud": 156038,
     "estado": "ok",
-    "fecha": "2026-11-22T14:02:48.657713+00:00"
+    "fecha": "2026-11-23T17:22:49.707976+00:00"
   }
 }
