@@ -1,12 +1,8 @@
 # Cambio detectado en fuentes oficiales
 
-Fecha: 23/11/2026 17:22 UTC
+Fecha: 24/11/2026 16:58 UTC
 
 Se han detectado modificaciones; revisa la biblioteca y actualiza las secciones afectadas:
-
-## UE
-
-- **ENISA SBD Playbook (GitHub)** — https://github.com/enisaeu/enisa-sbd-playbook/
 
 ## Fuentes con error en esta revisión
 
